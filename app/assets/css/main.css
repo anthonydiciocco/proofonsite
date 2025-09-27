@@ -2,17 +2,236 @@
 @import "@nuxt/ui";
 
 @theme static {
-  --font-sans: 'Public Sans', sans-serif;
+  --font-sans: 'Manrope', 'Public Sans', system-ui, sans-serif;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+  /* Granite (primary) */
+  --color-granite-50: #f4f6f8;
+  --color-granite-100: #e6eaee;
+  --color-granite-200: #cfd6de;
+  --color-granite-300: #aab6c4;
+  --color-granite-400: #7e8fa6;
+  --color-granite-500: #5c738f;
+  --color-granite-600: #2c3e50;
+  --color-granite-700: #223240;
+  --color-granite-800: #1a2833;
+  --color-granite-900: #131f29;
+  --color-granite-950: #0c151c;
+
+  /* Brass (accent) */
+  --color-brass-50: #fff8e6;
+  --color-brass-100: #ffefbf;
+  --color-brass-200: #ffe388;
+  --color-brass-300: #ffd54f;
+  --color-brass-400: #f5c326;
+  --color-brass-500: #e1ad01;
+  --color-brass-600: #c99600;
+  --color-brass-700: #a87b00;
+  --color-brass-800: #865f00;
+  --color-brass-900: #6b4b00;
+  --color-brass-950: #3d2a00;
+
+  /* Emerald (success) */
+  --color-emerald-50: #e9f8f0;
+  --color-emerald-100: #c9f0db;
+  --color-emerald-200: #99e4bf;
+  --color-emerald-300: #66d6a2;
+  --color-emerald-400: #3bc988;
+  --color-emerald-500: #27ae60;
+  --color-emerald-600: #1e8f4e;
+  --color-emerald-700: #187241;
+  --color-emerald-800: #135a36;
+  --color-emerald-900: #0d462b;
+  --color-emerald-950: #072b1a;
+
+  /* Hazard (warning) */
+  --color-hazard-50: #fff5eb;
+  --color-hazard-100: #ffe5cc;
+  --color-hazard-200: #ffcc99;
+  --color-hazard-300: #ffb066;
+  --color-hazard-400: #ff9933;
+  --color-hazard-500: #e67e22;
+  --color-hazard-600: #c56616;
+  --color-hazard-700: #9e4d12;
+  --color-hazard-800: #7a3b10;
+  --color-hazard-900: #5c2e0d;
+  --color-hazard-950: #3a1c08;
+
+  /* Brick (error) */
+  --color-brick-50: #fdecea;
+  --color-brick-100: #f9d2cf;
+  --color-brick-200: #f3a8a3;
+  --color-brick-300: #e87b74;
+  --color-brick-400: #dc4f47;
+  --color-brick-500: #c0392b;
+  --color-brick-600: #a32e23;
+  --color-brick-700: #84261d;
+  --color-brick-800: #692019;
+  --color-brick-900: #4e1813;
+  --color-brick-950: #2f0e0b;
+
+  /* Concrete (neutrals) */
+  --color-concrete-50: #f7f7f7;
+  --color-concrete-100: #eeeeee;
+  --color-concrete-200: #e2e2e2;
+  --color-concrete-300: #cfcfcf;
+  --color-concrete-400: #b1b1b1;
+  --color-concrete-500: #949494;
+  --color-concrete-600: #787878;
+  --color-concrete-700: #5f5f5f;
+  --color-concrete-800: #474747;
+  --color-concrete-900: #2f2f2f;
+  --color-concrete-950: #1c1c1c;
+
+  --shadow-app-card: 0 26px 76px -28px rgba(16, 24, 32, 0.54), 0 20px 50px -20px rgba(30, 62, 89, 0.36);
+  --shadow-app-glow: 0 0 0 1px rgba(164, 152, 61, 0.12), 0 44px 90px -40px rgba(225, 173, 1, 0.22);
+}
+
+:root {
+  --ui-header-height: --spacing(20);
+  --ui-radius: 0.625rem;
+  --ui-container: var(--container-7xl);
+
+  --ui-bg: #f5f7fa;
+  --ui-bg-muted: #edf1f4;
+  --ui-bg-elevated: rgba(255, 255, 255, 0.95);
+  --ui-bg-accented: rgba(225, 173, 1, 0.08);
+  --ui-bg-inverted: #0b0f14;
+
+  --ui-border: rgba(44, 62, 80, 0.12);
+  --ui-border-muted: rgba(44, 62, 80, 0.08);
+  --ui-border-accented: rgba(225, 173, 1, 0.22);
+  --ui-border-inverted: rgba(12, 17, 22, 0.76);
+
+  --ui-text: #10202b;
+  --ui-text-muted: rgba(16, 32, 43, 0.66);
+  --ui-text-toned: rgba(16, 32, 43, 0.54);
+  --ui-text-highlighted: #1e3242;
+  --ui-text-inverted: #f7fbff;
+
+  /* Nuxt UI semantic colors */
+  --ui-primary: var(--color-granite-600);
+  --ui-secondary: var(--color-brass-500);
+  --ui-success: var(--color-emerald-500);
+  --ui-info: var(--color-granite-400);
+  --ui-warning: var(--color-hazard-500);
+  --ui-error: var(--color-brick-500);
+
+  --app-card: rgba(255, 255, 255, 0.86);
+  --app-card-border: rgba(44, 62, 80, 0.16);
+  --app-card-highlight: rgba(225, 173, 1, 0.18);
+
+  --app-body-gradient:
+    radial-gradient(120% 120% at 14% 12%, rgba(44, 62, 80, 0.14) 0%, transparent 58%),
+    radial-gradient(92% 92% at 82% 16%, rgba(225, 173, 1, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #f7f8fb 0%, #eef2f6 46%, #e2e7ed 100%);
+
+  --app-surface-layer-1: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72));
+  --app-surface-layer-2: radial-gradient(92% 120% at 18% 34%, rgba(44, 62, 80, 0.1), transparent 68%);
+  --app-surface-blend: normal, multiply;
+}
+
+.dark {
+  --ui-bg: #0a0f14;
+  --ui-bg-muted: #0e1821;
+  --ui-bg-elevated: rgba(16, 27, 36, 0.9);
+  --ui-bg-accented: rgba(225, 173, 1, 0.16);
+  --ui-bg-inverted: #f7f9fb;
+
+  --ui-border: rgba(124, 144, 162, 0.34);
+  --ui-border-muted: rgba(124, 144, 162, 0.24);
+  --ui-border-accented: rgba(225, 173, 1, 0.28);
+  --ui-border-inverted: rgba(12, 20, 26, 0.94);
+
+  --ui-text: #eef6ff;
+  --ui-text-muted: rgba(203, 218, 232, 0.78);
+  --ui-text-toned: rgba(181, 198, 214, 0.66);
+  --ui-text-highlighted: #ffffff;
+  --ui-text-inverted: #0e1821;
+
+  /* Nuxt UI semantic colors */
+  --ui-primary: var(--color-granite-300);
+  --ui-secondary: var(--color-brass-300);
+  --ui-success: var(--color-emerald-400);
+  --ui-info: var(--color-granite-400);
+  --ui-warning: var(--color-hazard-400);
+  --ui-error: var(--color-brick-400);
+
+  --app-card: rgba(16, 27, 36, 0.8);
+  --app-card-border: rgba(134, 154, 173, 0.4);
+  --app-card-highlight: rgba(225, 173, 1, 0.24);
+
+  --app-body-gradient:
+    radial-gradient(120% 120% at 12% 10%, rgba(44, 62, 80, 0.28) 0%, transparent 60%),
+    radial-gradient(82% 82% at 86% 16%, rgba(225, 173, 1, 0.18) 0%, transparent 54%),
+    linear-gradient(180deg, #080d12 0%, #0e1821 44%, #12222e 100%);
+
+  --app-surface-layer-1: linear-gradient(148deg, rgba(28, 43, 58, 0.72), rgba(12, 22, 29, 0.95));
+  --app-surface-layer-2: radial-gradient(80% 120% at 24% 14%, rgba(225, 173, 1, 0.1), transparent 62%);
+  --app-surface-blend: overlay, normal;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--app-body-gradient);
+  color: var(--ui-text);
+  transition: background 0.6s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .bg-app-surface {
+    background-color: var(--ui-bg);
+    background-image: var(--app-surface-layer-1), var(--app-surface-layer-2);
+    background-blend-mode: var(--app-surface-blend);
+  }
+
+  .text-app-foreground {
+    color: var(--ui-text);
+  }
+
+  .border-app-card {
+    border-color: var(--app-card-border);
+  }
+
+  .shadow-app-card {
+    box-shadow: var(--shadow-app-card);
+  }
+
+  .shadow-app-glow {
+    box-shadow: var(--shadow-app-glow);
+  }
+}
+
+@layer components {
+  .pricing-card {
+    background: var(--app-surface-layer-1);
+    backdrop-filter: blur(18px);
+  }
+
+  .dark .pricing-card {
+    background: rgba(16, 27, 36, 0.88);
+  }
+
+  .pricing-feature {
+    padding: 0.75rem 0;
+    transition: transform 0.2s ease;
+  }
+
+  .pricing-feature:hover {
+    transform: translateY(-2px);
+  }
+
+  .pricing-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    color: var(--ui-secondary);
+    padding: 0.25rem;
+  }
+
+  .pricing-price {
+    font-feature-settings: 'tnum';
+  }
 }

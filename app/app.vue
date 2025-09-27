@@ -1,18 +1,24 @@
-<script setup>
+<script setup lang="ts">
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/favicon.ico' },
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Public+Sans:wght@400;600;700&display=swap'
+    }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: 'en-CA'
   }
 })
 
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+const title = 'ProofOnSite — Photo log for every site delivery'
+const description = 'ProofOnSite is an offline-first PWA that replaces paper slips and scattered texts with a timestamped, bilingual log accessible to the whole team.'
 
 useSeoMeta({
   title,
@@ -27,40 +33,8 @@ useSeoMeta({
 
 <template>
   <UApp>
-    <UHeader>
-      <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
-        </NuxtLink>
-
-        <TemplateMenu />
-      </template>
-
-      <template #right>
-        <UColorModeButton />
-
-        <UButton to="https://github.com/nuxt-ui-templates/starter" target="_blank" icon="i-simple-icons-github"
-          aria-label="GitHub" color="neutral" variant="ghost" />
-      </template>
-    </UHeader>
-
-    <UMain>
+    <NuxtLayout>
       <NuxtPage />
-    </UMain>
-
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
-    <UFooter>
-      <template #left>
-        <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
-        </p>
-      </template>
-
-      <template #right>
-        <UButton to="https://github.com/nuxt-ui-templates/starter" target="_blank" icon="i-simple-icons-github"
-          aria-label="GitHub" color="neutral" variant="ghost" />
-      </template>
-    </UFooter>
+    </NuxtLayout>
   </UApp>
 </template>
