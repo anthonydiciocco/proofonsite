@@ -3,7 +3,7 @@ import type {
   AccordionItem,
   ButtonProps,
   PageLink,
-  TimelineItem
+  StepperItem
 } from '@nuxt/ui'
 import { siteNavigationItems } from '~/constants/navigation'
 
@@ -65,30 +65,40 @@ const painPoints = [
 
 const workflowItems = [
   {
-    date: 'Step 1',
     title: 'Generate & print the QR pack',
     description: 'Each site gets a unique PDF with bilingual instructions and large-format codes ready for lamination.',
     icon: 'i-lucide-printer'
   },
   {
-    date: 'Step 2',
     title: 'Drivers scan on arrival',
     description: 'They land on the ProofOnSite PWA, branded for your site, with big controls designed for gloved hands.',
     icon: 'i-lucide-smartphone'
   },
   {
-    date: 'Step 3',
     title: 'Capture proof offline-first',
     description: 'Take photos, add notes, and sync automatically once the phone regains a connection — no duplicate typing.',
     icon: 'i-lucide-cloud-off'
   },
   {
-    date: 'Step 4',
     title: 'Office notified instantly',
     description: 'Managers receive an email summary, searchable dash entry, and exports for suppliers or auditors.',
     icon: 'i-lucide-inbox'
   }
-] satisfies TimelineItem[]
+] satisfies StepperItem[]
+
+const workflowStepperUi = {
+  root: 'flex-col gap-6',
+  header: 'flex flex-col gap-6',
+  item: 'group relative',
+  container: 'relative flex items-start gap-4',
+  trigger:
+    'pointer-events-none relative mt-0.5 flex size-10 items-center justify-center rounded-full bg-secondary/10 text-secondary shadow-none border-0 transition-none group-data-[state=active]:ring-0 group-data-[state=active]:border-0 group-data-[state=active]:!bg-secondary/10 group-data-[state=completed]:ring-0 group-data-[state=completed]:border-0 group-data-[state=completed]:!bg-secondary/10',
+  indicator: 'flex items-center justify-center size-full text-secondary',
+  separator: 'absolute start-[calc(50%-1px)] -bottom-[10px] w-0.5 bg-[color:var(--ui-border-muted)]',
+  wrapper: 'pt-0.5 space-y-1 text-left',
+  title: 'text-base font-semibold text-[color:var(--ui-text-highlighted)]',
+  description: 'text-sm leading-6 text-[color:var(--ui-text-toned)]'
+}
 
 const benefitFeatures = [
   {
@@ -208,41 +218,14 @@ const currentYear = new Date().getFullYear()
       <section>
         <UPageHero headline="Field-tested on Quebec construction sites"
           title="Visual proof of every delivery, captured in 30 seconds"
-          description="ProofOnSite replaces paper slips and disorganized texts with a structured, timestamped log the whole team can consult. Generate one QR per site, capture photos even on a weak connection, and notify the office instantly."
+          description="Scan the site QR, snap a photo, and instantly create a searchable log. No lost slips, no app downloads, no wasted time."
           orientation="horizontal" :links="heroLinks">
           <template #default>
-            <UCard
-              class="max-w-xl border border-app-card bg-app-surface shadow-app-glow backdrop-blur ring-1 ring-[rgba(225,173,1,0.18)]">
-              <template #header>
-                <p class="text-sm font-semibold text-muted">
-                  Capture checklist
-                </p>
-              </template>
-
-              <ul class="space-y-4">
-                <li v-for="item in heroChecklist" :key="item.title" class="flex items-start gap-3">
-                  <div
-                    class="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                    <UIcon :name="item.icon" class="size-4" />
-                  </div>
-                  <div>
-                    <p class="text-sm font-semibold text-highlighted">
-                      {{ item.title }}
-                    </p>
-                    <p class="text-sm text-muted">
-                      {{ item.description }}
-                    </p>
-                  </div>
-                </li>
-              </ul>
-
-              <template #footer>
-                <div class="flex items-center gap-2 text-xs text-muted">
-                  <UIcon name="i-lucide-waves" class="size-4" />
-                  Works offline: captures sync as soon as a connection is available.
-                </div>
-              </template>
-            </UCard>
+            <!-- Clean image only -->
+            <div class="flex justify-center">
+              <img src="~/assets/stock_1.png" alt="ProofOnSite capture in action"
+                class="max-w-full h-auto rounded-xl shadow-app-glow border border-app-card" />
+            </div>
           </template>
         </UPageHero>
       </section>
@@ -253,7 +236,26 @@ const currentYear = new Date().getFullYear()
 
       <UPageSection id="workflow" title="A four-step workflow tailored to site realities"
         description="Everyone starts from the same QR code. No heavy training, just immediate traceability that reassures the office and suppliers.">
-        <UTimeline class="mt-12" color="secondary" size="lg" :items="workflowItems" />
+        <UStepper class="mt-12 mx-auto max-w-3xl" color="secondary" size="md" :items="workflowItems"
+          orientation="vertical" :linear="false" :ui="workflowStepperUi">
+          <template #indicator="{ item }">
+            <span class="flex size-10 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+              <UIcon :name="item.icon" class="size-5" />
+            </span>
+          </template>
+
+          <template #title="{ item }">
+            <p class="font-semibold tracking-wide text-[color:var(--ui-text-highlighted)]">
+              {{ item.title }}
+            </p>
+          </template>
+
+          <template #description="{ item }">
+            <p class="text-sm leading-6 text-[color:var(--ui-text-toned)]">
+              {{ item.description }}
+            </p>
+          </template>
+        </UStepper>
       </UPageSection>
 
       <UPageSection id="benefits" title="What ProofOnSite delivers to your team"

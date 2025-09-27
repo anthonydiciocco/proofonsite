@@ -25,11 +25,10 @@ watch(
 </script>
 
 <template>
-  <header
-    class="sticky top-0 z-40 border-app-card bg-elevated/80 backdrop-blur-md shadow-app-card supports-[backdrop-filter]:bg-elevated/70">
+  <header class="sticky top-0 z-40 border border-secondary/10 bg-app-surface/70 backdrop-blur-md shadow-app-glow">
     <UContainer class="py-4">
       <div class="flex items-center justify-between gap-4">
-        <NuxtLink to="/" class="inline-flex items-center" aria-label="Page d’accueil ProofOnSite">
+        <NuxtLink to="/" class="inline-flex items-center" aria-label="Page d'accueil ProofOnSite">
           <AppLogo class="sm:gap-4" />
         </NuxtLink>
 
@@ -52,10 +51,10 @@ watch(
           <ul class="flex flex-col gap-2">
             <li v-for="item in navigationItems" :key="item.label">
               <NuxtLink :to="item.to"
-                class="flex items-center justify-between rounded-xl border border-app-card bg-app-surface px-4 py-2 text-sm font-medium text-highlighted shadow-app-glow transition hover:border-secondary/60 hover:text-secondary"
+                class="flex items-center justify-between rounded-xl border border-secondary/20 bg-secondary/5 px-4 py-2 text-sm font-medium text-highlighted shadow-app-glow transition hover:border-secondary/40 hover:bg-secondary/10 hover:text-secondary"
                 @click="isMenuOpen = false">
                 {{ item.label }}
-                <UIcon name="i-lucide-arrow-up-right" class="size-4 text-muted" />
+                <UIcon name="i-lucide-arrow-up-right" class="size-4 text-secondary" />
               </NuxtLink>
             </li>
             <li>
