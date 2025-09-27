@@ -25,8 +25,15 @@ const attrs = useAttrs()
 </script>
 
 <template>
-  <div class="inline-flex items-center gap-3 text-highlighted" v-bind="attrs">
-    <component :is="ProofOnSiteLogo" class="h-10 w-10 text-secondary" aria-hidden="true" />
+  <div
+    class="inline-flex items-center gap-3 text-highlighted"
+    v-bind="attrs"
+  >
+    <component
+      :is="ProofOnSiteLogo"
+      class="h-10 w-10 text-secondary"
+      aria-hidden="true"
+    />
     <span class="text-base font-semibold uppercase tracking-[0.32em] sm:text-lg">
       ProofOnSite
     </span>

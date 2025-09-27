@@ -1,60 +1,82 @@
-# Nuxt Starter Template
+# ProofOnSite
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+ProofOnSite est une application SaaS en cours de validation qui simplifie le suivi des livraisons sur les chantiers de construction. L’interface marketing côté client est propulsée par Nuxt 4 + Nuxt UI, et un backend light basé sur Neon (PostgreSQL), Drizzle ORM et un système d’authentification inspiré de Lucia complète désormais l’expérience.
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+## Prérequis
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+- [Bun](https://bun.sh) 1.2+
+- Compte Neon PostgreSQL (ou toute base Postgres compatible HTTP)
+- Node 18+ (inclus avec Bun)
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-  </picture>
-</a>
-
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
-
-## Quick Start
-
-```bash [Terminal]
-npm create nuxt@latest -- -t github:nuxt-ui-templates/starter
-```
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
-
-## Setup
-
-Make sure to install the dependencies:
+## Installation
 
 ```bash
-pnpm install
+# Installer les dépendances avec Bun
+bun install
+
+# Dupliquer le fichier d’environnement et renseigner les variables
+cp .env.example .env
 ```
 
-## Development Server
+Variables requises :
 
-Start the development server on `http://localhost:3000`:
+```env
+DATABASE_URL="postgresql://user:password@host/db?sslmode=require"
+SESSION_COOKIE_NAME="pos_session"        # optionnel
+SESSION_COOKIE_DOMAIN=""                # optionnel
+SESSION_MAX_AGE="2592000"               # optionnel (secondes)
+```
+
+## Base de données
+
+Les schémas Drizzle se trouvent dans `server/db/schema.ts`. Pour générer ou pousser les migrations :
 
 ```bash
-pnpm dev
+# Générer les migrations SQL depuis le schéma
+bun run db:generate
+
+# Appliquer le schéma sur la base (push sans fichier SQL)
+bun run db:push
+
+# Accéder au studio Drizzle
+bun run db:studio
 ```
 
-## Production
+> Drizzle utilise la connexion HTTP de Neon (`@neondatabase/serverless`). Assurez-vous que `DATABASE_URL` pointe vers le pooler Neon (`...-pooler...`).
 
-Build the application for production:
+## Lancement en développement
 
 ```bash
-pnpm build
+bun run dev
 ```
 
-Locally preview production build:
+Le site est accessible sur [http://localhost:3000](http://localhost:3000). Les pages `/login`, `/register` et `/dashboard` utilisent le nouveau flux d’authentification (sessions persistées en base, cookie signé serveur-side, rafraîchissement automatique).
 
-```bash
-pnpm preview
-```
+## Pile technique
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- **Nuxt 4** + **Nuxt UI 4**
+- **Drizzle ORM** + **Neon** (PostgreSQL serverless)
+- **BcryptJS** pour le hash des mots de passe
+- **@oslojs/crypto** pour la génération et le hachage des secrets de session (inspiré de Lucia v3)
+- **Zod** pour la validation côté serveur et client
+
+## Scripts utiles
+
+| Commande | Description |
+| --- | --- |
+| `bun run lint` | Linting ESLint |
+| `bun run typecheck` | Vérification TypeScript/Nuxt |
+| `bun run build` | Build de production |
+| `bun run preview` | Prévisualisation du build |
+| `bun run db:generate` | Génère les migrations à partir du schéma |
+| `bun run db:push` | Applique le schéma sur la base cible |
+| `bun run db:studio` | Lance Drizzle Studio |
+
+## Prochaines étapes
+
+- Finaliser la gestion des sites chantiers et des QR codes
+- Stockage des médias (photos de livraisons) avec compression côté client
+- Notifications e-mail ciblées pour les chefs de chantier et fournisseurs
+- Tableau de bord enrichi avec filtres et exports
+
+Toute contribution ou retour d’expérience sur le flux d’authentification est le bienvenu pour préparer la prochaine itération produit.

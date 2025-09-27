@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
-import type { NavigationMenuItem } from '@nuxt/ui'
+import { useRouter } from 'vue-router'
+import { useRequestFetch, useToast } from '#imports'
+import type { DropdownMenuItem, NavigationMenuItem } from '@nuxt/ui'
 import { siteNavigationItems } from '~/constants/navigation'
+import { refreshAuth, useAuthState } from '../../composables/useAuth'
 
 const props = defineProps<{
   items?: NavigationMenuItem[]
@@ -15,6 +18,11 @@ const primaryCtaTo = computed(() => props.ctaTo ?? '#cta')
 
 const isMenuOpen = ref(false)
 const route = useRoute()
+const router = useRouter()
+const toast = useToast()
+const requestFetch = useRequestFetch()
+const authState = useAuthState()
+const isLoggingOut = ref(false)
 
 watch(
   () => route.fullPath,
@@ -22,6 +30,71 @@ watch(
     isMenuOpen.value = false
   }
 )
+
+const isAuthenticated = computed(() => authState.value.status === 'authenticated')
+const currentUser = computed(() => authState.value.user)
+
+const userMenuItems = computed<DropdownMenuItem[][]>(() => [
+  [
+    {
+      label: 'Tableau de bord',
+      icon: 'i-lucide-layout-dashboard',
+      to: '/dashboard'
+    }
+  ],
+  [
+    {
+      label: 'Déconnexion',
+      icon: 'i-lucide-log-out',
+      disabled: isLoggingOut.value,
+      onSelect: async (event) => {
+        event.preventDefault()
+        await handleLogout()
+      }
+    }
+  ]
+])
+
+async function handleLogout() {
+  if (isLoggingOut.value) {
+    return
+  }
+
+  isLoggingOut.value = true
+
+  try {
+    await requestFetch('/api/auth/logout', {
+      method: 'POST'
+    })
+
+    await refreshAuth({ force: true })
+    toast.add({
+      title: 'Déconnexion',
+      description: 'À bientôt sur ProofOnSite.',
+      color: 'neutral'
+    })
+    await router.push('/')
+  } catch (error: unknown) {
+    type FetchErrorLike = {
+      data?: { message?: string }
+      statusMessage?: string
+    }
+
+    const fetchError = error as FetchErrorLike
+    const fallbackMessage = error instanceof Error ? error.message : null
+    const message = fetchError.data?.message
+      ?? fetchError.statusMessage
+      ?? fallbackMessage
+      ?? 'Impossible de vous déconnecter pour le moment.'
+    toast.add({
+      title: 'Erreur',
+      description: message,
+      color: 'error'
+    })
+  } finally {
+    isLoggingOut.value = false
+  }
+}
 </script>
 
 <template>
@@ -34,9 +107,26 @@ watch(
 
         <div class="hidden items-center gap-6 lg:flex">
           <UNavigationMenu :items="navigationItems" orientation="horizontal" variant="link" />
-          <UButton color="secondary" variant="solid" size="sm" :to="primaryCtaTo" trailing-icon="i-lucide-arrow-right">
-            {{ primaryCtaLabel }}
-          </UButton>
+          <template v-if="isAuthenticated">
+            <UButton color="secondary" variant="solid" size="sm" :to="primaryCtaTo"
+              trailing-icon="i-lucide-arrow-right">
+              {{ primaryCtaLabel }}
+            </UButton>
+            <UDropdownMenu :items="userMenuItems" :content="{ align: 'end', side: 'bottom', sideOffset: 8 }">
+              <UButton color="neutral" variant="ghost" icon="i-lucide-user-round">
+                {{ currentUser?.displayName ?? currentUser?.email }}
+              </UButton>
+            </UDropdownMenu>
+          </template>
+          <template v-else>
+            <UButton color="neutral" variant="ghost" to="/login">
+              Se connecter
+            </UButton>
+            <UButton color="secondary" variant="solid" size="sm" :to="primaryCtaTo"
+              trailing-icon="i-lucide-arrow-right">
+              {{ primaryCtaLabel }}
+            </UButton>
+          </template>
         </div>
 
         <div class="flex items-center gap-2">
@@ -57,10 +147,22 @@ watch(
                 <UIcon name="i-lucide-arrow-up-right" class="size-4 text-secondary" />
               </NuxtLink>
             </li>
-            <li>
+            <li v-if="!isAuthenticated">
+              <UButton block color="neutral" variant="ghost" to="/login" @click="isMenuOpen = false">
+                Se connecter
+              </UButton>
               <UButton block color="secondary" variant="solid" :to="primaryCtaTo" trailing-icon="i-lucide-arrow-right"
                 @click="isMenuOpen = false">
                 {{ primaryCtaLabel }}
+              </UButton>
+            </li>
+            <li v-else>
+              <UButton block color="secondary" variant="solid" to="/dashboard" trailing-icon="i-lucide-layout-dashboard"
+                @click="isMenuOpen = false">
+                Tableau de bord
+              </UButton>
+              <UButton block color="neutral" variant="ghost" :loading="isLoggingOut" @click="handleLogout">
+                Se déconnecter
               </UButton>
             </li>
           </ul>

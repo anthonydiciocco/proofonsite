@@ -27,24 +27,6 @@ const heroLinks = [
   }
 ] satisfies ButtonProps[]
 
-const heroChecklist = [
-  {
-    icon: 'i-lucide-qr-code',
-    title: 'Print the site QR code',
-    description: 'Stick it at the gate and the trailer. Everyone scans — no logins, no app store friction.'
-  },
-  {
-    icon: 'i-lucide-camera',
-    title: 'Snap delivery proof in 30 seconds',
-    description: 'The form opens instantly, compresses photos, and works even on a weak LTE signal.'
-  },
-  {
-    icon: 'i-lucide-badge-check',
-    title: 'Notify the office automatically',
-    description: 'Timestamped photos and slips land in the manager’s inbox and dashboard in real time.'
-  }
-]
-
 const painPoints = [
   {
     icon: 'i-lucide-file-warning',
@@ -224,7 +206,7 @@ const currentYear = new Date().getFullYear()
             <!-- Clean image only -->
             <div class="flex justify-center">
               <img src="~/assets/stock_1.png" alt="ProofOnSite capture in action"
-                class="max-w-full h-auto rounded-xl shadow-app-glow border border-app-card" />
+                class="max-w-full h-auto rounded-xl shadow-app-glow border border-app-card">
             </div>
           </template>
         </UPageHero>
