@@ -30,90 +30,53 @@ const heroLinks = [
 const painPoints = [
   {
     icon: 'i-lucide-file-warning',
-    title: 'Paper slips disappear',
-    description: 'Suppliers hand over carbon copies that end up soaked, misplaced, or forgotten in the glovebox.'
+    title: 'Paper slips get lost',
+    description: 'Delivery slips are easily damaged or misplaced, creating gaps in accountability and billing.'
   },
   {
     icon: 'i-lucide-message-square-warning',
-    title: 'Photos lost in chat apps',
-    description: 'WhatsApp and SMS threads mix in jokes, emojis, and off-topic chatter. Nothing is searchable when a dispute shows up.'
+    title: 'Photos buried in chat',
+    description: 'Images and messages in chat threads are hard to find and unreliable when you need proof.'
   },
   {
-    icon: 'i-lucide-alarm-clock',
+    icon: 'i-lucide-clock',
     title: 'Managers chase confirmations',
-    description: 'Two hours per week wasted on “Did the rebar arrive?” phone calls because there’s no shared log.'
+    description: 'Managers spend 2 hours a week on calls and messages to confirm deliveries because there’s no shared log.'
   }
 ]
-
-const workflowItems = [
-  {
-    title: 'Generate & print the QR pack',
-    description: 'Each site gets a unique PDF with bilingual instructions and large-format codes ready for lamination.',
-    icon: 'i-lucide-printer'
-  },
-  {
-    title: 'Drivers scan on arrival',
-    description: 'They land on the ProofOnSite PWA, branded for your site, with big controls designed for gloved hands.',
-    icon: 'i-lucide-smartphone'
-  },
-  {
-    title: 'Capture proof offline-first',
-    description: 'Take photos, add notes, and sync automatically once the phone regains a connection — no duplicate typing.',
-    icon: 'i-lucide-cloud-off'
-  },
-  {
-    title: 'Office notified instantly',
-    description: 'Managers receive an email summary, searchable dash entry, and exports for suppliers or auditors.',
-    icon: 'i-lucide-inbox'
-  }
-] satisfies StepperItem[]
-
-const workflowStepperUi = {
-  root: 'flex-col gap-6',
-  header: 'flex flex-col gap-6',
-  item: 'group relative',
-  container: 'relative flex items-start gap-4',
-  trigger:
-    'pointer-events-none relative mt-0.5 flex size-10 items-center justify-center rounded-full bg-secondary/10 text-secondary shadow-none border-0 transition-none group-data-[state=active]:ring-0 group-data-[state=active]:border-0 group-data-[state=active]:!bg-secondary/10 group-data-[state=completed]:ring-0 group-data-[state=completed]:border-0 group-data-[state=completed]:!bg-secondary/10',
-  indicator: 'flex items-center justify-center size-full text-secondary',
-  separator: 'absolute start-[calc(50%-1px)] -bottom-[10px] w-0.5 bg-[color:var(--ui-border-muted)]',
-  wrapper: 'pt-0.5 space-y-1 text-left',
-  title: 'text-base font-semibold text-[color:var(--ui-text-highlighted)]',
-  description: 'text-sm leading-6 text-[color:var(--ui-text-toned)]'
-}
 
 const benefitFeatures = [
   {
     icon: 'i-lucide-scan',
     title: 'Zero training for crews',
-    description: 'Two buttons, clear French/English instructions, and automatic photo compression keep the flow under 30 seconds.'
+    description: 'Crew-ready in seconds: two large buttons and clear on-screen prompts. No accounts or installs — just scan and submit.'
   },
   {
-    icon: 'i-lucide-database',
+    icon: 'i-lucide-archive',
     title: 'Structured evidence archive',
-    description: 'Filter by supplier, trade, or pour sequence. Export CSV/PDF when it is time to reconcile invoices.'
+    description: 'Filter by supplier, trade, or pour. Export CSV or PDF for reconciliations and audits.'
   },
   {
-    icon: 'i-lucide-bell',
+    icon: 'i-lucide-bell-ring',
     title: 'Instant alerts for stakeholders',
-    description: 'Site managers choose who gets notified — foremen, PMs, clients — all without adding extra seats.'
+    description: 'Notify foremen, PMs, or clients automatically. No extra user licenses required.'
   }
 ]
 const realityHighlights = [
   {
     icon: 'i-lucide-wifi-off',
     title: 'Offline capture',
-    detail: 'Workers can log deliveries in basements or remote lots; the data syncs automatically later.'
+    detail: 'Capture deliveries offline. Submissions sync automatically when a connection is available.'
   },
   {
-    icon: 'i-lucide-thermometer',
-    title: 'Built for Quebec winters',
-    detail: 'Large tap targets, dark mode by default, and compressed uploads to handle -20 °C work gloves.'
+    icon: 'i-lucide-hard-hat',
+    title: 'Built for tough conditions',
+    detail: 'Large touch targets, a high-contrast UI, and upload optimizations to perform on low bandwidth.'
   },
   {
-    icon: 'i-lucide-message-square-text',
-    title: 'Bilingual by design',
-    detail: 'Interface and notifications ship in French/English so suppliers and subcontractors stay aligned.'
+    icon: 'i-lucide-globe',
+    title: 'Global-ready',
+    detail: 'Interface and notifications support multiple locales so teams and suppliers stay aligned.'
   }
 ]
 
@@ -126,7 +89,7 @@ const pricingEssentials = [
   {
     icon: 'i-lucide-qr-code',
     title: 'QR packs for each site',
-    description: 'Print-ready bilingual instructions, refreshed whenever you activate a site.'
+    description: 'Print-ready, localized instructions, refreshed whenever you activate a site.'
   },
   {
     icon: 'i-lucide-smartphone',
@@ -173,6 +136,29 @@ const faqItems = [
   }
 ] satisfies AccordionItem[]
 
+const workflowItems = [
+  {
+    title: 'Generate QR',
+    description: 'Generate and print the QR code.',
+    icon: 'i-lucide-printer'
+  },
+  {
+    title: 'Scan QR',
+    description: 'Open your camera and scan the QR code.',
+    icon: 'i-lucide-smartphone'
+  },
+  {
+    title: 'Capture proof',
+    description: 'Take a photo and submit.',
+    icon: 'i-lucide-camera'
+  },
+  {
+    title: 'Review logs',
+    description: 'Search and review timestamped proof',
+    icon: 'i-lucide-archive'
+  }
+] satisfies StepperItem[]
+
 const footerProductLinks = [
   { label: 'Product demo', to: '#workflow', icon: 'i-lucide-monitor-play' },
   { label: 'Pricing', to: '#pricing', icon: 'i-lucide-credit-card' },
@@ -197,8 +183,8 @@ const currentYear = new Date().getFullYear()
 <template>
   <div class="space-y-24">
     <div class="space-y-24">
-      <section>
-        <UPageHero headline="Field-tested on Quebec construction sites"
+      <ScrollReveal as="section" animation="fade-up" :duration="700">
+        <UPageHero headline="Field-tested on construction sites"
           title="Visual proof of every delivery, captured in 30 seconds"
           description="Scan the site QR, snap a photo, and instantly create a searchable log. No lost slips, no app downloads, no wasted time."
           orientation="horizontal" :links="heroLinks">
@@ -210,129 +196,299 @@ const currentYear = new Date().getFullYear()
             </div>
           </template>
         </UPageHero>
-      </section>
+      </ScrollReveal>
 
-      <UPageSection id="product" title="Why delivery tracking breaks down on site"
-        description="ProofOnSite eliminates the time wasted on paper slips and scattered texts by offering a simple, structured, bilingual flow."
-        :features="painPoints" />
-
-      <UPageSection id="workflow" title="A four-step workflow tailored to site realities"
-        description="Everyone starts from the same QR code. No heavy training, just immediate traceability that reassures the office and suppliers.">
-        <UStepper class="mt-12 mx-auto max-w-3xl" color="secondary" size="md" :items="workflowItems"
-          orientation="vertical" :linear="false" :ui="workflowStepperUi">
-          <template #indicator="{ item }">
-            <span class="flex size-10 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-              <UIcon :name="item.icon" class="size-5" />
-            </span>
-          </template>
-
-          <template #title="{ item }">
-            <p class="font-semibold tracking-wide text-[color:var(--ui-text-highlighted)]">
-              {{ item.title }}
+      <!-- Pain Points with enhanced column layout -->
+      <ScrollReveal id="product" as="section" class="py-16" animation="fade-up" :duration="650">
+        <UContainer>
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-[color:var(--ui-text-highlighted)] sm:text-4xl mb-4">
+              Why delivery tracking breaks down on site
+            </h2>
+            <p class="text-xl text-[color:var(--ui-text-toned)] max-w-3xl mx-auto">
+              ProofOnSite eliminates the time wasted on paper slips and scattered texts by offering a simple,
+              structured flow that fits how teams actually work.
             </p>
-          </template>
+          </div>
 
-          <template #description="{ item }">
-            <p class="text-sm leading-6 text-[color:var(--ui-text-toned)]">
-              {{ item.description }}
-            </p>
-          </template>
-        </UStepper>
-      </UPageSection>
-
-      <UPageSection id="benefits" title="What ProofOnSite delivers to your team"
-        description="Simple for crews, powerful for managers. No per-user licenses, no complex deployments."
-        :features="benefitFeatures" />
-
-      <UPageSection title="Designed with jobsite constraints in mind"
-        description="We co-designed the experience with site managers — every detail addresses a real pain observed on the jobsite.">
-        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <UCard v-for="highlight in realityHighlights" :key="highlight.title" class="h-full bg-app-surface">
-            <div class="flex items-start gap-3">
-              <div
-                class="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                <UIcon :name="highlight.icon" class="size-5" />
+          <UPageColumns>
+            <ScrollReveal v-for="(pain, index) in painPoints" :key="pain.title" as="div" animation="fade-up"
+              :delay="index * 80"
+              class="space-y-4 p-8 rounded-2xl bg-gradient-to-b from-red-50/30 to-transparent dark:from-red-950/20 dark:to-transparent border border-red-100/50 dark:border-red-900/30 hover:border-red-200/70 dark:hover:border-red-800/50 transition-colors duration-300">
+              <div class="flex size-16 items-center justify-center rounded-2xl bg-red-500 text-white shadow-lg">
+                <UIcon :name="pain.icon" class="size-8" />
               </div>
-              <div>
-                <h3 class="text-base font-semibold text-highlighted">
-                  {{ highlight.title }}
-                </h3>
-                <p class="mt-2 text-sm text-muted">
-                  {{ highlight.detail }}
-                </p>
-              </div>
-            </div>
-          </UCard>
-        </div>
-      </UPageSection>
-
-      <UPageSection id="pricing" title="Simple, per-site pricing"
-        description="Activate ProofOnSite when the site starts, then pause it when the project wraps up — no paying for unused licenses.">
-        <div class="mt-12 flex justify-center">
-          <UCard class="pricing-card w-full max-w-3xl border border-app-card bg-app-surface shadow-app-glow">
-            <div class="space-y-6">
-              <UBadge color="secondary" variant="soft" size="sm">
-                Pilot ready
-              </UBadge>
-
-              <div class="space-y-4">
-                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
-                  Per active site
-                </p>
-
-                <div class="flex flex-wrap items-end gap-3">
-                  <span class="pricing-price text-5xl font-semibold text-highlighted">
-                    $49
-                  </span>
-                  <span class="text-sm font-medium text-muted">
-                    / month
-                  </span>
-                </div>
-
-                <p class="text-base text-toned">
-                  Switch a site on only when materials are flowing. Pause and resume in seconds — no annual
-                  commitments or hidden tiers.
-                </p>
-              </div>
-            </div>
-
-            <ul class="mt-8 grid gap-4 sm:grid-cols-2">
-              <li v-for="feature in pricingEssentials" :key="feature.title" class="pricing-feature">
-                <div class="flex items-start gap-3">
-                  <div class="pricing-icon">
-                    <UIcon :name="feature.icon" class="size-5" />
-                  </div>
-                  <div class="space-y-1">
-                    <p class="text-sm font-semibold text-highlighted">
-                      {{ feature.title }}
-                    </p>
-                    <p class="text-sm text-muted">
-                      {{ feature.description }}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-
-            <div class="mt-8 space-y-3">
-              <UButton to="#cta" size="lg" color="secondary" class="w-full justify-between" icon="i-lucide-mail"
-                trailing-icon="i-lucide-arrow-right">
-                Start a 30-day pilot
-              </UButton>
-              <p class="text-xs text-muted">
-                Billed monthly for active sites only. Cancel or pause anytime — we send a reminder before each renewal.
+              <h3 class="text-xl font-bold text-highlighted">
+                {{ pain.title }}
+              </h3>
+              <p class="text-base leading-relaxed text-muted">
+                {{ pain.description }}
               </p>
+            </ScrollReveal>
+          </UPageColumns>
+        </UContainer>
+      </ScrollReveal>
+
+      <!-- Enhanced 4-step workflow with visual stepper -->
+      <ScrollReveal id="workflow" as="section" class="py-16" animation="fade-up" :duration="650">
+        <UContainer>
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-[color:var(--ui-text-highlighted)] sm:text-4xl mb-4">
+              A simple 4-step workflow
+            </h2>
+            <p class="text-xl text-[color:var(--ui-text-toned)] max-w-3xl mx-auto">
+              One QR code, 4 quick actions. No training required, nor app download.
+            </p>
+          </div>
+
+          <!-- Simplified visual stepper -->
+          <ScrollReveal as="div" class="max-w-5xl mx-auto" animation="fade-up" :delay="100">
+            <UStepper :items="workflowItems" color="secondary" size="lg" orientation="horizontal" disabled class="mb-12"
+              :ui="{
+                root: 'w-full',
+                trigger: 'shadow-lg',
+                title: 'text-base font-bold mt-3',
+                description: 'text-sm text-muted mt-1 max-w-48 mx-auto leading-relaxed'
+              }">
+              <template #indicator="{ item }">
+                <div class="flex size-16 items-center justify-center rounded-2xl bg-secondary text-white shadow-lg">
+                  <UIcon :name="item.icon" class="size-8" />
+                </div>
+              </template>
+            </UStepper>
+
+            <!-- Summary highlight -->
+            <ScrollReveal as="div"
+              class="text-center mt-12 p-8 bg-gradient-to-r from-secondary/5 via-secondary/10 to-secondary/5 rounded-2xl border border-secondary/20"
+              animation="fade-up" :delay="180">
+              <div class="flex items-center justify-center gap-3 mb-4">
+                <UIcon name="i-lucide-timer" class="size-6 text-secondary" />
+                <h3 class="text-xl font-bold text-highlighted">
+                  Complete workflow in under 2 minutes
+                </h3>
+              </div>
+              <p class="text-muted max-w-2xl mx-auto">
+                Scan the site QR, capture proof, and notify the office. Fast, reliable, and built for real site
+                conditions.
+              </p>
+            </ScrollReveal>
+          </ScrollReveal>
+        </UContainer>
+      </ScrollReveal>
+
+      <!-- Benefits section with elegant split layout -->
+      <ScrollReveal id="benefits" as="section" class="py-16" animation="fade-up" :duration="650">
+        <UContainer>
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-[color:var(--ui-text-highlighted)] sm:text-4xl mb-4">
+              What ProofOnSite delivers to your team
+            </h2>
+            <p class="text-xl text-[color:var(--ui-text-toned)] max-w-3xl mx-auto">
+              Simple for crews, powerful for managers. No per-user licenses, no complex deployments.
+            </p>
+          </div>
+
+          <!-- Split layout with main feature and supporting features -->
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Main feature card -->
+            <ScrollReveal as="div" class="order-2 lg:order-1" animation="fade-right" :delay="100">
+              <UCard
+                class="relative overflow-hidden bg-gradient-to-br from-green-50/50 via-white to-green-50/30 dark:from-green-950/20 dark:via-gray-900 dark:to-green-950/10 border-green-200/30 dark:border-green-800/30 hover:border-green-300/50 dark:hover:border-green-700/50 transition-all duration-500 shadow-lg hover:shadow-xl">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5 rotate-12">
+                  <UIcon name="i-lucide-scan" class="size-full" />
+                </div>
+
+                <div class="relative z-10 p-8">
+                  <div class="flex items-center gap-6 mb-6">
+                    <div class="flex size-16 items-center justify-center rounded-2xl bg-green-500 text-white shadow-lg">
+                      <UIcon name="i-lucide-scan" class="size-8" />
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-bold text-highlighted mb-2">
+                        Zero training for crews
+                      </h3>
+                      <div class="w-16 h-1 bg-green-500 rounded-full" />
+                    </div>
+                  </div>
+
+                  <p class="text-lg leading-relaxed text-muted mb-6">
+                    Two large buttons and clear on-screen prompts make capture instant. No accounts, no installs — just
+                    scan and submit. Submissions are optimized for slow connections and sync automatically.
+                  </p>
+
+                  <!-- Feature highlights -->
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-3 text-sm text-highlighted">
+                      <div class="size-2 bg-green-500 rounded-full" />
+                      <span>Clear instructions</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-highlighted">
+                      <div class="size-2 bg-green-500 rounded-full" />
+                      <span>No app download</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-highlighted">
+                      <div class="size-2 bg-green-500 rounded-full" />
+                      <span>Under 30-second workflow</span>
+                    </div>
+                  </div>
+                </div>
+              </UCard>
+            </ScrollReveal>
+
+            <!-- Supporting features -->
+            <div class="order-1 lg:order-2 space-y-6">
+              <ScrollReveal v-for="(feature, index) in benefitFeatures.slice(1)" :key="feature.title" as="div"
+                animation="fade-up" :delay="(index + 1) * 90">
+                <UCard
+                  class="group hover:shadow-app-glow transition-all duration-300 bg-app-surface border-app-card hover:border-secondary/30">
+                  <div class="flex items-start gap-4 p-6">
+                    <div
+                      class="flex size-12 shrink-0 items-center justify-center rounded-xl group-hover:scale-110 transition-transform duration-300 bg-secondary/10 text-secondary">
+                      <UIcon :name="feature.icon" class="size-6" />
+                    </div>
+                    <div class="flex-1">
+                      <h3
+                        class="text-lg font-semibold text-highlighted mb-2 group-hover:text-secondary transition-colors duration-300">
+                        {{ feature.title }}
+                      </h3>
+                      <p class="text-sm leading-relaxed text-muted">
+                        {{ feature.description }}
+                      </p>
+                    </div>
+                  </div>
+                </UCard>
+              </ScrollReveal>
             </div>
-          </UCard>
-        </div>
-      </UPageSection>
+          </div>
+        </UContainer>
+      </ScrollReveal>
 
-      <UPageSection id="faq" title="Frequently asked questions"
-        description="Everything happens by email — schedule a personalized demo and receive documentation for your team.">
-        <UAccordion class="mt-12" :items="faqItems" />
-      </UPageSection>
+      <!-- Jobsite realities section with enhanced visual hierarchy -->
+      <ScrollReveal as="section" class="py-16" animation="fade-up" :duration="650">
+        <UContainer>
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-[color:var(--ui-text-highlighted)] sm:text-4xl mb-4">
+              Designed with jobsite constraints in mind
+            </h2>
+            <p class="text-xl text-[color:var(--ui-text-toned)] max-w-3xl mx-auto">
+              We co-designed the experience with site managers — every detail addresses a real pain observed on the
+              jobsite.
+            </p>
+          </div>
 
-      <section id="cta">
+          <div class="grid gap-8 md:grid-cols-3">
+            <ScrollReveal v-for="(highlight, index) in realityHighlights" :key="highlight.title" as="div"
+              animation="fade-up" :delay="index * 100">
+              <UCard class="relative overflow-hidden group hover:shadow-app-glow transition-all duration-500" :class="[
+                index === 0 ? 'bg-gradient-to-br from-blue-50/50 to-white dark:from-blue-950/20 dark:to-gray-900' : '',
+                index === 1 ? 'bg-gradient-to-br from-green-50/50 to-white dark:from-green-950/20 dark:to-gray-900' : '',
+                index === 2 ? 'bg-gradient-to-br from-purple-50/50 to-white dark:from-purple-950/20 dark:to-gray-900' : ''
+              ]">
+                <!-- Background decoration -->
+                <div
+                  class="absolute top-0 right-0 w-20 h-20 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                  <UIcon :name="highlight.icon" class="size-full" />
+                </div>
+
+                <div class="relative z-10 p-6">
+                  <div class="flex items-start gap-4 mb-4">
+                    <div
+                      class="flex size-14 shrink-0 items-center justify-center rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 bg-secondary text-white">
+                      <UIcon :name="highlight.icon" class="size-7" />
+                    </div>
+                    <div class="flex-1">
+                      <h3
+                        class="text-xl font-bold text-highlighted mb-3 group-hover:text-secondary transition-colors duration-300">
+                        {{ highlight.title }}
+                      </h3>
+                    </div>
+                  </div>
+                  <p class="text-base leading-relaxed text-muted">
+                    {{ highlight.detail }}
+                  </p>
+                </div>
+              </UCard>
+            </ScrollReveal>
+          </div>
+        </UContainer>
+      </ScrollReveal>
+
+      <ScrollReveal animation="fade-up" :duration="650">
+        <UPageSection id="pricing" title="Simple, per-site pricing"
+          description="Activate ProofOnSite when the site starts, then pause it when the project wraps up — no paying for unused licenses.">
+          <ScrollReveal as="div" class="mt-12 flex justify-center" animation="zoom-in" :delay="80">
+            <UCard class="pricing-card w-full max-w-3xl border border-app-card bg-app-surface shadow-app-glow">
+              <div class="space-y-6">
+                <UBadge color="secondary" variant="soft" size="sm">
+                  Pilot ready
+                </UBadge>
+
+                <div class="space-y-4">
+                  <p class="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
+                    Per active site
+                  </p>
+
+                  <div class="flex flex-wrap items-end gap-3">
+                    <span class="pricing-price text-5xl font-semibold text-highlighted">
+                      49$
+                    </span>
+                    <span class="text-sm font-medium text-muted">
+                      / month
+                    </span>
+                  </div>
+
+                  <p class="text-base text-toned">
+                    Switch a site on only when materials are flowing. Pause and resume in seconds — no annual
+                    commitments or hidden tiers.
+                  </p>
+                </div>
+              </div>
+
+              <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+                <ScrollReveal v-for="(feature, index) in pricingEssentials" :key="feature.title" as="li"
+                  class="pricing-feature" animation="fade-up" :delay="index * 70">
+                  <div class="flex items-start gap-3">
+                    <div class="pricing-icon">
+                      <UIcon :name="feature.icon" class="size-5" />
+                    </div>
+                    <div class="space-y-1">
+                      <p class="text-sm font-semibold text-highlighted">
+                        {{ feature.title }}
+                      </p>
+                      <p class="text-sm text-muted">
+                        {{ feature.description }}
+                      </p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              </ul>
+
+              <div class="mt-8 space-y-3">
+                <UButton to="#cta" size="lg" color="secondary" class="w-full justify-between" icon="i-lucide-mail"
+                  trailing-icon="i-lucide-arrow-right">
+                  Start a 30-day pilot
+                </UButton>
+                <p class="text-xs text-muted">
+                  Billed monthly for active sites only. Cancel or pause anytime — we send a reminder before each
+                  renewal.
+                </p>
+              </div>
+            </UCard>
+          </ScrollReveal>
+        </UPageSection>
+      </ScrollReveal>
+
+      <ScrollReveal animation="fade-up" :duration="650">
+        <UPageSection id="faq" title="Frequently asked questions"
+          description="Everything happens by email — schedule a personalized demo and receive documentation for your team.">
+          <ScrollReveal as="div" class="mt-12" animation="fade-up" :delay="80">
+            <UAccordion :items="faqItems" />
+          </ScrollReveal>
+        </UPageSection>
+      </ScrollReveal>
+
+      <ScrollReveal id="cta" as="section" animation="zoom-in" :duration="650">
         <UPageCTA title="Schedule your pilot on a construction site"
           description="Answer three short questions and we'll prepare a printable QR kit, an adoption guide, and an onboarding video session — all within 72 hours."
           variant="subtle" :links="[{
@@ -348,10 +504,10 @@ const currentYear = new Date().getFullYear()
             variant: 'outline',
             icon: 'i-lucide-file-down'
           }]" />
-      </section>
+      </ScrollReveal>
     </div>
 
-    <footer>
+    <ScrollReveal as="footer" animation="fade-up" :duration="600" :delay="120">
       <UFooter>
         <template #top>
           <UContainer class="grid gap-10 md:grid-cols-3">
@@ -380,6 +536,6 @@ const currentYear = new Date().getFullYear()
           </UButton>
         </template>
       </UFooter>
-    </footer>
+    </ScrollReveal>
   </div>
 </template>
