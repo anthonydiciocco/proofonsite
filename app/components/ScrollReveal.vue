@@ -3,12 +3,12 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 type AnimationType
   = 'fade-up'
-    | 'fade-down'
-    | 'fade-left'
-    | 'fade-right'
-    | 'zoom-in'
-    | 'zoom-out'
-    | 'blur-up'
+  | 'fade-down'
+  | 'fade-left'
+  | 'fade-right'
+  | 'zoom-in'
+  | 'zoom-out'
+  | 'blur-up'
 
 const props = withDefaults(defineProps<{
   as?: string
@@ -73,13 +73,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <component
-    :is="props.as"
-    ref="element"
-    class="scroll-reveal"
-    :data-animation="props.animation"
-    :style="style"
-  >
+  <component :is="props.as" ref="element" class="scroll-reveal" :data-animation="props.animation" :style="style">
     <slot />
   </component>
 </template>

@@ -189,10 +189,37 @@ const currentYear = new Date().getFullYear()
           description="Scan the site QR, snap a photo, and instantly create a searchable log. No lost slips, no app downloads, no wasted time."
           orientation="horizontal" :links="heroLinks">
           <template #default>
-            <!-- Clean image only -->
             <div class="flex justify-center">
-              <img src="~/assets/stock_1.png" alt="ProofOnSite capture in action"
-                class="max-w-full h-auto rounded-xl shadow-app-glow border border-app-card">
+              <div class="relative inline-block">
+                <!-- Decorative gradient background -->
+                <div
+                  class="absolute -inset-4 bg-gradient-to-r from-secondary/20 via-primary/20 to-secondary/20 rounded-2xl blur-2xl opacity-60" />
+
+                <!-- Main image card -->
+                <UCard class="relative overflow-hidden border-2 border-secondary/20 shadow-2xl p-0">
+                  <img src="~/assets/stock_1.png" alt="ProofOnSite capture in action" class="w-full h-auto rounded-lg">
+
+                  <!-- Floating badge - top left -->
+                  <div class="absolute top-4 left-4">
+                    <UBadge color="secondary" variant="solid" size="lg" class="shadow-lg backdrop-blur-sm">
+                      <div class="flex items-center gap-2">
+                        <UIcon name="i-lucide-shield-check" class="size-4" />
+                        <span class="font-semibold">Live Capture</span>
+                      </div>
+                    </UBadge>
+                  </div>
+
+                  <!-- Floating badge - bottom right -->
+                  <div class="absolute bottom-4 right-4">
+                    <UBadge color="success" variant="solid" size="md" class="shadow-lg backdrop-blur-sm">
+                      <div class="flex items-center gap-1.5">
+                        <div class="size-2 bg-white rounded-full animate-pulse" />
+                        <span class="font-medium">Field Ready</span>
+                      </div>
+                    </UBadge>
+                  </div>
+                </UCard>
+              </div>
             </div>
           </template>
         </UPageHero>
