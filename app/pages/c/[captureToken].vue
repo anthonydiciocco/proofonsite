@@ -120,7 +120,7 @@ definePageMeta({
   layout: 'minimal'
 })
 
-const { t } = useI18n()
+const { t, locale, setLocale, availableLocales } = useI18n()
 const route = useRoute()
 const captureToken = route.params.captureToken as string
 
@@ -135,8 +135,12 @@ const photoFile = ref<File | null>(null)
 const photoPreview = ref<string | null>(null)
 const photoInput = ref<HTMLInputElement>()
 
-// Load site info
+// Detect and set browser language on mount
 onMounted(async () => {
+  // Auto-detect browser language for PWA
+  detectAndSetBrowserLanguage()
+
+  // Load site info
   try {
     const response = await $fetch<{ site: Site }>(`/api/capture/${captureToken}/info`)
     site.value = response.site
@@ -154,6 +158,42 @@ onMounted(async () => {
     loading.value = false
   }
 })
+
+/**
+ * Detect browser language and set locale automatically
+ * Priority: Cookie → Browser Language → Default
+ */
+function detectAndSetBrowserLanguage() {
+  const cookie = useCookie('i18n_redirected', {
+    maxAge: 60 * 60 * 24 * 365, // 1 year
+    sameSite: 'lax'
+  })
+
+  type LocaleCode = 'en' | 'fr' | 'es' | 'zh' | 'de' | 'pt'
+  const locales = availableLocales as unknown as Array<{ code: LocaleCode; name: string }>
+  const supportedCodes: LocaleCode[] = ['en', 'fr', 'es', 'zh', 'de', 'pt']
+
+  // Priority 1: Check cookie
+  if (cookie.value && supportedCodes.includes(cookie.value as LocaleCode)) {
+    if (locale.value !== cookie.value) {
+      setLocale(cookie.value as LocaleCode)
+    }
+    return
+  }
+
+  // Priority 2: Detect browser language
+  if (typeof navigator !== 'undefined' && navigator.language) {
+    const parts = navigator.language.split('-')
+    if (parts.length > 0 && parts[0]) {
+      const browserLang = parts[0].toLowerCase() as LocaleCode
+      
+      if (supportedCodes.includes(browserLang)) {
+        setLocale(browserLang)
+        cookie.value = browserLang
+      }
+    }
+  }
+}
 
 // Handle photo selection
 async function handlePhotoSelect(event: Event) {
