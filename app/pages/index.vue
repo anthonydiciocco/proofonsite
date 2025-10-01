@@ -5,177 +5,180 @@ import type {
   PageLink,
   StepperItem
 } from '@nuxt/ui'
-import { siteNavigationItems } from '~/constants/navigation'
+import { createNavigationItems } from '~/constants/navigation'
 
-const navigationItems = siteNavigationItems
+const { t } = useI18n()
 
-const heroLinks = [
+const navigationItems = computed(() => createNavigationItems(t))
+
+const heroLinks = computed(() => [
   {
-    label: 'See it in action',
+    label: t('hero.cta.demo'),
     to: '#cta',
-    size: 'xl',
-    color: 'secondary',
+    size: 'xl' as const,
+    color: 'secondary' as const,
     trailingIcon: 'i-lucide-arrow-right'
   },
   {
-    label: 'Contact us by email',
+    label: t('hero.cta.contact'),
     to: 'mailto:hello@proofonsite.com?subject=ProofOnSite%20Pilot',
-    size: 'xl',
-    color: 'secondary',
-    variant: 'soft',
+    size: 'xl' as const,
+    color: 'secondary' as const,
+    variant: 'soft' as const,
     icon: 'i-lucide-mail'
   }
-] satisfies ButtonProps[]
+] satisfies ButtonProps[])
 
-const painPoints = [
+const painPoints = computed(() => [
   {
     icon: 'i-lucide-file-warning',
-    title: 'Paper slips get lost',
-    description: 'Delivery slips are easily damaged or misplaced, creating gaps in accountability and billing.'
+    title: t('problem.painPoints.lostSlips.title'),
+    description: t('problem.painPoints.lostSlips.description')
   },
   {
     icon: 'i-lucide-message-square-warning',
-    title: 'Photos buried in chat',
-    description: 'Images and messages in chat threads are hard to find and unreliable when you need proof.'
+    title: t('problem.painPoints.chatPhotos.title'),
+    description: t('problem.painPoints.chatPhotos.description')
   },
   {
     icon: 'i-lucide-clock',
-    title: 'Managers chase confirmations',
-    description: 'Managers spend 2 hours a week on calls and messages to confirm deliveries because there’s no shared log.'
+    title: t('problem.painPoints.chasingConfirmations.title'),
+    description: t('problem.painPoints.chasingConfirmations.description')
   }
-]
+])
 
-const benefitFeatures = [
+const benefitFeatures = computed(() => [
   {
     icon: 'i-lucide-scan',
-    title: 'Zero training for crews',
-    description: 'Crew-ready in seconds: two large buttons and clear on-screen prompts. No accounts or installs — just scan and submit.'
+    title: t('benefits.features.zeroTraining.title'),
+    description: t('benefits.features.zeroTraining.description')
   },
   {
     icon: 'i-lucide-archive',
-    title: 'Structured evidence archive',
-    description: 'Filter by supplier, trade, or pour. Export CSV or PDF for reconciliations and audits.'
+    title: t('benefits.features.structuredArchive.title'),
+    description: t('benefits.features.structuredArchive.description')
   },
   {
     icon: 'i-lucide-bell-ring',
-    title: 'Instant alerts for stakeholders',
-    description: 'Notify foremen, PMs, or clients automatically. No extra user licenses required.'
+    title: t('benefits.features.instantAlerts.title'),
+    description: t('benefits.features.instantAlerts.description')
   }
-]
-const realityHighlights = [
+])
+
+const realityHighlights = computed(() => [
   {
     icon: 'i-lucide-wifi-off',
-    title: 'Offline capture',
-    detail: 'Capture deliveries offline. Submissions sync automatically when a connection is available.'
+    title: t('reality.highlights.offline.title'),
+    detail: t('reality.highlights.offline.detail')
   },
   {
     icon: 'i-lucide-hard-hat',
-    title: 'Built for tough conditions',
-    detail: 'Large touch targets, a high-contrast UI, and upload optimizations to perform on low bandwidth.'
+    title: t('reality.highlights.toughConditions.title'),
+    detail: t('reality.highlights.toughConditions.detail')
   },
   {
     icon: 'i-lucide-globe',
-    title: 'Global-ready',
-    detail: 'Interface and notifications support multiple locales so teams and suppliers stay aligned.'
+    title: t('reality.highlights.globalReady.title'),
+    detail: t('reality.highlights.globalReady.detail')
   }
-]
+])
 
-const pricingEssentials = [
+const pricingEssentials = computed(() => [
   {
     icon: 'i-lucide-hard-hat',
-    title: 'Unlimited crew uploads',
-    description: 'Capture proof from any trade without adding seats or licenses.'
+    title: t('pricing.features.unlimitedUploads.title'),
+    description: t('pricing.features.unlimitedUploads.description')
   },
   {
     icon: 'i-lucide-qr-code',
-    title: 'QR packs for each site',
-    description: 'Print-ready, localized instructions, refreshed whenever you activate a site.'
+    title: t('pricing.features.qrPacks.title'),
+    description: t('pricing.features.qrPacks.description')
   },
   {
     icon: 'i-lucide-smartphone',
-    title: 'Offline-first mobile flow',
-    description: '30-second capture with automatic compression and background sync.'
+    title: t('pricing.features.offlineFirst.title'),
+    description: t('pricing.features.offlineFirst.description')
   },
   {
     icon: 'i-lucide-mail',
-    title: 'Instant notifications',
-    description: 'Timestamped email digests sent to managers, PMs, suppliers and clients.'
+    title: t('pricing.features.instantNotifications.title'),
+    description: t('pricing.features.instantNotifications.description')
   },
   {
     icon: 'i-lucide-file-text',
-    title: 'Structured evidence archive',
-    description: 'Searchable log with CSV/PDF exports for reconciliations and audits.'
+    title: t('pricing.features.structuredExports.title'),
+    description: t('pricing.features.structuredExports.description')
   },
   {
     icon: 'i-lucide-shield-check',
-    title: 'Secure by default',
-    description: 'Scoped access per site, automatic timestamps, and internal-only data retention.'
+    title: t('pricing.features.support.title'),
+    description: t('pricing.features.support.description')
   }
-]
+])
 
-const faqItems = [
+const faqItems = computed(() => [
   {
-    label: 'Do crews need accounts or logins?',
+    label: t('faq.q1.question'),
     icon: 'i-lucide-user-round',
-    content: 'No accounts, passwords, or downloads. The QR opens a secure form scoped to that site. We capture the caller ID and timestamp automatically.'
+    content: t('faq.q1.answer')
   },
   {
-    label: 'What happens with spotty connectivity?',
+    label: t('faq.q2.question'),
     icon: 'i-lucide-cloud-off',
-    content: 'ProofOnSite caches the submission locally, compresses media, then syncs as soon as the device sees a signal again. A banner confirms once it is delivered.'
+    content: t('faq.q2.answer')
   },
   {
-    label: 'Can we notify suppliers or clients automatically?',
+    label: t('faq.q3.question'),
     icon: 'i-lucide-bell-ring',
-    content: 'Yes. Each site lets you add optional CC emails so stakeholders receive the same log without being added as users.'
+    content: t('faq.q3.answer')
   },
   {
-    label: 'How fast can we get started?',
+    label: t('faq.q4.question'),
     icon: 'i-lucide-rocket',
-    content: 'We create your QR packs and onboarding checklist within 3 business days. Pilot sites typically launch the same week.'
+    content: t('faq.q4.answer')
   }
-] satisfies AccordionItem[]
+] satisfies AccordionItem[])
 
-const workflowItems = [
+const workflowItems = computed(() => [
   {
-    title: 'Generate QR',
-    description: 'Generate and print the QR code.',
+    title: t('solution.howItWorks.steps.setup.title'),
+    description: t('solution.howItWorks.steps.setup.description'),
     icon: 'i-lucide-printer'
   },
   {
-    title: 'Scan QR',
-    description: 'Open your camera and scan the QR code.',
+    title: t('solution.howItWorks.steps.scan.title'),
+    description: t('solution.howItWorks.steps.scan.description'),
     icon: 'i-lucide-smartphone'
   },
   {
-    title: 'Capture proof',
-    description: 'Take a photo and submit.',
+    title: t('solution.howItWorks.steps.capture.title'),
+    description: t('solution.howItWorks.steps.capture.description'),
     icon: 'i-lucide-camera'
   },
   {
-    title: 'Review logs',
-    description: 'Search and review timestamped proof',
+    title: t('solution.howItWorks.steps.notify.title'),
+    description: t('solution.howItWorks.steps.notify.description'),
     icon: 'i-lucide-archive'
   }
-] satisfies StepperItem[]
+] satisfies StepperItem[])
 
-const footerProductLinks = [
-  { label: 'Product demo', to: '#workflow', icon: 'i-lucide-monitor-play' },
-  { label: 'Pricing', to: '#pricing', icon: 'i-lucide-credit-card' },
-  { label: 'Roadmap', to: '#benefits', icon: 'i-lucide-compass' }
-] satisfies PageLink[]
+const footerProductLinks = computed(() => [
+  { label: t('footer.product.demo'), to: '#workflow', icon: 'i-lucide-monitor-play' },
+  { label: t('footer.product.pricing'), to: '#pricing', icon: 'i-lucide-credit-card' },
+  { label: t('footer.product.roadmap'), to: '#benefits', icon: 'i-lucide-compass' }
+] satisfies PageLink[])
 
-const footerSupportLinks = [
-  { label: 'Implementation checklist', to: '#product', icon: 'i-lucide-list-checks' },
-  { label: 'Pilot program', to: '#pricing', icon: 'i-lucide-flag' },
-  { label: 'Email support', to: 'mailto:hello@proofonsite.com', icon: 'i-lucide-life-buoy' }
-] satisfies PageLink[]
+const footerSupportLinks = computed(() => [
+  { label: t('footer.support.implementation'), to: '#product', icon: 'i-lucide-list-checks' },
+  { label: t('footer.support.pilot'), to: '#pricing', icon: 'i-lucide-flag' },
+  { label: t('footer.support.email'), to: 'mailto:hello@proofonsite.com', icon: 'i-lucide-life-buoy' }
+] satisfies PageLink[])
 
-const footerLegalLinks = [
-  { label: 'Terms', to: '#', icon: 'i-lucide-scale' },
-  { label: 'Privacy', to: '#', icon: 'i-lucide-shield' },
-  { label: 'Security', to: '#', icon: 'i-lucide-lock' }
-] satisfies PageLink[]
+const footerLegalLinks = computed(() => [
+  { label: t('footer.legal.terms'), to: '#', icon: 'i-lucide-scale' },
+  { label: t('footer.legal.privacy'), to: '#', icon: 'i-lucide-shield' },
+  { label: t('footer.legal.security'), to: '#', icon: 'i-lucide-lock' }
+] satisfies PageLink[])
 
 const currentYear = new Date().getFullYear()
 </script>
@@ -184,9 +187,7 @@ const currentYear = new Date().getFullYear()
   <div class="space-y-24">
     <div class="space-y-24">
       <ScrollReveal as="section" animation="fade-up" :duration="700">
-        <UPageHero headline="Field-tested on construction sites"
-          title="Visual proof of every delivery, captured in 30 seconds"
-          description="Scan the site QR, snap a photo, and instantly create a searchable log. No lost slips, no app downloads, no wasted time."
+        <UPageHero :headline="t('hero.headline')" :title="t('hero.title')" :description="t('hero.description')"
           orientation="horizontal" :links="heroLinks">
           <template #default>
             <div class="flex justify-center">
@@ -197,14 +198,14 @@ const currentYear = new Date().getFullYear()
 
                 <!-- Main image card -->
                 <UCard class="relative overflow-hidden border-2 border-secondary/20 shadow-2xl p-0">
-                  <img src="~/assets/stock_1.png" alt="ProofOnSite capture in action" class="w-full h-auto rounded-lg">
+                  <img src="~/assets/stock_1.png" :alt="t('hero.imageAlt')" class="w-full h-auto rounded-lg">
 
                   <!-- Floating badge - top left -->
                   <div class="absolute top-4 left-4">
                     <UBadge color="secondary" variant="solid" size="lg" class="shadow-lg backdrop-blur-sm">
                       <div class="flex items-center gap-2">
                         <UIcon name="i-lucide-shield-check" class="size-4" />
-                        <span class="font-semibold">Live Capture</span>
+                        <span class="font-semibold">{{ t('hero.badges.liveCapture') }}</span>
                       </div>
                     </UBadge>
                   </div>
@@ -214,7 +215,7 @@ const currentYear = new Date().getFullYear()
                     <UBadge color="success" variant="solid" size="md" class="shadow-lg backdrop-blur-sm">
                       <div class="flex items-center gap-1.5">
                         <div class="size-2 bg-white rounded-full animate-pulse" />
-                        <span class="font-medium">Field Ready</span>
+                        <span class="font-medium">{{ t('hero.badges.fieldReady') }}</span>
                       </div>
                     </UBadge>
                   </div>
@@ -230,11 +231,10 @@ const currentYear = new Date().getFullYear()
         <UContainer>
           <div class="text-center mb-16">
             <h2 class="text-3xl font-bold tracking-tight text-[color:var(--ui-text-highlighted)] sm:text-4xl mb-4">
-              Why delivery tracking breaks down on site
+              {{ t('problem.title') }}
             </h2>
             <p class="text-xl text-[color:var(--ui-text-toned)] max-w-3xl mx-auto">
-              ProofOnSite eliminates the time wasted on paper slips and scattered texts by offering a simple,
-              structured flow that fits how teams actually work.
+              {{ t('problem.description') }}
             </p>
           </div>
 
@@ -261,10 +261,10 @@ const currentYear = new Date().getFullYear()
         <UContainer>
           <div class="text-center mb-16">
             <h2 class="text-3xl font-bold tracking-tight text-[color:var(--ui-text-highlighted)] sm:text-4xl mb-4">
-              A simple 4-step workflow
+              {{ t('solution.title') }}
             </h2>
             <p class="text-xl text-[color:var(--ui-text-toned)] max-w-3xl mx-auto">
-              One QR code, 4 quick actions. No training required, nor app download.
+              {{ t('solution.description') }}
             </p>
           </div>
 
@@ -291,12 +291,11 @@ const currentYear = new Date().getFullYear()
               <div class="flex items-center justify-center gap-3 mb-4">
                 <UIcon name="i-lucide-timer" class="size-6 text-secondary" />
                 <h3 class="text-xl font-bold text-highlighted">
-                  Complete workflow in under 2 minutes
+                  {{ t('solution.workflowSummary.title') }}
                 </h3>
               </div>
               <p class="text-muted max-w-2xl mx-auto">
-                Scan the site QR, capture proof, and notify the office. Fast, reliable, and built for real site
-                conditions.
+                {{ t('solution.workflowSummary.description') }}
               </p>
             </ScrollReveal>
           </ScrollReveal>
@@ -308,10 +307,10 @@ const currentYear = new Date().getFullYear()
         <UContainer>
           <div class="text-center mb-16">
             <h2 class="text-3xl font-bold tracking-tight text-[color:var(--ui-text-highlighted)] sm:text-4xl mb-4">
-              What ProofOnSite delivers to your team
+              {{ t('benefits.title') }}
             </h2>
             <p class="text-xl text-[color:var(--ui-text-toned)] max-w-3xl mx-auto">
-              Simple for crews, powerful for managers. No per-user licenses, no complex deployments.
+              {{ t('benefits.subtitle') }}
             </p>
           </div>
 
@@ -333,30 +332,29 @@ const currentYear = new Date().getFullYear()
                     </div>
                     <div>
                       <h3 class="text-2xl font-bold text-highlighted mb-2">
-                        Zero training for crews
+                        {{ t('benefits.features.zeroTraining.title') }}
                       </h3>
                       <div class="w-16 h-1 bg-green-500 rounded-full" />
                     </div>
                   </div>
 
                   <p class="text-lg leading-relaxed text-muted mb-6">
-                    Two large buttons and clear on-screen prompts make capture instant. No accounts, no installs — just
-                    scan and submit. Submissions are optimized for slow connections and sync automatically.
+                    {{ t('benefits.features.zeroTraining.extendedDescription') }}
                   </p>
 
                   <!-- Feature highlights -->
                   <div class="space-y-3">
                     <div class="flex items-center gap-3 text-sm text-highlighted">
                       <div class="size-2 bg-green-500 rounded-full" />
-                      <span>Clear instructions</span>
+                      <span>{{ t('benefits.features.zeroTraining.highlights.clearInstructions') }}</span>
                     </div>
                     <div class="flex items-center gap-3 text-sm text-highlighted">
                       <div class="size-2 bg-green-500 rounded-full" />
-                      <span>No app download</span>
+                      <span>{{ t('benefits.features.zeroTraining.highlights.noAppDownload') }}</span>
                     </div>
                     <div class="flex items-center gap-3 text-sm text-highlighted">
                       <div class="size-2 bg-green-500 rounded-full" />
-                      <span>Under 30-second workflow</span>
+                      <span>{{ t('benefits.features.zeroTraining.highlights.fastWorkflow') }}</span>
                     </div>
                   </div>
                 </div>
@@ -396,11 +394,10 @@ const currentYear = new Date().getFullYear()
         <UContainer>
           <div class="text-center mb-16">
             <h2 class="text-3xl font-bold tracking-tight text-[color:var(--ui-text-highlighted)] sm:text-4xl mb-4">
-              Designed with jobsite constraints in mind
+              {{ t('reality.title') }}
             </h2>
             <p class="text-xl text-[color:var(--ui-text-toned)] max-w-3xl mx-auto">
-              We co-designed the experience with site managers — every detail addresses a real pain observed on the
-              jobsite.
+              {{ t('reality.subtitle') }}
             </p>
           </div>
 
@@ -442,18 +439,17 @@ const currentYear = new Date().getFullYear()
       </ScrollReveal>
 
       <ScrollReveal animation="fade-up" :duration="650">
-        <UPageSection id="pricing" title="Simple, per-site pricing"
-          description="Activate ProofOnSite when the site starts, then pause it when the project wraps up — no paying for unused licenses.">
+        <UPageSection id="pricing" :title="t('pricing.title')" :description="t('pricing.description')">
           <ScrollReveal as="div" class="mt-12 flex justify-center" animation="zoom-in" :delay="80">
             <UCard class="pricing-card w-full max-w-3xl border border-app-card bg-app-surface shadow-app-glow">
               <div class="space-y-6">
                 <UBadge color="secondary" variant="soft" size="sm">
-                  Pilot ready
+                  {{ t('pricing.badge') }}
                 </UBadge>
 
                 <div class="space-y-4">
                   <p class="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
-                    Per active site
+                    {{ t('pricing.perActiveSite') }}
                   </p>
 
                   <div class="flex flex-wrap items-end gap-3">
@@ -461,13 +457,12 @@ const currentYear = new Date().getFullYear()
                       49$
                     </span>
                     <span class="text-sm font-medium text-muted">
-                      / month
+                      {{ t('pricing.perMonth') }}
                     </span>
                   </div>
 
                   <p class="text-base text-toned">
-                    Switch a site on only when materials are flowing. Pause and resume in seconds — no annual
-                    commitments or hidden tiers.
+                    {{ t('pricing.description') }}
                   </p>
                 </div>
               </div>
@@ -494,11 +489,10 @@ const currentYear = new Date().getFullYear()
               <div class="mt-8 space-y-3">
                 <UButton to="#cta" size="lg" color="secondary" class="w-full justify-between" icon="i-lucide-mail"
                   trailing-icon="i-lucide-arrow-right">
-                  Start a 30-day pilot
+                  {{ t('pricing.ctaButton') }}
                 </UButton>
                 <p class="text-xs text-muted">
-                  Billed monthly for active sites only. Cancel or pause anytime — we send a reminder before each
-                  renewal.
+                  {{ t('pricing.billingNote') }}
                 </p>
               </div>
             </UCard>
@@ -507,8 +501,7 @@ const currentYear = new Date().getFullYear()
       </ScrollReveal>
 
       <ScrollReveal animation="fade-up" :duration="650">
-        <UPageSection id="faq" title="Frequently asked questions"
-          description="Everything happens by email — schedule a personalized demo and receive documentation for your team.">
+        <UPageSection id="faq" :title="t('faq.title')" :description="t('faq.description')">
           <ScrollReveal as="div" class="mt-12" animation="fade-up" :delay="80">
             <UAccordion :items="faqItems" />
           </ScrollReveal>
@@ -516,21 +509,19 @@ const currentYear = new Date().getFullYear()
       </ScrollReveal>
 
       <ScrollReveal id="cta" as="section" animation="zoom-in" :duration="650">
-        <UPageCTA title="Schedule your pilot on a construction site"
-          description="Answer three short questions and we'll prepare a printable QR kit, an adoption guide, and an onboarding video session — all within 72 hours."
-          variant="subtle" :links="[{
-            label: 'Book a meeting',
-            to: 'mailto:hello@proofonsite.com?subject=I%20want%20to%20pilot%20ProofOnSite',
-            color: 'secondary',
-            icon: 'i-lucide-calendar-plus'
-          }, {
-            label: 'Download product sheet',
-            to: '#',
-            target: '_blank',
-            color: 'secondary',
-            variant: 'outline',
-            icon: 'i-lucide-file-down'
-          }]" />
+        <UPageCTA :title="t('cta.title')" :description="t('cta.description')" variant="subtle" :links="[{
+          label: t('cta.primaryButton'),
+          to: 'mailto:hello@proofonsite.com?subject=I%20want%20to%20pilot%20ProofOnSite',
+          color: 'secondary',
+          icon: 'i-lucide-calendar-plus'
+        }, {
+          label: t('cta.secondaryButton'),
+          to: '#',
+          target: '_blank',
+          color: 'secondary',
+          variant: 'outline',
+          icon: 'i-lucide-file-down'
+        }]" />
       </ScrollReveal>
     </div>
 
@@ -538,9 +529,9 @@ const currentYear = new Date().getFullYear()
       <UFooter>
         <template #top>
           <UContainer class="grid gap-10 md:grid-cols-3">
-            <UPageLinks title="Product" :links="footerProductLinks" />
-            <UPageLinks title="Support" :links="footerSupportLinks" />
-            <UPageLinks title="Trust" :links="footerLegalLinks" />
+            <UPageLinks :title="t('footer.product.title')" :links="footerProductLinks" />
+            <UPageLinks :title="t('footer.support.title')" :links="footerSupportLinks" />
+            <UPageLinks :title="t('footer.legal.title')" :links="footerLegalLinks" />
           </UContainer>
         </template>
 
@@ -548,7 +539,7 @@ const currentYear = new Date().getFullYear()
           <div class="space-y-2">
             <AppLogo class="text-sm sm:text-base" />
             <p class="text-xs text-muted">
-              © {{ currentYear }} — All rights reserved.
+              © {{ currentYear }} — {{ t('footer.rights') }}
             </p>
           </div>
         </template>
@@ -557,9 +548,9 @@ const currentYear = new Date().getFullYear()
 
         <template #right>
           <UButton color="secondary" variant="ghost" icon="i-lucide-mail" to="mailto:hello@proofonsite.com"
-            aria-label="Send an email" />
+            :aria-label="t('footer.emailAriaLabel')" />
           <UButton color="secondary" variant="soft" trailing-icon="i-lucide-arrow-right" to="#cta">
-            Start a pilot
+            {{ t('footer.startPilot') }}
           </UButton>
         </template>
       </UFooter>

@@ -1,0 +1,474 @@
+{
+  "common": {
+    "appName": "ProofOnSite",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "submit": "Soumettre",
+    "search": "Rechercher",
+    "noResults": "Aucun résultat",
+    "required": "Requis",
+    "optional": "Optionnel",
+    "yes": "Oui",
+    "no": "Non",
+    "all": "Tous",
+    "active": "Actif",
+    "archived": "Archivé",
+    "refresh": "Actualiser",
+    "language": "Langue"
+  },
+  "nav": {
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "contact": "Contact",
+    "cta": "Essai gratuit",
+    "homeAriaLabel": "Aller à l'accueil",
+    "toggleMenuAriaLabel": "Basculer le menu de navigation",
+    "product": "Produit",
+    "workflow": "Fonctionnement",
+    "benefits": "Avantages",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "headline": "Testé sur les chantiers",
+    "title": "Preuve visuelle de chaque livraison, capturée en 30 secondes",
+    "description": "Scannez le code QR du chantier et prenez une photo. Aucune perte de papier, aucune application à télécharger, aucun temps perdu.",
+    "imageAlt": "ProofOnSite capture en action",
+    "badges": {
+      "liveCapture": "Capture en direct",
+      "fieldReady": "Prêt pour le chantier"
+    },
+    "cta": {
+      "demo": "Voir en action",
+      "contact": "Nous contacter par e-mail"
+    }
+  },
+  "problem": {
+    "title": "Pourquoi le suivi des livraisons est difficile?",
+    "description": "ProofOnSite élimine le temps perdu sur les preuves papiers et les textos éparpillés en offrant un flux simple et structuré qui s'adapte à vos équipes.",
+    "painPoints": {
+      "lostSlips": {
+        "title": "Les preuves papiers se perdent",
+        "description": "Les preuves de livraison sont facilement endommagés ou égarés, créant des problèmes dans la responsabilité et la facturation."
+      },
+      "chatPhotos": {
+        "title": "Photos perdues dans les applications de messagerie",
+        "description": "Les images et messages dans les fils de discussion sont difficiles à retrouver et peu fiables quand vous avez besoin d'une preuve."
+      },
+      "chasingConfirmations": {
+        "title": "Les gestionnaires courent après les confirmations",
+        "description": "Les gestionnaires passent 2 heures par semaine en appels et messages pour confirmer les livraisons parce qu'il n'y a pas de registre centralisé."
+      }
+    }
+  },
+  "solution": {
+    "title": "Un flux de travail simple en 4 étapes",
+    "description": "Un code QR, 4 actions rapides. Aucune formation requise, aucune application à télécharger.",
+    "howItWorks": {
+      "title": "Fonctionnement",
+      "steps": {
+        "setup": {
+          "title": "Générer le QR",
+          "description": "Générez et imprimez le code QR."
+        },
+        "scan": {
+          "title": "Scanner le QR",
+          "description": "Ouvrez votre caméra et scannez le code QR."
+        },
+        "capture": {
+          "title": "Enregistrer la preuve",
+          "description": "Prenez une photo et envoyez."
+        },
+        "notify": {
+          "title": "Consulter l'historique",
+          "description": "Recherchez et consultez les preuves horodatées"
+        }
+      }
+    },
+    "workflowSummary": {
+      "title": "Flux complet en moins de 2 minutes",
+      "description": "Scannez le QR du chantier, capturez la preuve et notifiez le bureau. Rapide, fiable et conçu pour les conditions réelles du terrain."
+    }
+  },
+  "benefits": {
+    "title": "Ce que ProofOnSite apporte à votre équipe",
+    "subtitle": "Simple pour les équipes, puissant pour les gestionnaires. Pas de licence par utilisateur, pas de déploiement complexe.",
+    "features": {
+      "zeroTraining": {
+        "title": "Aucune formation pour les équipes",
+        "description": "Prêt en quelques secondes : deux gros boutons et des instructions claires à l'écran. Pas de compte ni d'installation — juste scanner et soumettre.",
+        "extendedDescription": "Un seul bouton et des instructions claires à l'écran rendent la capture instantanée. Pas de compte, pas d'installation — juste une photo et envoyer. Les envoies sont optimisées pour les connexions lentes et se synchronisent automatiquement.",
+        "highlights": {
+          "clearInstructions": "Instructions simples.",
+          "noAppDownload": "Aucune application à télécharger, ni de compte à créer.",
+          "fastWorkflow": "Flux de moins de 30 secondes"
+        }
+      },
+      "structuredArchive": {
+        "title": "Archive structurée de preuves",
+        "description": "Filtrez par fournisseur, corps de métier ou coulée. Exportez en CSV ou PDF pour les réconciliations et audits."
+      },
+      "instantAlerts": {
+        "title": "Alertes instantanées pour les responsables",
+        "description": "Notifiez automatiquement les contremaîtres, chefs de projet ou clients. Aucune licence utilisateur supplémentaire requise."
+      }
+    }
+  },
+  "reality": {
+    "title": "Conçu avec les contraintes du chantier en tête",
+    "subtitle": "Nous avons co-conçu l'expérience avec des gestionnaires de chantier — chaque détail répond à une vraie difficulté observée sur le terrain.",
+    "highlights": {
+      "offline": {
+        "title": "Fonctionne sans connexion",
+        "detail": "Capturez les livraisons hors ligne. Les envoies se synchronisent automatiquement dès qu'une connexion est disponible."
+      },
+      "toughConditions": {
+        "title": "Conçu pour les conditions difficiles",
+        "detail": "Grandes zones tactiles, interface à contraste élevé et optimisations de téléversement pour les connexions à faible débit."
+      },
+      "globalReady": {
+        "title": "Multilingue",
+        "detail": "L'interface et les notifications supportent plusieurs langues pour que les équipes et fournisseurs restent alignés."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Tarification simple, par chantier",
+    "subtitle": "Activez ProofOnSite au démarrage du chantier, puis mettez-le en pause à la fin du projet — ne payez pas pour des licences inutilisées.",
+    "perSite": "Par chantier",
+    "currency": "$",
+    "badge": "Prêt pilote",
+    "perActiveSite": "Par chantier actif",
+    "perMonth": "/ mois",
+    "description": "Activez un chantier seulement quand les matériaux circulent. Mettez en pause et reprenez en quelques secondes — aucun engagement annuel ni palier caché.",
+    "ctaButton": "Démarrer un pilote de 30 jours",
+    "billingNote": "Facturation mensuelle pour les chantiers actifs uniquement. Annulez ou mettez en pause à tout moment — nous envoyons un rappel avant chaque renouvellement.",
+    "features": {
+      "unlimitedUploads": {
+        "title": "Téléversements illimités",
+        "description": "Capturez des preuves par n'importe qui sur le chantier sans ajouter de sièges ou de licences."
+      },
+      "qrPacks": {
+        "title": "QR code imprimable par chantier",
+        "description": "Chaque chantier reçoit un QR code unique, prêt à imprimer et à placer sur site."
+      },
+      "offlineFirst": {
+        "title": "Flux mobile hors ligne",
+        "description": "Capture en 30 secondes avec compression automatique et synchronisation en arrière-plan."
+      },
+      "instantNotifications": {
+        "title": "Notifications instantanées",
+        "description": "Recevez des notifications par e-mail, automatiquement envoyées aux gestionnaires, fournisseurs et clients."
+      },
+      "structuredExports": {
+        "title": "Archive structurée",
+        "description": "Registre consultable avec exports CSV/PDF pour les réconciliations et audits."
+      },
+      "support": {
+        "title": "Sécurisé par défaut",
+        "description": "Accès délimité par chantier, horodatage automatique et conservation des données en interne uniquement."
+      }
+    },
+    "cta": "Démarrer un pilote de 30 jours"
+  },
+  "dashboard": {
+    "hello": "Bonjour",
+    "welcome": "Bienvenue sur votre tableau de bord ProofOnSite",
+    "subtitle": "Gérez vos chantiers et suivez les livraisons.",
+    "newSite": "Créer un nouveau chantier",
+    "metrics": {
+      "total": "Total des chantiers",
+      "active": "Chantiers actifs",
+      "archived": "Chantiers archivés",
+      "lastCreated": "Dernière création",
+      "activeSites": "Chantiers actifs",
+      "archivedSites": "Chantiers archivés",
+      "totalSites": "Total des chantiers",
+      "clickToFilter": "Cliquer pour filtrer",
+      "clickToShowAll": "Cliquer pour tout afficher"
+    },
+    "sites": {
+      "title": "Vos chantiers",
+      "searchPlaceholder": "Rechercher par nom, adresse ou code...",
+      "filterByStatus": "Filtrer par statut",
+      "addNew": "Ajouter un chantier",
+      "reset": "Réinitialiser",
+      "columns": {
+        "site": "Chantier",
+        "code": "Code",
+        "status": "Statut",
+        "qrCode": "Code QR",
+        "deliveries": "Livraisons"
+      },
+      "status": {
+        "all": "Tous les chantiers",
+        "active": "Actif",
+        "archived": "Archivé"
+      },
+      "statusLabels": {
+        "active": "Actif",
+        "archived": "Archivé"
+      },
+      "actions": {
+        "view": "Voir les livraisons",
+        "edit": "Modifier le chantier",
+        "archive": "Archiver le chantier",
+        "reactivate": "Réactiver le chantier",
+        "downloadQR": "Télécharger le code QR",
+        "delete": "Supprimer le chantier"
+      },
+      "ariaLabels": {
+        "copySiteCode": "Copier le code du chantier",
+        "moreActions": "Plus d'actions"
+      },
+      "form": {
+        "titleNew": "Créer un nouveau chantier",
+        "titleEdit": "Modifier le chantier",
+        "subtitle": "Remplissez les informations sur le chantier.",
+        "nameLabel": "Nom du chantier",
+        "namePlaceholder": "ex. : Tour résidentielle - Phase 2",
+        "addressLabel": "Adresse du chantier",
+        "addressPlaceholder": "ex. : 1234 rue Principale, Montréal, QC",
+        "statusLabel": "Statut du chantier",
+        "statusOptions": {
+          "active": "Actif",
+          "archived": "Archivé"
+        },
+        "saveButton": "Enregistrer le chantier",
+        "createButton": "Créer le chantier"
+      },
+      "resetFilters": "Réinitialiser les filtres",
+      "validation": {
+        "nameMin": "Le nom doit contenir au moins 3 caractères",
+        "nameMax": "Le nom ne peut pas dépasser 100 caractères",
+        "addressMin": "L'adresse doit contenir au moins 5 caractères",
+        "addressMax": "L'adresse ne peut pas dépasser 200 caractères"
+      },
+      "toast": {
+        "created": "Chantier créé avec succès",
+        "createdDescription": "Le code QR est prêt à être téléchargé",
+        "updated": "Chantier mis à jour avec succès",
+        "updatedDescription": "Les modifications ont été enregistrées",
+        "deleted": "Chantier supprimé avec succès",
+        "deletedDescription": "Le chantier et ses livraisons ont été supprimés",
+        "archived": "Chantier archivé avec succès",
+        "archivedDescription": "Le chantier est maintenant archivé",
+        "reactivated": "Chantier réactivé avec succès",
+        "reactivatedDescription": "Le chantier est de nouveau actif",
+        "codeCopied": "Code du chantier copié dans le presse-papiers",
+        "codeDescription": "Vous pouvez partager ce code avec votre équipe",
+        "qrReady": "Code QR prêt au téléchargement",
+        "qrReadyDescription": "Imprimez-le et placez-le sur votre chantier",
+        "errorSave": "Erreur lors de l'enregistrement du chantier",
+        "errorStatus": "Erreur lors du changement de statut",
+        "errorDelete": "Erreur lors de la suppression du chantier",
+        "errorQR": "Erreur lors de la génération du code QR",
+        "errorPDF": "Erreur lors du téléchargement du PDF"
+      },
+      "delete": {
+        "title": "Supprimer le chantier ?",
+        "description": "Cette action est irréversible. Tous les enregistrements de livraison pour ce chantier seront définitivement supprimés.",
+        "warning": "Êtes-vous certain de vouloir continuer ?",
+        "confirmButton": "Oui, supprimer le chantier"
+      },
+      "empty": {
+        "default": "Aucun chantier pour le moment. Créez votre premier chantier pour commencer à suivre les livraisons.",
+        "search": "Aucun chantier ne correspond à votre recherche. Essayez d'ajuster vos filtres.",
+        "archived": "Aucun chantier archivé."
+      },
+      "errors": {
+        "loadTitle": "Erreur de chargement",
+        "loadDescription": "Impossible de charger les chantiers. Veuillez réessayer."
+      }
+    }
+  },
+  "header": {
+    "logoutSuccess": "Déconnexion réussie",
+    "logoutError": "Échec de la déconnexion. Veuillez réessayer."
+  },
+  "auth": {
+    "login": {
+      "title": "Connexion",
+      "subtitle": "Accédez à votre tableau de bord",
+      "fullSubtitle": "Connectez-vous pour gérer vos chantiers et consulter les enregistrements de livraison.",
+      "email": {
+        "label": "Adresse email",
+        "placeholder": "votre{'@'}email.com"
+      },
+      "password": {
+        "label": "Mot de passe",
+        "placeholder": "Entrez votre mot de passe"
+      },
+      "submit": "Se connecter",
+      "noAccount": "Vous n'avez pas de compte ?",
+      "register": "Inscription",
+      "createAccess": "Créez votre accès",
+      "successTitle": "Bon retour !",
+      "successDescription": "Vous êtes maintenant connecté.",
+      "errorTitle": "Échec de connexion",
+      "errorDescription": "Email ou mot de passe invalide. Veuillez réessayer.",
+      "validation": {
+        "emailInvalid": "Adresse email invalide",
+        "passwordRequired": "Mot de passe requis"
+      }
+    },
+    "register": {
+      "title": "Inscription",
+      "subtitle": "Créez votre compte",
+      "heading": "Créez votre compte",
+      "fullSubtitle": "Commencez à suivre les livraisons sur vos chantiers dès aujourd'hui.",
+      "displayName": {
+        "label": "Nom complet",
+        "placeholder": "Jean Tremblay"
+      },
+      "email": {
+        "label": "Adresse email",
+        "placeholder": "votre{'@'}email.com"
+      },
+      "password": {
+        "label": "Mot de passe",
+        "placeholder": "Créez un mot de passe robuste"
+      },
+      "confirmPassword": {
+        "label": "Confirmer le mot de passe",
+        "placeholder": "Ressaisissez votre mot de passe"
+      },
+      "submit": "Créer un compte",
+      "hasAccount": "Vous avez déjà un compte ?",
+      "login": "Connexion",
+      "successTitle": "Compte créé!",
+      "successDescription": "Bienvenue sur ProofOnSite. Vous pouvez maintenant ajouter des chantiers.",
+      "errorDescription": "Échec de création du compte. Veuillez vérifier vos informations et réessayer.",
+      "validation": {
+        "nameMin": "Le nom doit contenir au moins 2 caractères",
+        "nameMax": "Le nom ne peut pas dépasser 50 caractères",
+        "emailInvalid": "Adresse e-mail invalide",
+        "passwordMin": "Le mot de passe doit contenir au moins 8 caractères",
+        "passwordMax": "Le mot de passe ne peut pas dépasser 100 caractères",
+        "passwordMismatch": "Les mots de passe ne correspondent pas"
+      }
+    },
+    "logout": "Déconnexion"
+  },
+  "capture": {
+    "title": "Enregistrer une livraison",
+    "subtitle": "Prenez une photo du bordereau de livraison et des matériaux",
+    "uploadPhoto": {
+      "title": "Capturer une photo de livraison",
+      "description": "Prenez une photo claire du bordereau de livraison et des matériaux reçus."
+    },
+    "submit": "Soumettre la livraison",
+    "success": "Livraison enregistrée",
+    "error": "Échec du téléversement",
+    "uploading": "Téléversement en cours...",
+    "offline": "Vous êtes hors ligne. La photo sera téléversée au retour de la connexion.",
+    "loading": "Chargement des informations du chantier...",
+    "invalidCode": "Code QR invalide",
+    "invalidCodeDescription": "Ce code QR n'est pas valide ou a expiré. Veuillez contacter votre gestionnaire de chantier.",
+    "archivedSite": "Chantier archivé",
+    "archivedSiteDescription": "Ce chantier est archivé et n'accepte plus de nouvelles livraisons. Contactez votre gestionnaire de chantier pour le réactiver.",
+    "sent": "Envoyé !",
+    "successDescription": "La livraison a été enregistrée et votre gestionnaire a été notifié.",
+    "newDelivery": "Enregistrer une autre livraison",
+    "cancelButton": "Annuler",
+    "sendButton": "Envoyer la photo",
+    "sendingButton": "Envoi en cours...",
+    "photoButton": "Prendre une photo",
+    "tapToCapture": "Appuyez pour prendre une photo",
+    "photoTooLarge": "La photo est trop volumineuse. La taille maximale est de 5 Mo.",
+    "unsupportedFormat": "Format de fichier non supporté. Veuillez utiliser JPG ou PNG.",
+    "uploadFailed": "Échec du téléversement. Veuillez vérifier votre connexion et réessayer."
+  },
+  "deliveries": {
+    "title": "Enregistrements de livraison",
+    "site": "Chantier",
+    "backToDashboard": "Retour au tableau de bord",
+    "noDeliveries": "Aucune livraison enregistrée pour ce chantier.",
+    "loading": "Chargement des enregistrements de livraison...",
+    "deliveryFrom": "Livraison du",
+    "columns": {
+      "photo": "Photo",
+      "date": "Date et heure",
+      "actions": "Actions"
+    },
+    "viewPhoto": "Voir la photo complète"
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "description": "Tout se fait par e-mail — planifiez une démonstration personnalisée et recevez la documentation pour votre équipe.",
+    "q1": {
+      "question": "Les équipes ont-elles besoin de comptes ou de connexions ?",
+      "answer": "Aucun compte, mot de passe ou téléchargement. Le QR ouvre un formulaire sécurisé délimité à ce chantier. Nous capturons l'identifiant de l'appelant et l'horodatage automatiquement."
+    },
+    "q2": {
+      "question": "Que se passe-t-il avec une connectivité irrégulière ?",
+      "answer": "ProofOnSite met en cache la soumission localement, compresse les médias, puis se synchronise dès que l'appareil capte un signal. Une bannière confirme une fois la livraison transmise."
+    },
+    "q3": {
+      "question": "Peut-on notifier automatiquement les fournisseurs ou clients ?",
+      "answer": "Oui. Chaque chantier vous permet d'ajouter des e-mails CC optionnels pour que les parties prenantes reçoivent le même registre sans être ajoutées comme utilisateurs."
+    },
+    "q4": {
+      "question": "En combien de temps peut-on démarrer ?",
+      "answer": "Nous créons vos trousses QR et liste de vérification d'intégration sous 3 jours ouvrables. Les chantiers pilotes démarrent généralement la même semaine."
+    }
+  },
+  "cta": {
+    "title": "Planifiez votre pilote sur un chantier",
+    "description": "Répondez à trois courtes questions et nous préparerons une trousse QR imprimable, un guide d'adoption et une séance vidéo d'intégration — le tout sous 72 heures.",
+    "primaryButton": "Réserver une rencontre",
+    "secondaryButton": "Télécharger la fiche produit"
+  },
+  "footer": {
+    "tagline": "Preuve visuelle pour chaque livraison. Conçu pour la construction.",
+    "rights": "Tous droits réservés.",
+    "emailAriaLabel": "Envoyer un e-mail",
+    "product": {
+      "title": "Produit",
+      "demo": "Démonstration produit",
+      "pricing": "Tarifs",
+      "roadmap": "Feuille de route"
+    },
+    "support": {
+      "title": "Support",
+      "implementation": "Liste de vérification d'implémentation",
+      "pilot": "Programme pilote",
+      "email": "Support par e-mail"
+    },
+    "legal": {
+      "title": "Confiance",
+      "terms": "Conditions",
+      "privacy": "Confidentialité",
+      "security": "Sécurité"
+    },
+    "startPilot": "Démarrer un pilote"
+  },
+  "meta": {
+    "home": {
+      "title": "ProofOnSite - Preuves sur les chantiers",
+      "description": "Obtenez une preuve visuelle instantanée de chaque livraison sur votre chantier. Simple suivi par code QR sans application à télécharger. Utilisé par les équipes de construction."
+    },
+    "dashboard": {
+      "title": "Tableau de bord - ProofOnSite"
+    },
+    "login": {
+      "title": "Connexion - ProofOnSite"
+    },
+    "register": {
+      "title": "Inscription - ProofOnSite"
+    }
+  }
+}

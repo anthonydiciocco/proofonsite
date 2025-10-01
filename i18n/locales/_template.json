@@ -1,0 +1,472 @@
+{
+  "common": {
+    "appName": "",
+    "loading": "",
+    "error": "",
+    "success": "",
+    "cancel": "",
+    "confirm": "",
+    "save": "",
+    "delete": "",
+    "edit": "",
+    "close": "",
+    "back": "",
+    "next": "",
+    "submit": "",
+    "search": "",
+    "noResults": "",
+    "required": "",
+    "optional": "",
+    "yes": "",
+    "no": "",
+    "all": "",
+    "active": "",
+    "archived": "",
+    "refresh": "",
+    "language": ""
+  },
+  "nav": {
+    "home": "",
+    "dashboard": "",
+    "login": "",
+    "register": "",
+    "logout": "",
+    "features": "",
+    "pricing": "",
+    "contact": "",
+    "cta": "",
+    "homeAriaLabel": "",
+    "toggleMenuAriaLabel": "",
+    "product": "",
+    "workflow": "",
+    "benefits": "",
+    "faq": ""
+  },
+  "hero": {
+    "headline": "",
+    "title": "",
+    "description": "",
+    "imageAlt": "",
+    "badges": {
+      "liveCapture": "",
+      "fieldReady": ""
+    },
+    "cta": {
+      "demo": "",
+      "contact": ""
+    }
+  },
+  "problem": {
+    "title": "",
+    "description": "",
+    "painPoints": {
+      "lostSlips": {
+        "title": "",
+        "description": ""
+      },
+      "chatPhotos": {
+        "title": "",
+        "description": ""
+      },
+      "chasingConfirmations": {
+        "title": "",
+        "description": ""
+      }
+    }
+  },
+  "solution": {
+    "title": "",
+    "description": "",
+    "howItWorks": {
+      "title": "",
+      "steps": {
+        "setup": {
+          "title": "",
+          "description": ""
+        },
+        "scan": {
+          "title": "",
+          "description": ""
+        },
+        "capture": {
+          "title": "",
+          "description": ""
+        },
+        "notify": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "workflowSummary": {
+      "title": "",
+      "description": ""
+    }
+  },
+  "benefits": {
+    "title": "",
+    "subtitle": "",
+    "features": {
+      "zeroTraining": {
+        "title": "",
+        "description": "",
+        "extendedDescription": "",
+        "highlights": {
+          "clearInstructions": "",
+          "noAppDownload": "",
+          "fastWorkflow": ""
+        }
+      },
+      "structuredArchive": {
+        "title": "",
+        "description": ""
+      },
+      "instantAlerts": {
+        "title": "",
+        "description": ""
+      }
+    }
+  },
+  "reality": {
+    "title": "",
+    "subtitle": "",
+    "highlights": {
+      "offline": {
+        "title": "",
+        "detail": ""
+      },
+      "toughConditions": {
+        "title": "",
+        "detail": ""
+      },
+      "globalReady": {
+        "title": "",
+        "detail": ""
+      }
+    }
+  },
+  "pricing": {
+    "title": "",
+    "subtitle": "",
+    "perSite": "",
+    "currency": "",
+    "badge": "",
+    "perActiveSite": "",
+    "perMonth": "",
+    "description": "",
+    "ctaButton": "",
+    "billingNote": "",
+    "features": {
+      "unlimitedUploads": {
+        "title": "",
+        "description": ""
+      },
+      "qrPacks": {
+        "title": "",
+        "description": ""
+      },
+      "offlineFirst": {
+        "title": "",
+        "description": ""
+      },
+      "instantNotifications": {
+        "title": "",
+        "description": ""
+      },
+      "structuredExports": {
+        "title": "",
+        "description": ""
+      },
+      "support": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "cta": ""
+  },
+  "dashboard": {
+    "hello": "",
+    "welcome": "",
+    "subtitle": "",
+    "newSite": "",
+    "metrics": {
+      "total": "",
+      "active": "",
+      "archived": "",
+      "lastCreated": "",
+      "activeSites": "",
+      "archivedSites": "",
+      "totalSites": "",
+      "clickToFilter": "",
+      "clickToShowAll": ""
+    },
+    "sites": {
+      "title": "",
+      "searchPlaceholder": "",
+      "filterByStatus": "",
+      "addNew": "",
+      "reset": "",
+      "columns": {
+        "site": "",
+        "code": "",
+        "status": "",
+        "qrCode": "",
+        "deliveries": ""
+      },
+      "status": {
+        "all": "",
+        "active": "",
+        "archived": ""
+      },
+      "statusLabels": {
+        "active": "",
+        "archived": ""
+      },
+      "actions": {
+        "view": "",
+        "edit": "",
+        "archive": "",
+        "reactivate": "",
+        "downloadQR": "",
+        "delete": ""
+      },
+      "ariaLabels": {
+        "copySiteCode": "",
+        "moreActions": ""
+      },
+      "form": {
+        "titleNew": "",
+        "titleEdit": "",
+        "subtitle": "",
+        "nameLabel": "",
+        "namePlaceholder": "",
+        "addressLabel": "",
+        "addressPlaceholder": "",
+        "statusLabel": "",
+        "statusOptions": {
+          "active": "",
+          "archived": ""
+        },
+        "saveButton": "",
+        "createButton": ""
+      },
+      "resetFilters": "",
+      "validation": {
+        "nameMin": "",
+        "nameMax": "",
+        "addressMin": "",
+        "addressMax": ""
+      },
+      "toast": {
+        "created": "",
+        "createdDescription": "",
+        "updated": "",
+        "updatedDescription": "",
+        "deleted": "",
+        "deletedDescription": "",
+        "archived": "",
+        "archivedDescription": "",
+        "reactivated": "",
+        "reactivatedDescription": "",
+        "codeCopied": "",
+        "codeDescription": "",
+        "qrReady": "",
+        "qrReadyDescription": "",
+        "errorSave": "",
+        "errorStatus": "",
+        "errorDelete": "",
+        "errorQR": "",
+        "errorPDF": ""
+      },
+      "delete": {
+        "title": "",
+        "description": "",
+        "warning": "",
+        "confirmButton": ""
+      },
+      "empty": {
+        "default": "",
+        "search": "",
+        "archived": ""
+      },
+      "errors": {
+        "loadTitle": "",
+        "loadDescription": ""
+      }
+    }
+  },
+  "header": {
+    "logoutSuccess": "",
+    "logoutError": ""
+  },
+  "auth": {
+    "login": {
+      "title": "",
+      "subtitle": "",
+      "fullSubtitle": "",
+      "email": {
+        "label": "",
+        "placeholder": ""
+      },
+      "password": {
+        "label": "",
+        "placeholder": ""
+      },
+      "submit": "",
+      "noAccount": "",
+      "register": "",
+      "createAccess": "",
+      "successTitle": "",
+      "successDescription": "",
+      "errorTitle": "",
+      "errorDescription": "",
+      "validation": {
+        "emailInvalid": "",
+        "passwordRequired": ""
+      }
+    },
+    "register": {
+      "title": "",
+      "subtitle": "",
+      "heading": "",
+      "fullSubtitle": "",
+      "displayName": {
+        "label": "",
+        "placeholder": ""
+      },
+      "email": {
+        "label": "",
+        "placeholder": ""
+      },
+      "password": {
+        "label": "",
+        "placeholder": ""
+      },
+      "confirmPassword": {
+        "label": "",
+        "placeholder": ""
+      },
+      "submit": "",
+      "hasAccount": "",
+      "login": "",
+      "successTitle": "",
+      "successDescription": "",
+      "errorDescription": "",
+      "validation": {
+        "nameMin": "",
+        "nameMax": "",
+        "emailInvalid": "",
+        "passwordMin": "",
+        "passwordMax": "",
+        "passwordMismatch": ""
+      }
+    },
+    "logout": ""
+  },
+  "capture": {
+    "title": "",
+    "subtitle": "",
+    "uploadPhoto": {
+      "title": "",
+      "description": ""
+    },
+    "submit": "",
+    "success": "",
+    "error": "",
+    "uploading": "",
+    "offline": "",
+    "loading": "",
+    "invalidCode": "",
+    "invalidCodeDescription": "",
+    "sent": "",
+    "successDescription": "",
+    "newDelivery": "",
+    "cancelButton": "",
+    "sendButton": "",
+    "sendingButton": "",
+    "photoButton": "",
+    "tapToCapture": "",
+    "photoTooLarge": "",
+    "unsupportedFormat": "",
+    "uploadFailed": ""
+  },
+  "deliveries": {
+    "title": "",
+    "site": "",
+    "backToDashboard": "",
+    "noDeliveries": "",
+    "loading": "",
+    "deliveryFrom": "",
+    "columns": {
+      "photo": "",
+      "date": "",
+      "actions": ""
+    },
+    "viewPhoto": ""
+  },
+  "faq": {
+    "title": "",
+    "description": "",
+    "q1": {
+      "question": "",
+      "answer": ""
+    },
+    "q2": {
+      "question": "",
+      "answer": ""
+    },
+    "q3": {
+      "question": "",
+      "answer": ""
+    },
+    "q4": {
+      "question": "",
+      "answer": ""
+    }
+  },
+  "cta": {
+    "title": "",
+    "description": "",
+    "primaryButton": "",
+    "secondaryButton": ""
+  },
+  "footer": {
+    "tagline": "",
+    "rights": "",
+    "emailAriaLabel": "",
+    "product": {
+      "title": "",
+      "demo": "",
+      "pricing": "",
+      "roadmap": ""
+    },
+    "support": {
+      "title": "",
+      "implementation": "",
+      "pilot": "",
+      "email": ""
+    },
+    "legal": {
+      "title": "",
+      "terms": "",
+      "privacy": "",
+      "security": ""
+    },
+    "startPilot": ""
+  },
+  "meta": {
+    "home": {
+      "title": "",
+      "description": ""
+    },
+    "dashboard": {
+      "title": ""
+    },
+    "login": {
+      "title": ""
+    },
+    "register": {
+      "title": ""
+    }
+  }
+}

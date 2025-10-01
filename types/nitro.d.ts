@@ -6,4 +6,10 @@ declare module 'h3' {
   }
 }
 
+declare global {
+  interface ImportMeta {
+    client?: boolean
+  }
+}
+
 export { }

@@ -20,7 +20,8 @@ export default defineEventHandler(async (event) => {
       id: true,
       name: true,
       address: true,
-      referenceCode: true
+      referenceCode: true,
+      status: true
     }
   })
 
@@ -28,6 +29,14 @@ export default defineEventHandler(async (event) => {
     throw createError({
       statusCode: 404,
       message: 'Invalid capture token'
+    })
+  }
+
+  // 🔒 Block archived sites
+  if (site.status === 'archived') {
+    throw createError({
+      statusCode: 403,
+      message: 'This site is archived. Contact your site manager to reactivate it.'
     })
   }
 

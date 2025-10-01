@@ -1,0 +1,474 @@
+{
+  "common": {
+    "appName": "ProofOnSite",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "submit": "Enviar",
+    "search": "Buscar",
+    "noResults": "Nenhum resultado",
+    "required": "Obrigatório",
+    "optional": "Opcional",
+    "yes": "Sim",
+    "no": "Não",
+    "all": "Todos",
+    "active": "Ativa",
+    "archived": "Arquivada",
+    "refresh": "Atualizar",
+    "language": "Idioma"
+  },
+  "nav": {
+    "home": "Início",
+    "dashboard": "Painel",
+    "login": "Entrar",
+    "register": "Cadastrar",
+    "logout": "Sair",
+    "features": "Recursos",
+    "pricing": "Preços",
+    "contact": "Contato",
+    "cta": "Teste Grátis",
+    "homeAriaLabel": "Voltar ao início",
+    "toggleMenuAriaLabel": "Alternar menu de navegação",
+    "product": "Produto",
+    "workflow": "Como Funciona",
+    "benefits": "Benefícios",
+    "faq": "Dúvidas"
+  },
+  "hero": {
+    "headline": "Testado em obra",
+    "title": "Cada entrega registrada em 30 segundos, com foto e hora exata",
+    "description": "Escaneia o QR da obra e tira a foto. Sem papel perdido, sem app pra baixar, sem perder tempo.",
+    "imageAlt": "ProofOnSite registro em obra",
+    "badges": {
+      "liveCapture": "Registro Instantâneo",
+      "fieldReady": "Pronto pra Obra"
+    },
+    "cta": {
+      "demo": "Ver demonstração",
+      "contact": "Falar por e-mail"
+    }
+  },
+  "problem": {
+    "title": "Por que é tão difícil controlar entregas na obra",
+    "description": "ProofOnSite acaba com o papel perdido e as fotos sumidas no WhatsApp. Um fluxo simples que toda a equipe consegue usar.",
+    "painPoints": {
+      "lostSlips": {
+        "title": "Canhotos de entrega somem",
+        "description": "Notas amassadas, perdidas ou rasgadas criam problemas na hora de conferir e cobrar."
+      },
+      "chatPhotos": {
+        "title": "Fotos perdidas no WhatsApp",
+        "description": "Imagens e mensagens nos grupos somem rápido, e quando você precisa não acha mais."
+      },
+      "chasingConfirmations": {
+        "title": "Mestre de obra correndo atrás de confirmação",
+        "description": "Gasta 2 horas por semana ligando e mandando mensagem pra confirmar entrega, porque não tem registro centralizado."
+      }
+    }
+  },
+  "solution": {
+    "title": "Fluxo simples em 4 passos",
+    "description": "Um QR code, 4 ações rápidas. Sem treinamento, sem baixar app.",
+    "howItWorks": {
+      "title": "Como funciona",
+      "steps": {
+        "setup": {
+          "title": "Gera o QR",
+          "description": "Gere e imprima o QR code da obra."
+        },
+        "scan": {
+          "title": "Escaneia o QR",
+          "description": "Abre a câmera e escaneia o código."
+        },
+        "capture": {
+          "title": "Registra a entrega",
+          "description": "Tira a foto e envia."
+        },
+        "notify": {
+          "title": "Consulta o histórico",
+          "description": "Busque e veja os registros com data e hora."
+        }
+      }
+    },
+    "workflowSummary": {
+      "title": "Fluxo completo em menos de 2 minutos",
+      "description": "Escaneia o QR da obra, tira a foto e notifica o escritório. Rápido, confiável e feito pro dia a dia da obra."
+    }
+  },
+  "benefits": {
+    "title": "O que ProofOnSite traz pra sua equipe",
+    "subtitle": "Simples pro pessoal da obra, poderoso pro gestor. Sem licença por usuário, sem implantação complicada.",
+    "features": {
+      "zeroTraining": {
+        "title": "Zero treinamento pra equipe",
+        "description": "Pronto em segundos: dois botões grandes e instruções claras na tela. Sem conta, sem instalar — só escaneia e envia.",
+        "extendedDescription": "Um botão e instruções claras na tela tornam o registro instantâneo. Sem conta, sem instalação — só foto e enviar. Upload otimizado pra conexão fraca e sincroniza automaticamente.",
+        "highlights": {
+          "clearInstructions": "Instruções simples.",
+          "noAppDownload": "Sem app pra baixar, sem cadastro.",
+          "fastWorkflow": "Fluxo de menos de 30 segundos"
+        }
+      },
+      "structuredArchive": {
+        "title": "Arquivo estruturado de entregas",
+        "description": "Filtra por fornecedor, etapa ou concretagem. Exporta CSV ou PDF pra conferência e auditoria."
+      },
+      "instantAlerts": {
+        "title": "Alertas instantâneos pros responsáveis",
+        "description": "Notifica automaticamente mestres, engenheiros ou clientes. Sem precisar comprar licença adicional."
+      }
+    }
+  },
+  "reality": {
+    "title": "Feito pensando nas condições da obra",
+    "subtitle": "Desenvolvemos a experiência junto com mestres de obra — cada detalhe resolve um problema real do dia a dia.",
+    "highlights": {
+      "offline": {
+        "title": "Funciona sem internet",
+        "detail": "Registra entregas offline. O envio sincroniza automaticamente quando pega sinal."
+      },
+      "toughConditions": {
+        "title": "Feito pra condições difíceis",
+        "detail": "Botões grandes, interface de alto contraste e upload otimizado pra conexão fraca."
+      },
+      "globalReady": {
+        "title": "Suporte multilíngue",
+        "detail": "Interface e notificações em vários idiomas pra manter equipes e fornecedores alinhados."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Preço simples, por obra",
+    "subtitle": "Ativa ProofOnSite quando a obra começa, pausa quando termina — não paga licença parada.",
+    "perSite": "Por obra",
+    "currency": "R$",
+    "badge": "Versão Piloto",
+    "perActiveSite": "Por obra ativa",
+    "perMonth": "/mês",
+    "description": "Ativa a obra só quando o material está circulando. Pausa e reativa em segundos — sem contrato anual, sem taxa escondida.",
+    "ctaButton": "Começar piloto de 30 dias",
+    "billingNote": "Cobrança mensal só das obras ativas. Cancela ou pausa a qualquer momento — mandamos lembrete antes de cada renovação.",
+    "features": {
+      "unlimitedUploads": {
+        "title": "Registros ilimitados",
+        "description": "Qualquer pessoa na obra pode tirar foto e enviar, sem adicionar usuário ou licença."
+      },
+      "qrPacks": {
+        "title": "QR code imprimível por obra",
+        "description": "Cada obra recebe um QR único, pronto pra imprimir e fixar no canteiro."
+      },
+      "offlineFirst": {
+        "title": "Funciona offline no celular",
+        "description": "Registro em 30 segundos com compressão automática e sincronização em segundo plano."
+      },
+      "instantNotifications": {
+        "title": "Notificações instantâneas",
+        "description": "Envia e-mail automático pros gestores, fornecedores e clientes."
+      },
+      "structuredExports": {
+        "title": "Arquivo estruturado",
+        "description": "Histórico pesquisável com export CSV/PDF pra conferências e auditorias."
+      },
+      "support": {
+        "title": "Seguro por padrão",
+        "description": "Acesso limitado por obra, registro automático de data/hora e dados mantidos internamente."
+      }
+    },
+    "cta": "Começar piloto de 30 dias"
+  },
+  "dashboard": {
+    "hello": "Olá",
+    "welcome": "Bem-vindo ao seu painel ProofOnSite",
+    "subtitle": "Gerencie suas obras e acompanhe as entregas.",
+    "newSite": "Criar nova obra",
+    "metrics": {
+      "total": "Total de obras",
+      "active": "Obras ativas",
+      "archived": "Obras arquivadas",
+      "lastCreated": "Última criação",
+      "activeSites": "Obras ativas",
+      "archivedSites": "Obras arquivadas",
+      "totalSites": "Total de obras",
+      "clickToFilter": "Clique pra filtrar",
+      "clickToShowAll": "Clique pra mostrar todas"
+    },
+    "sites": {
+      "title": "Suas obras",
+      "searchPlaceholder": "Buscar por nome, endereço ou código...",
+      "filterByStatus": "Filtrar por status",
+      "addNew": "Adicionar obra",
+      "reset": "Resetar",
+      "columns": {
+        "site": "Obra",
+        "code": "Código",
+        "status": "Status",
+        "qrCode": "QR Code",
+        "deliveries": "Entregas"
+      },
+      "status": {
+        "all": "Todas as obras",
+        "active": "Ativa",
+        "archived": "Arquivada"
+      },
+      "statusLabels": {
+        "active": "Ativa",
+        "archived": "Arquivada"
+      },
+      "actions": {
+        "view": "Ver entregas",
+        "edit": "Editar obra",
+        "archive": "Arquivar obra",
+        "reactivate": "Reativar obra",
+        "downloadQR": "Baixar QR code",
+        "delete": "Excluir obra"
+      },
+      "ariaLabels": {
+        "copySiteCode": "Copiar código da obra",
+        "moreActions": "Mais ações"
+      },
+      "form": {
+        "titleNew": "Criar nova obra",
+        "titleEdit": "Editar obra",
+        "subtitle": "Preencha as informações da obra.",
+        "nameLabel": "Nome da obra",
+        "namePlaceholder": "Ex: Residencial Vista Verde - Fase 2",
+        "addressLabel": "Endereço da obra",
+        "addressPlaceholder": "Ex: Av. Paulista, 1000 - São Paulo, SP",
+        "statusLabel": "Status da obra",
+        "statusOptions": {
+          "active": "Ativa",
+          "archived": "Arquivada"
+        },
+        "saveButton": "Salvar obra",
+        "createButton": "Criar obra"
+      },
+      "resetFilters": "Resetar filtros",
+      "validation": {
+        "nameMin": "O nome deve ter pelo menos 3 caracteres",
+        "nameMax": "O nome não pode passar de 100 caracteres",
+        "addressMin": "O endereço deve ter pelo menos 5 caracteres",
+        "addressMax": "O endereço não pode passar de 200 caracteres"
+      },
+      "toast": {
+        "created": "Obra criada com sucesso",
+        "createdDescription": "QR code pronto pra download",
+        "updated": "Obra atualizada com sucesso",
+        "updatedDescription": "Alterações salvas",
+        "deleted": "Obra excluída com sucesso",
+        "deletedDescription": "A obra e suas entregas foram excluídas",
+        "archived": "Obra arquivada com sucesso",
+        "archivedDescription": "A obra foi arquivada",
+        "reactivated": "Obra reativada com sucesso",
+        "reactivatedDescription": "A obra voltou a ficar ativa",
+        "codeCopied": "Código da obra copiado",
+        "codeDescription": "Você pode compartilhar este código com sua equipe",
+        "qrReady": "QR code pronto pra download",
+        "qrReadyDescription": "Imprima e fixe na sua obra",
+        "errorSave": "Erro ao salvar obra",
+        "errorStatus": "Erro ao mudar status",
+        "errorDelete": "Erro ao excluir obra",
+        "errorQR": "Erro ao gerar QR code",
+        "errorPDF": "Erro ao baixar PDF"
+      },
+      "delete": {
+        "title": "Excluir obra?",
+        "description": "Esta ação não pode ser desfeita. Todos os registros de entrega desta obra serão excluídos permanentemente.",
+        "warning": "Tem certeza que deseja continuar?",
+        "confirmButton": "Sim, excluir obra"
+      },
+      "empty": {
+        "default": "Nenhuma obra no momento. Crie sua primeira obra pra começar a registrar entregas.",
+        "search": "Nenhuma obra encontrada. Tente ajustar os filtros.",
+        "archived": "Nenhuma obra arquivada."
+      },
+      "errors": {
+        "loadTitle": "Erro ao carregar",
+        "loadDescription": "Não foi possível carregar as obras. Tente novamente."
+      }
+    }
+  },
+  "header": {
+    "logoutSuccess": "Saiu com sucesso",
+    "logoutError": "Falha ao sair. Tente novamente."
+  },
+  "auth": {
+    "login": {
+      "title": "Entrar",
+      "subtitle": "Acesse seu painel",
+      "fullSubtitle": "Entre pra gerenciar suas obras e ver os registros de entrega.",
+      "email": {
+        "label": "E-mail",
+        "placeholder": "seu{'@'}email.com.br"
+      },
+      "password": {
+        "label": "Senha",
+        "placeholder": "Digite sua senha"
+      },
+      "submit": "Entrar",
+      "noAccount": "Não tem conta?",
+      "register": "Cadastrar",
+      "createAccess": "Crie seu acesso",
+      "successTitle": "Bem-vindo de volta!",
+      "successDescription": "Você entrou com sucesso.",
+      "errorTitle": "Falha ao entrar",
+      "errorDescription": "E-mail ou senha inválidos. Tente novamente.",
+      "validation": {
+        "emailInvalid": "E-mail inválido",
+        "passwordRequired": "Senha obrigatória"
+      }
+    },
+    "register": {
+      "title": "Cadastrar",
+      "subtitle": "Crie sua conta",
+      "heading": "Crie sua conta",
+      "fullSubtitle": "Comece a registrar entregas nas suas obras hoje mesmo.",
+      "displayName": {
+        "label": "Nome completo",
+        "placeholder": "João Silva"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "seu{'@'}email.com.br"
+      },
+      "password": {
+        "label": "Senha",
+        "placeholder": "Crie uma senha forte"
+      },
+      "confirmPassword": {
+        "label": "Confirmar senha",
+        "placeholder": "Digite sua senha novamente"
+      },
+      "submit": "Criar conta",
+      "hasAccount": "Já tem conta?",
+      "login": "Entrar",
+      "successTitle": "Conta criada!",
+      "successDescription": "Bem-vindo ao ProofOnSite. Agora você pode adicionar obras.",
+      "errorDescription": "Falha ao criar conta. Verifique suas informações e tente novamente.",
+      "validation": {
+        "nameMin": "O nome deve ter pelo menos 2 caracteres",
+        "nameMax": "O nome não pode passar de 50 caracteres",
+        "emailInvalid": "E-mail inválido",
+        "passwordMin": "A senha deve ter pelo menos 8 caracteres",
+        "passwordMax": "A senha não pode passar de 100 caracteres",
+        "passwordMismatch": "As senhas não coincidem"
+      }
+    },
+    "logout": "Sair"
+  },
+  "capture": {
+    "title": "Registrar entrega",
+    "subtitle": "Tire uma foto do canhoto e do material",
+    "uploadPhoto": {
+      "title": "Tirar foto da entrega",
+      "description": "Tire uma foto clara do canhoto de entrega e do material recebido."
+    },
+    "submit": "Enviar registro",
+    "success": "Entrega registrada",
+    "error": "Falha no envio",
+    "uploading": "Enviando...",
+    "offline": "Você está offline. A foto será enviada quando voltar a conexão.",
+    "loading": "Carregando informações da obra...",
+    "invalidCode": "QR code inválido",
+    "invalidCodeDescription": "Este QR code não é válido ou expirou. Entre em contato com seu gestor de obra.",
+    "archivedSite": "Obra arquivada",
+    "archivedSiteDescription": "Esta obra está arquivada e não aceita mais novas entregas. Entre em contato com seu gestor de obra para reativá-la.",
+    "sent": "Enviado!",
+    "successDescription": "Entrega registrada e seu gestor foi notificado.",
+    "newDelivery": "Registrar outra entrega",
+    "cancelButton": "Cancelar",
+    "sendButton": "Enviar foto",
+    "sendingButton": "Enviando...",
+    "photoButton": "Tirar foto",
+    "tapToCapture": "Toque pra tirar foto",
+    "photoTooLarge": "Foto muito grande. Tamanho máximo é 5MB.",
+    "unsupportedFormat": "Formato não suportado. Use JPG ou PNG.",
+    "uploadFailed": "Falha no envio. Verifique sua conexão e tente novamente."
+  },
+  "deliveries": {
+    "title": "Registros de entrega",
+    "site": "Obra",
+    "backToDashboard": "Voltar ao painel",
+    "noDeliveries": "Nenhuma entrega registrada nesta obra.",
+    "loading": "Carregando registros de entrega...",
+    "deliveryFrom": "Entrega de",
+    "columns": {
+      "photo": "Foto",
+      "date": "Data e hora",
+      "actions": "Ações"
+    },
+    "viewPhoto": "Ver foto completa"
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "description": "Tudo por e-mail — agende uma demo personalizada e receba a documentação pra sua equipe.",
+    "q1": {
+      "question": "A equipe precisa de conta ou login?",
+      "answer": "Nenhuma conta, senha ou download. O QR abre um formulário seguro específico daquela obra. Capturamos automaticamente o identificador de quem enviou e o horário."
+    },
+    "q2": {
+      "question": "E se a conexão estiver ruim?",
+      "answer": "ProofOnSite guarda o envio localmente, comprime a foto, e sincroniza assim que o aparelho pegar sinal. Um banner confirma quando o registro foi transmitido."
+    },
+    "q3": {
+      "question": "Dá pra notificar fornecedores ou clientes automaticamente?",
+      "answer": "Sim. Cada obra permite adicionar e-mails opcionais pra cópia, assim as partes interessadas recebem o mesmo registro sem precisar ser adicionadas como usuários."
+    },
+    "q4": {
+      "question": "Quanto tempo leva pra começar?",
+      "answer": "Criamos seu pacote de QR codes e checklist de integração em até 3 dias úteis. Obras piloto geralmente começam na mesma semana."
+    }
+  },
+  "cta": {
+    "title": "Agende seu piloto em obra",
+    "description": "Responda três perguntas curtas e preparamos um pacote de QR imprimível, guia de adoção e sessão de onboarding em vídeo — tudo em até 72 horas.",
+    "primaryButton": "Agendar reunião",
+    "secondaryButton": "Baixar ficha do produto"
+  },
+  "footer": {
+    "tagline": "Prova visual de cada entrega. Feito pra construção.",
+    "rights": "Todos os direitos reservados.",
+    "emailAriaLabel": "Enviar e-mail",
+    "product": {
+      "title": "Produto",
+      "demo": "Demonstração",
+      "pricing": "Preços",
+      "roadmap": "Roadmap"
+    },
+    "support": {
+      "title": "Suporte",
+      "implementation": "Checklist de implementação",
+      "pilot": "Programa piloto",
+      "email": "Suporte por e-mail"
+    },
+    "legal": {
+      "title": "Confiança",
+      "terms": "Termos",
+      "privacy": "Privacidade",
+      "security": "Segurança"
+    },
+    "startPilot": "Começar piloto"
+  },
+  "meta": {
+    "home": {
+      "title": "ProofOnSite - Registro de Entregas em Obra",
+      "description": "Tenha prova visual instantânea de cada entrega na sua obra. Rastreamento simples por QR code sem app pra baixar. Usado por equipes de construção."
+    },
+    "dashboard": {
+      "title": "Painel - ProofOnSite"
+    },
+    "login": {
+      "title": "Entrar - ProofOnSite"
+    },
+    "register": {
+      "title": "Cadastrar - ProofOnSite"
+    }
+  }
+}

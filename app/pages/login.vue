@@ -10,8 +10,11 @@ definePageMeta({
   middleware: 'guest' as never
 })
 
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 useHead({
-  title: 'Connexion — ProofOnSite'
+  title: computed(() => t('meta.login.title'))
 })
 
 const router = useRouter()
@@ -19,12 +22,12 @@ const toast = useToast()
 const isSubmitting = ref(false)
 const requestFetch = useRequestFetch()
 
-const schema = z.object({
-  email: z.string().email('Adresse courriel invalide'),
-  password: z.string().min(1, 'Le mot de passe est requis')
+const getSchema = () => z.object({
+  email: z.string().email(t('auth.login.validation.emailInvalid')),
+  password: z.string().min(1, t('auth.login.validation.passwordRequired'))
 })
 
-type LoginForm = z.infer<typeof schema>
+type LoginForm = z.infer<ReturnType<typeof getSchema>>
 
 const formState = reactive<LoginForm>({
   email: '',
@@ -46,11 +49,11 @@ async function onSubmit(event: { data?: LoginForm | null }) {
 
     await refreshAuth({ force: true })
     toast.add({
-      title: 'Connexion réussie',
-      description: 'Bienvenue sur ProofOnSite.',
+      title: t('auth.login.successTitle'),
+      description: t('auth.login.successDescription'),
       color: 'success'
     })
-    await router.push('/dashboard')
+    await router.push(localePath('/dashboard'))
   } catch (error: unknown) {
     type FetchErrorLike = {
       data?: { message?: string }
@@ -62,9 +65,9 @@ async function onSubmit(event: { data?: LoginForm | null }) {
     const message = fetchError.data?.message
       ?? fetchError.statusMessage
       ?? fallbackMessage
-      ?? 'Impossible de vous connecter.'
+      ?? t('auth.login.errorDescription')
     toast.add({
-      title: 'Erreur de connexion',
+      title: t('auth.login.errorTitle'),
       description: message,
       color: 'error'
     })
@@ -79,34 +82,35 @@ async function onSubmit(event: { data?: LoginForm | null }) {
     <div class="mx-auto flex max-w-md flex-col gap-6">
       <div class="space-y-2 text-center">
         <h1 class="text-2xl font-semibold text-[color:var(--ui-text-highlighted)]">
-          Connexion à ProofOnSite
+          {{ t('auth.login.title') }}
         </h1>
         <p class="text-sm text-[color:var(--ui-text-muted)]">
-          Accédez au tableau de bord des chantiers et aux journaux de livraisons.
+          {{ t('auth.login.fullSubtitle') }}
         </p>
       </div>
 
       <UCard class="bg-app-surface">
-        <UForm :state="formState" :schema="schema" class="space-y-6" @submit="onSubmit">
-          <UFormField name="email" label="Adresse courriel">
-            <UInput v-model="formState.email" type="email" placeholder="chef@chantier.com" autocomplete="email" />
+        <UForm :state="formState" :schema="getSchema()" class="space-y-6" @submit="onSubmit">
+          <UFormField name="email" :label="t('auth.login.email.label')">
+            <UInput v-model="formState.email" type="email" :placeholder="t('auth.login.email.placeholder')"
+              autocomplete="email" />
           </UFormField>
 
-          <UFormField name="password" label="Mot de passe">
-            <UInput v-model="formState.password" type="password" placeholder="••••••••"
+          <UFormField name="password" :label="t('auth.login.password.label')">
+            <UInput v-model="formState.password" type="password" :placeholder="t('auth.login.password.placeholder')"
               autocomplete="current-password" />
           </UFormField>
 
           <UButton type="submit" color="secondary" class="w-full" :loading="isSubmitting">
-            Se connecter
+            {{ t('auth.login.submit') }}
           </UButton>
         </UForm>
       </UCard>
 
       <p class="text-center text-sm text-[color:var(--ui-text-muted)]">
-        Pas encore de compte ?
-        <NuxtLink to="/register" class="font-medium text-secondary hover:underline">
-          Créer un accès
+        {{ t('auth.login.noAccount') }}
+        <NuxtLink :to="localePath('/register')" class="font-medium text-secondary hover:underline">
+          {{ t('auth.login.createAccess') }}
         </NuxtLink>
       </p>
     </div>

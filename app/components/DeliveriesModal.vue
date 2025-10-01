@@ -6,7 +6,7 @@
           <div class="flex items-center justify-between">
             <div>
               <h3 class="text-lg font-semibold">
-                Livraisons - {{ site.name }}
+                {{ t('deliveries.title') }} - {{ site.name }}
               </h3>
               <p class="text-sm text-gray-600">
                 {{ site.address }}
@@ -19,13 +19,13 @@
         <!-- Loading -->
         <div v-if="loading" class="py-12 text-center">
           <UIcon name="i-lucide-loader-2" class="w-8 h-8 text-primary animate-spin mx-auto mb-2" />
-          <p class="text-gray-600">Chargement des livraisons...</p>
+          <p class="text-gray-600">{{ t('deliveries.loading') }}</p>
         </div>
 
         <!-- Empty State -->
         <div v-else-if="!deliveries.length" class="py-12 text-center">
           <UIcon name="i-lucide-package-x" class="w-12 h-12 text-gray-400 mx-auto mb-3" />
-          <p class="text-gray-600">Aucune livraison enregistrée</p>
+          <p class="text-gray-600">{{ t('deliveries.noDeliveries') }}</p>
         </div>
 
         <!-- Deliveries Grid -->
@@ -33,7 +33,7 @@
           <div v-for="delivery in deliveries" :key="delivery.id"
             class="border border-gray-200 rounded-lg overflow-hidden hover:border-primary transition-colors cursor-pointer"
             @click="openPhoto(delivery.photoUrl)">
-            <img :src="delivery.photoUrl" :alt="`Livraison du ${formatDate(delivery.capturedAt)}`"
+            <img :src="delivery.photoUrl" :alt="t('deliveries.deliveryFrom', { date: formatDate(delivery.capturedAt) })"
               class="w-full h-48 object-cover">
             <div class="p-3">
               <div class="flex items-center gap-2 text-sm text-gray-600">
@@ -68,6 +68,8 @@ interface DeliveryDisplay {
 }
 
 const props = defineProps<Props>()
+
+const { t } = useI18n()
 
 const isOpen = defineModel<boolean>({ required: true })
 const deliveries = ref<DeliveryDisplay[]>([])

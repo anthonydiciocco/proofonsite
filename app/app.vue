@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -17,8 +19,8 @@ useHead({
   }
 })
 
-const title = 'ProofOnSite — Photo log for every site delivery'
-const description = 'ProofOnSite is an offline-first PWA that replaces paper slips and scattered texts with a timestamped, bilingual log accessible to the whole team.'
+const title = computed(() => t('meta.home.title'))
+const description = computed(() => t('meta.home.description'))
 
 useSeoMeta({
   title,

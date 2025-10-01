@@ -4,7 +4,20 @@
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <UIcon name="i-lucide-loader-2" class="w-12 h-12 text-white animate-spin mx-auto mb-3" />
-        <p class="text-white text-lg font-medium">Chargement...</p>
+        <p class="text-white text-lg font-medium">{{ t('capture.loading') }}</p>
+      </div>
+    </div>
+
+    <!-- Archived State -->
+    <div v-else-if="isArchived" class="flex-1 flex items-center justify-center p-6">
+      <div class="text-center max-w-md bg-orange-600 p-8 rounded-2xl">
+        <UIcon name="i-lucide-archive-x" class="w-16 h-16 text-white mx-auto mb-4" />
+        <h2 class="text-2xl font-bold text-white mb-2">
+          {{ t('capture.archivedSite') }}
+        </h2>
+        <p class="text-orange-100 text-lg">
+          {{ t('capture.archivedSiteDescription') }}
+        </p>
       </div>
     </div>
 
@@ -13,10 +26,10 @@
       <div class="text-center max-w-md bg-red-600 p-8 rounded-2xl">
         <UIcon name="i-lucide-alert-circle" class="w-16 h-16 text-white mx-auto mb-4" />
         <h2 class="text-2xl font-bold text-white mb-2">
-          Code invalide
+          {{ t('capture.invalidCode') }}
         </h2>
         <p class="text-red-100 text-lg">
-          Ce QR code n'est pas valide
+          {{ t('capture.invalidCodeDescription') }}
         </p>
       </div>
     </div>
@@ -26,15 +39,15 @@
       <div class="text-center max-w-md bg-green-600 p-8 rounded-2xl">
         <UIcon name="i-lucide-check-circle" class="w-20 h-20 text-white mx-auto mb-4" />
         <h2 class="text-3xl font-bold text-white mb-3">
-          Envoyé !
+          {{ t('capture.sent') }}
         </h2>
         <p class="text-green-100 text-lg mb-8">
-          Livraison enregistrée avec succès
+          {{ t('capture.successDescription') }}
         </p>
         <button
           class="w-full bg-white text-green-600 font-bold text-xl py-5 px-6 rounded-xl hover:bg-green-50 active:scale-95 transition-all shadow-lg"
           @click="resetCapture">
-          Nouvelle livraison
+          {{ t('capture.newDelivery') }}
         </button>
       </div>
     </div>
@@ -51,12 +64,12 @@
           <button
             class="bg-white/20 backdrop-blur text-white font-bold text-lg py-5 rounded-xl hover:bg-white/30 active:scale-95 transition-all"
             @click="clearPhoto">
-            ✕ Annuler
+            {{ t('capture.cancelButton') }}
           </button>
           <button :disabled="uploading"
             class="bg-green-500 text-white font-bold text-lg py-5 rounded-xl hover:bg-green-600 active:scale-95 transition-all shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             @click="uploadPhoto">
-            {{ uploading ? '⏳ Envoi...' : '✓ Envoyer' }}
+            {{ uploading ? t('capture.sendingButton') : t('capture.sendButton') }}
           </button>
         </div>
       </div>
@@ -69,10 +82,10 @@
               <UIcon name="i-lucide-camera" class="w-32 h-32 text-black" />
             </div>
             <p class="text-white text-4xl font-black mb-3 tracking-tight">
-              PHOTO
+              {{ t('capture.photoButton') }}
             </p>
             <p class="text-white/80 text-xl font-semibold">
-              Tap to capture
+              {{ t('capture.tapToCapture') }}
             </p>
           </div>
         </label>
@@ -107,6 +120,7 @@ definePageMeta({
   layout: 'minimal'
 })
 
+const { t } = useI18n()
 const route = useRoute()
 const captureToken = route.params.captureToken as string
 
@@ -114,6 +128,7 @@ const captureToken = route.params.captureToken as string
 const site = ref<Site | null>(null)
 const loading = ref(true)
 const error = ref(false)
+const isArchived = ref(false)
 const success = ref(false)
 const uploading = ref(false)
 const photoFile = ref<File | null>(null)
@@ -126,9 +141,14 @@ onMounted(async () => {
     const response = await $fetch<{ site: Site }>(`/api/capture/${captureToken}/info`)
     site.value = response.site
   }
-  catch (err) {
+  catch (err: any) {
     console.error('Failed to load site:', err)
-    error.value = true
+    // Check if site is archived (403 error)
+    if (err.statusCode === 403) {
+      isArchived.value = true
+    } else {
+      error.value = true
+    }
   }
   finally {
     loading.value = false
@@ -144,13 +164,13 @@ async function handlePhotoSelect(event: Event) {
 
   // Validate file size (5MB max)
   if (file.size > 5 * 1024 * 1024) {
-    alert('La photo est trop volumineuse (maximum 5 MB)')
+    alert(t('capture.photoTooLarge'))
     return
   }
 
   // Validate file type
   if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
-    alert('Format non supporté (utilisez JPEG, PNG ou WebP)')
+    alert(t('capture.unsupportedFormat'))
     return
   }
 
@@ -193,9 +213,15 @@ async function uploadPhoto() {
     success.value = true
     clearPhoto()
   }
-  catch (err) {
+  catch (err: any) {
     console.error('Upload failed:', err)
-    alert('Erreur lors de l\'envoi. Veuillez réessayer.')
+
+    // Check if site was archived during upload
+    if (err.statusCode === 403) {
+      isArchived.value = true
+    } else {
+      alert(t('capture.uploadFailed'))
+    }
   }
   finally {
     uploading.value = false

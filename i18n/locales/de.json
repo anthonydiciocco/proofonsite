@@ -1,0 +1,474 @@
+{
+  "common": {
+    "appName": "",
+    "loading": "",
+    "error": "",
+    "success": "",
+    "cancel": "",
+    "confirm": "",
+    "save": "",
+    "delete": "",
+    "edit": "",
+    "close": "",
+    "back": "",
+    "next": "",
+    "submit": "",
+    "search": "",
+    "noResults": "",
+    "required": "",
+    "optional": "",
+    "yes": "",
+    "no": "",
+    "all": "",
+    "active": "",
+    "archived": "",
+    "refresh": "",
+    "language": ""
+  },
+  "nav": {
+    "home": "Start",
+    "dashboard": "Dashboard",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "cta": "Kostenlos testen",
+    "homeAriaLabel": "Zur Startseite",
+    "toggleMenuAriaLabel": "Menü öffnen/schließen",
+    "product": "Produkt",
+    "workflow": "Ablauf",
+    "benefits": "Vorteile",
+    "faq": "Häufige Fragen"
+  },
+  "hero": {
+    "headline": "Baustellengeprüft",
+    "title": "Visueller Nachweis jeder Lieferung, erfasst in 30 Sekunden",
+    "description": "QR-Code scannen und Foto machen. Kein Papierkram verloren, keine App nötig, keine Zeit verschwendet.",
+    "imageAlt": "ProofOnSite Erfassung in Aktion",
+    "badges": {
+      "liveCapture": "Live-Erfassung",
+      "fieldReady": "Baustellentauglich"
+    },
+    "cta": {
+      "demo": "In Aktion sehen",
+      "contact": "Per E-Mail kontaktieren"
+    }
+  },
+  "problem": {
+    "title": "Warum die Lieferungsverfolgung schwierig ist",
+    "description": "ProofOnSite eliminiert Zeitverluste durch verlorene Lieferscheine und chaotische Nachrichten mit einem einfachen, strukturierten Prozess für Ihre Teams.",
+    "painPoints": {
+      "lostSlips": {
+        "title": "Verlorene Lieferscheine",
+        "description": "Lieferbelege gehen leicht verloren oder werden beschädigt – das führt zu Problemen bei Nachweisen und Abrechnung."
+      },
+      "chatPhotos": {
+        "title": "Unübersichtliche Chat-Fotos",
+        "description": "Fotos in Messenger-Verläufen sind schwer wiederzufinden und unzuverlässig, wenn man einen Nachweis braucht."
+      },
+      "chasingConfirmations": {
+        "title": "Ständiges Nachhaken",
+        "description": "Bauleiter verlieren Stunden damit, Lieferungen zu bestätigen und Material nachzuverfolgen."
+      }
+    }
+  },
+  "solution": {
+    "title": "Einfacher Ablauf in 4 Schritten",
+    "description": "Ein QR-Code, 4 schnelle Aktionen. Keine Schulung erforderlich, keine App zum Herunterladen.",
+    "howItWorks": {
+      "title": "So funktioniert's",
+      "steps": {
+        "setup": {
+          "title": "Baustelle einrichten",
+          "description": "Laden Sie den QR-Code herunter und platzieren Sie ihn an der Anlieferungszone."
+        },
+        "scan": {
+          "title": "QR-Code scannen",
+          "description": "Bei Lieferung scannt jeder Mitarbeiter einfach den Code mit dem Smartphone."
+        },
+        "capture": {
+          "title": "Foto aufnehmen",
+          "description": "Lieferschein und Material fotografieren – fertig in unter 30 Sekunden."
+        },
+        "notify": {
+          "title": "Automatische Benachrichtigung",
+          "description": "Der Bauleiter erhält sofort eine Meldung mit Zeitstempel und Foto."
+        }
+      }
+    },
+    "workflowSummary": {
+      "title": "Kompletter Ablauf in unter 2 Minuten",
+      "description": "Baustellen-QR scannen, Nachweis erfassen, Büro benachrichtigen. Schnell, zuverlässig und für echte Baustellenbedingungen entwickelt."
+    }
+  },
+  "benefits": {
+    "title": "Das bringt ProofOnSite Ihrem Team",
+    "subtitle": "Einfach für die Mannschaft, leistungsstark für die Bauleitung. Keine Benutzerlizenzen, keine komplizierte Einrichtung.",
+    "features": {
+      "zeroTraining": {
+        "title": "Keine Schulung nötig",
+        "description": "QR-Code scannen, Foto machen, fertig. Jeder versteht es sofort.",
+        "extendedDescription": "Keine Installation, keine Registrierung, kein Login. Der QR-Code öffnet direkt das Erfassungsformular.",
+        "highlights": {
+          "clearInstructions": "Klare Anweisungen auf Deutsch",
+          "noAppDownload": "Keine App-Installation",
+          "fastWorkflow": "Unter 30 Sekunden pro Erfassung"
+        }
+      },
+      "structuredArchive": {
+        "title": "Strukturiertes Archiv",
+        "description": "Filtern Sie nach Lieferant, Gewerk oder Datum. Export als CSV oder PDF für Abrechnung und Audits."
+      },
+      "instantAlerts": {
+        "title": "Sofortmeldungen",
+        "description": "Die Bauleitung wird automatisch per E-Mail informiert – keine verschollenen Nachrichten mehr."
+      }
+    }
+  },
+  "reality": {
+    "title": "Für Baustellenbedingungen entwickelt",
+    "subtitle": "Gemeinsam mit Bauleitern entwickelt – jedes Detail löst ein echtes Problem auf der Baustelle.",
+    "highlights": {
+      "offline": {
+        "title": "Offline-Erfassung",
+        "detail": "Lieferungen auch ohne Internet erfassen. Die Daten werden automatisch synchronisiert, sobald eine Verbindung besteht."
+      },
+      "toughConditions": {
+        "title": "Robuste Bedienung",
+        "detail": "Große Touchflächen, hoher Kontrast und Upload-Optimierung für langsame Verbindungen."
+      },
+      "globalReady": {
+        "title": "International einsetzbar",
+        "detail": "Verfügbar in Deutsch, Englisch, Französisch, Spanisch, Portugiesisch und Chinesisch."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Einfache Preisgestaltung pro Baustelle",
+    "subtitle": "Aktivieren Sie ProofOnSite beim Baustart und pausieren Sie es bei Abschluss – zahlen Sie nicht für ungenutzte Lizenzen.",
+    "perSite": "Pro Baustelle",
+    "currency": "$",
+    "badge": "Pilotphase",
+    "perActiveSite": "Pro aktiver Baustelle",
+    "perMonth": "/ Monat",
+    "description": "Aktivieren Sie eine Baustelle nur, wenn Material angeliefert wird. Pausieren und fortsetzen Sie jederzeit – keine Jahresverträge, keine versteckten Kosten.",
+    "ctaButton": "30-Tage-Pilot starten",
+    "billingNote": "Monatliche Abrechnung nur für aktive Baustellen. Jederzeit kündbar oder pausierbar – wir senden eine Erinnerung vor jeder Verlängerung.",
+    "features": {
+      "unlimitedUploads": {
+        "title": "Unbegrenzte Erfassungen",
+        "description": "Jeder auf der Baustelle kann Nachweise erfassen – ohne zusätzliche Plätze oder Lizenzen."
+      },
+      "qrPacks": {
+        "title": "QR-Code-Pakete",
+        "description": "Jede Baustelle erhält einen eindeutigen QR-Code, druckfertig zum Anbringen vor Ort."
+      },
+      "offlineFirst": {
+        "title": "Offline-fähig",
+        "description": "Erfassung in 30 Sekunden mit automatischer Komprimierung und Hintergrund-Synchronisation."
+      },
+      "instantNotifications": {
+        "title": "Sofortbenachrichtigungen",
+        "description": "E-Mail-Benachrichtigungen automatisch an Bauleiter, Lieferanten und Auftraggeber."
+      },
+      "structuredExports": {
+        "title": "Strukturierte Exporte",
+        "description": "Durchsuchbares Protokoll mit CSV/PDF-Export für Abrechnungen und Audits."
+      },
+      "support": {
+        "title": "E-Mail-Support",
+        "description": "Deutschsprachiger Support bei Fragen oder technischen Problemen."
+      }
+    },
+    "cta": "30-Tage-Pilot starten"
+  },
+  "dashboard": {
+    "hello": "Hallo",
+    "welcome": "Willkommen in Ihrem ProofOnSite Dashboard",
+    "subtitle": "Verwalten Sie Ihre Baustellen und verfolgen Sie Lieferungen.",
+    "newSite": "Neue Baustelle anlegen",
+    "metrics": {
+      "total": "Baustellen gesamt",
+      "active": "Aktive Baustellen",
+      "archived": "Archivierte Baustellen",
+      "lastCreated": "Zuletzt erstellt",
+      "activeSites": "Aktive Baustellen",
+      "archivedSites": "Archivierte Baustellen",
+      "totalSites": "Baustellen gesamt",
+      "clickToFilter": "Klicken zum Filtern",
+      "clickToShowAll": "Klicken für alle anzeigen"
+    },
+    "sites": {
+      "title": "Ihre Baustellen",
+      "searchPlaceholder": "Suche nach Name, Adresse oder Code...",
+      "filterByStatus": "Nach Status filtern",
+      "addNew": "Baustelle hinzufügen",
+      "reset": "Zurücksetzen",
+      "columns": {
+        "site": "Baustelle",
+        "code": "Code",
+        "status": "Status",
+        "qrCode": "QR-Code",
+        "deliveries": "Lieferungen"
+      },
+      "status": {
+        "all": "Alle",
+        "active": "Aktiv",
+        "archived": "Archiviert"
+      },
+      "statusLabels": {
+        "active": "Aktiv",
+        "archived": "Archiviert"
+      },
+      "actions": {
+        "view": "Lieferungen anzeigen",
+        "edit": "Bearbeiten",
+        "archive": "Archivieren",
+        "reactivate": "Reaktivieren",
+        "downloadQR": "QR-Code herunterladen",
+        "delete": "Baustelle löschen"
+      },
+      "ariaLabels": {
+        "copySiteCode": "Baustellencode kopieren",
+        "moreActions": "Weitere Aktionen"
+      },
+      "form": {
+        "titleNew": "Neue Baustelle",
+        "titleEdit": "Baustelle bearbeiten",
+        "subtitle": "Geben Sie die Informationen für Ihre Baustelle ein.",
+        "nameLabel": "Baustellenname",
+        "namePlaceholder": "z.B. Neubau Hauptstraße 45",
+        "addressLabel": "Adresse",
+        "addressPlaceholder": "Hauptstraße 45, 10115 Berlin",
+        "statusLabel": "Status",
+        "statusOptions": {
+          "active": "Aktiv",
+          "archived": "Archiviert"
+        },
+        "saveButton": "Speichern",
+        "createButton": "Baustelle anlegen"
+      },
+      "resetFilters": "Filter zurücksetzen",
+      "validation": {
+        "nameMin": "Der Name muss mindestens 2 Zeichen lang sein",
+        "nameMax": "Der Name darf maximal 100 Zeichen lang sein",
+        "addressMin": "Die Adresse muss mindestens 5 Zeichen lang sein",
+        "addressMax": "Die Adresse darf maximal 200 Zeichen lang sein"
+      },
+      "toast": {
+        "created": "Baustelle angelegt",
+        "createdDescription": "Die Baustelle wurde erfolgreich angelegt.",
+        "updated": "Baustelle aktualisiert",
+        "updatedDescription": "Die Baustelle wurde erfolgreich aktualisiert.",
+        "deleted": "Baustelle gelöscht",
+        "deletedDescription": "Die Baustelle wurde erfolgreich gelöscht.",
+        "archived": "Baustelle archiviert",
+        "archivedDescription": "Die Baustelle wurde erfolgreich archiviert.",
+        "reactivated": "Baustelle reaktiviert",
+        "reactivatedDescription": "Die Baustelle wurde erfolgreich reaktiviert.",
+        "codeCopied": "Code kopiert",
+        "codeDescription": "Der Baustellencode wurde in die Zwischenablage kopiert.",
+        "qrReady": "QR-Code bereit",
+        "qrReadyDescription": "Der QR-Code-Download startet in Kürze.",
+        "errorSave": "Fehler beim Speichern der Baustelle",
+        "errorStatus": "Fehler beim Aktualisieren des Status",
+        "errorDelete": "Fehler beim Löschen der Baustelle",
+        "errorQR": "Fehler beim Generieren des QR-Codes",
+        "errorPDF": "Fehler beim Herunterladen des PDFs"
+      },
+      "delete": {
+        "title": "Baustelle löschen?",
+        "description": "Diese Aktion kann nicht rückgängig gemacht werden. Alle Lieferungsdaten für diese Baustelle werden dauerhaft gelöscht.",
+        "warning": "Dies wird alle Lieferungsdaten für diese Baustelle dauerhaft löschen.",
+        "confirmButton": "Ja, Baustelle löschen"
+      },
+      "empty": {
+        "default": "Keine Baustellen vorhanden.",
+        "search": "Keine Baustellen gefunden.",
+        "archived": "Keine archivierten Baustellen."
+      },
+      "errors": {
+        "loadTitle": "Fehler beim Laden",
+        "loadDescription": "Die Baustellen konnten nicht geladen werden."
+      }
+    }
+  },
+  "header": {
+    "logoutSuccess": "Erfolgreich abgemeldet",
+    "logoutError": "Abmeldung fehlgeschlagen. Bitte versuchen Sie es erneut."
+  },
+  "auth": {
+    "login": {
+      "title": "Anmelden",
+      "subtitle": "Zugriff auf Ihr Dashboard",
+      "fullSubtitle": "Melden Sie sich an, um Ihre Baustellen zu verwalten und Lieferungsprotokolle einzusehen.",
+      "email": {
+        "label": "E-Mail",
+        "placeholder": "ihre{'@'}email.de"
+      },
+      "password": {
+        "label": "Passwort",
+        "placeholder": "Geben Sie Ihr Passwort ein"
+      },
+      "submit": "Anmelden",
+      "noAccount": "Noch kein Konto?",
+      "register": "Registrieren",
+      "createAccess": "Zugang erstellen",
+      "successTitle": "Erfolgreich angemeldet",
+      "successDescription": "Willkommen zurück!",
+      "errorTitle": "Anmeldung fehlgeschlagen",
+      "errorDescription": "E-Mail oder Passwort ist falsch.",
+      "validation": {
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "passwordRequired": "Passwort ist erforderlich"
+      }
+    },
+    "register": {
+      "title": "Registrieren",
+      "subtitle": "Konto erstellen",
+      "heading": "Konto erstellen",
+      "fullSubtitle": "Erstellen Sie ein Konto, um Ihre Baustellen zu verwalten.",
+      "displayName": {
+        "label": "Name",
+        "placeholder": "Max Mustermann"
+      },
+      "email": {
+        "label": "E-Mail",
+        "placeholder": "ihre{'@'}email.de"
+      },
+      "password": {
+        "label": "Passwort",
+        "placeholder": "Mindestens 8 Zeichen"
+      },
+      "confirmPassword": {
+        "label": "Passwort bestätigen",
+        "placeholder": "Passwort erneut eingeben"
+      },
+      "submit": "Konto erstellen",
+      "hasAccount": "Bereits ein Konto?",
+      "login": "Anmelden",
+      "successTitle": "Konto erstellt",
+      "successDescription": "Ihr Konto wurde erfolgreich erstellt.",
+      "errorDescription": "Fehler beim Erstellen des Kontos. Bitte versuchen Sie es erneut.",
+      "validation": {
+        "nameMin": "Der Name muss mindestens 2 Zeichen lang sein",
+        "nameMax": "Der Name darf maximal 50 Zeichen lang sein",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "passwordMin": "Das Passwort muss mindestens 8 Zeichen lang sein",
+        "passwordMax": "Das Passwort darf maximal 100 Zeichen lang sein",
+        "passwordMismatch": "Die Passwörter stimmen nicht überein"
+      }
+    },
+    "logout": "Abmelden"
+  },
+  "capture": {
+    "title": "Lieferung erfassen",
+    "subtitle": "Fotografieren Sie den Lieferschein und das Material",
+    "uploadPhoto": {
+      "title": "Foto hochladen",
+      "description": "Machen Sie ein klares Foto vom Lieferschein und dem erhaltenen Material."
+    },
+    "submit": "Lieferung absenden",
+    "success": "Lieferung erfasst",
+    "error": "Upload fehlgeschlagen",
+    "uploading": "Wird hochgeladen...",
+    "offline": "Sie sind offline. Das Foto wird hochgeladen, sobald die Verbindung wiederhergestellt ist.",
+    "loading": "Baustelleninformationen werden geladen...",
+    "invalidCode": "Ungültiger QR-Code",
+    "invalidCodeDescription": "Dieser QR-Code ist ungültig oder abgelaufen. Bitte kontaktieren Sie Ihre Bauleitung.",
+    "archivedSite": "Archivierte Baustelle",
+    "archivedSiteDescription": "Diese Baustelle ist archiviert und akzeptiert keine neuen Lieferungen mehr. Kontaktieren Sie Ihre Bauleitung, um sie zu reaktivieren.",
+    "sent": "Gesendet!",
+    "successDescription": "Die Lieferung wurde erfasst und Ihre Bauleitung wurde benachrichtigt.",
+    "newDelivery": "Weitere Lieferung erfassen",
+    "cancelButton": "Abbrechen",
+    "sendButton": "Foto senden",
+    "sendingButton": "Wird gesendet...",
+    "photoButton": "Foto aufnehmen",
+    "tapToCapture": "Antippen, um Foto aufzunehmen",
+    "photoTooLarge": "Das Foto ist zu groß. Maximale Größe ist 5 MB.",
+    "unsupportedFormat": "Dateiformat nicht unterstützt. Bitte verwenden Sie JPG oder PNG.",
+    "uploadFailed": "Upload fehlgeschlagen. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+  },
+  "deliveries": {
+    "title": "Lieferungsprotokolle",
+    "site": "Baustelle",
+    "backToDashboard": "Zurück zum Dashboard",
+    "noDeliveries": "Keine Lieferungen für diese Baustelle erfasst.",
+    "loading": "Lieferungsprotokolle werden geladen...",
+    "deliveryFrom": "Lieferung vom",
+    "columns": {
+      "photo": "Foto",
+      "date": "Datum",
+      "actions": "Aktionen"
+    },
+    "viewPhoto": "Vollständiges Foto anzeigen"
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "description": "Alles per E-Mail – vereinbaren Sie eine persönliche Demo und erhalten Sie die Dokumentation für Ihr Team.",
+    "q1": {
+      "question": "Benötigen Mitarbeiter ein Konto, um Lieferungen zu erfassen?",
+      "answer": "Nein. Kein Konto, kein Passwort, kein Download. Der QR-Code öffnet ein sicheres Formular nur für diese Baustelle. Wir erfassen automatisch Zeitstempel und Geräte-ID."
+    },
+    "q2": {
+      "question": "Funktioniert es auch ohne Internetverbindung?",
+      "answer": "Ja. ProofOnSite speichert die Erfassung lokal, komprimiert die Dateien und synchronisiert automatisch, sobald das Gerät wieder Empfang hat. Ein Banner bestätigt die erfolgreiche Übertragung."
+    },
+    "q3": {
+      "question": "Können mehrere Personen benachrichtigt werden?",
+      "answer": "Ja. Bei jeder Baustelle können Sie optionale CC-E-Mail-Adressen hinzufügen, damit Beteiligte das gleiche Protokoll erhalten, ohne als Benutzer hinzugefügt zu werden."
+    },
+    "q4": {
+      "question": "Wie lange werden die Daten gespeichert?",
+      "answer": "Alle Lieferungsdaten werden sicher für die Dauer Ihres Abonnements gespeichert. Nach Beendigung haben Sie 30 Tage Zeit, um alle Daten zu exportieren."
+    }
+  },
+  "cta": {
+    "title": "Planen Sie Ihren Baustellen-Pilot",
+    "description": "Beantworten Sie drei kurze Fragen und wir bereiten ein druckfertiges QR-Paket, einen Einführungsleitfaden und eine Video-Schulung vor – alles innerhalb von 72 Stunden.",
+    "primaryButton": "Termin buchen",
+    "secondaryButton": "Produktdatenblatt herunterladen"
+  },
+  "footer": {
+    "tagline": "Visueller Nachweis für jede Lieferung. Für die Baustelle entwickelt.",
+    "rights": "Alle Rechte vorbehalten.",
+    "emailAriaLabel": "E-Mail senden",
+    "product": {
+      "title": "Produkt",
+      "demo": "Demo",
+      "pricing": "Preise",
+      "roadmap": "Roadmap"
+    },
+    "support": {
+      "title": "Support",
+      "implementation": "Implementierung",
+      "pilot": "Pilotprogramm",
+      "email": "E-Mail-Support"
+    },
+    "legal": {
+      "title": "Rechtliches",
+      "terms": "AGB",
+      "privacy": "Datenschutz",
+      "security": "Sicherheit"
+    },
+    "startPilot": "Pilot starten"
+  },
+  "meta": {
+    "home": {
+      "title": "ProofOnSite - Visueller Nachweis für Baustellenlieferungen",
+      "description": "Erhalten Sie sofortigen visuellen Nachweis jeder Lieferung auf Ihrer Baustelle. Einfache QR-Code-Verfolgung ohne App-Download. Von Bauteams genutzt."
+    },
+    "dashboard": {
+      "title": "Dashboard - ProofOnSite"
+    },
+    "login": {
+      "title": "Anmelden - ProofOnSite"
+    },
+    "register": {
+      "title": "Registrieren - ProofOnSite"
+    }
+  }
+}

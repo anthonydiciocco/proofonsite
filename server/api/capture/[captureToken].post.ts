@@ -40,6 +40,14 @@ export default defineEventHandler(async (event) => {
     })
   }
 
+  // 🔒 Block archived sites
+  if (site.status === 'archived') {
+    throw createError({
+      statusCode: 403,
+      message: 'This site is archived. Contact your site manager to reactivate it.'
+    })
+  }
+
   // 2. Parse multipart form data
   const formData = await readFormData(event)
   const photoFile = formData.get('photo')

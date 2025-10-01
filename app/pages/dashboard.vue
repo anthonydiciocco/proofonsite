@@ -17,7 +17,9 @@ useHead({
 })
 
 const user = useAuthUser()
-const greeting = computed(() => user.value?.displayName ?? user.value?.email ?? 'team member')
+const { t } = useI18n()
+
+const greeting = computed(() => user.value?.displayName ?? user.value?.email ?? t('dashboard.welcome'))
 
 const { data: sitesData, error: sitesError, status: sitesStatus, refresh: refreshSites } = await useFetch<Site[]>(
   '/api/sites',
@@ -35,11 +37,11 @@ const searchTerm = ref('')
 const statusFilter = ref<'all' | SiteStatus>('all')
 const busySiteIds = ref<string[]>([])
 
-const statusOptions = [
-  { label: 'All', value: 'all' },
-  { label: 'Active', value: 'active' },
-  { label: 'Archived', value: 'archived' }
-]
+const statusOptions = computed(() => [
+  { label: t('dashboard.sites.status.all'), value: 'all' },
+  { label: t('dashboard.sites.status.active'), value: 'active' },
+  { label: t('dashboard.sites.status.archived'), value: 'archived' }
+])
 
 const sites = computed(() => sitesData.value ?? [])
 
@@ -99,7 +101,7 @@ const UDropdownMenu = resolveComponent('UDropdownMenu')
 
 const columns: TableColumn<Site>[] = [{
   accessorKey: 'name',
-  header: 'Site',
+  header: () => t('dashboard.sites.columns.site'),
   meta: {
     style: {
       th: { width: '360px', minWidth: '360px', maxWidth: '360px' },
@@ -115,7 +117,7 @@ const columns: TableColumn<Site>[] = [{
   }
 }, {
   accessorKey: 'referenceCode',
-  header: 'Code',
+  header: () => t('dashboard.sites.columns.code'),
   meta: {
     style: {
       th: { width: '140px', minWidth: '140px' },
@@ -136,13 +138,13 @@ const columns: TableColumn<Site>[] = [{
             await copyReferenceCode(site)
           }
         },
-        'aria-label': 'Copy site code'
+        'aria-label': t('dashboard.sites.ariaLabels.copySiteCode')
       })
     ])
   }
 }, {
   accessorKey: 'status',
-  header: 'Status',
+  header: () => t('dashboard.sites.columns.status'),
   meta: {
     style: {
       th: { width: '100px', minWidth: '100px' },
@@ -152,7 +154,7 @@ const columns: TableColumn<Site>[] = [{
   cell: ({ row }) => {
     const site = row.original
     const variant = site.status === 'active' ? 'success' : 'neutral'
-    const label = site.status === 'active' ? 'Active' : 'Archived'
+    const label = site.status === 'active' ? t('dashboard.sites.statusLabels.active') : t('dashboard.sites.statusLabels.archived')
     return h(
       UBadge,
       { color: variant, variant: 'subtle', class: 'capitalize' },
@@ -161,7 +163,7 @@ const columns: TableColumn<Site>[] = [{
   }
 }, {
   id: 'qrcode',
-  header: 'QR Code',
+  header: () => t('dashboard.sites.columns.qrCode'),
   enableSorting: false,
   meta: {
     style: {
@@ -183,11 +185,11 @@ const columns: TableColumn<Site>[] = [{
         onClick: () => downloadQRCodePDF(site)
       },
       'aria-label': `Download QR code for ${site.name}`
-    }, () => 'Download')
+    }, () => t('dashboard.sites.actions.downloadQR'))
   }
 }, {
   id: 'deliveries',
-  header: 'Deliveries',
+  header: () => t('dashboard.sites.columns.deliveries'),
   enableSorting: false,
   meta: {
     style: {
@@ -209,7 +211,7 @@ const columns: TableColumn<Site>[] = [{
         onClick: () => openDeliveriesModal(site)
       },
       'aria-label': `View deliveries for ${site.name}`
-    }, () => 'View')
+    }, () => t('dashboard.sites.actions.view'))
   }
 }, {
   id: 'actions',
@@ -227,7 +229,7 @@ const columns: TableColumn<Site>[] = [{
     const busy = siteIsBusy(site.id)
     const items: DropdownMenuItem[][] = [[
       {
-        label: 'Edit',
+        label: t('dashboard.sites.actions.edit'),
         icon: 'i-lucide-pencil',
         disabled: busy,
         onSelect() {
@@ -235,7 +237,7 @@ const columns: TableColumn<Site>[] = [{
         }
       },
       {
-        label: site.status === 'active' ? 'Archive' : 'Reactivate',
+        label: site.status === 'active' ? t('dashboard.sites.actions.archive') : t('dashboard.sites.actions.reactivate'),
         icon: site.status === 'active' ? 'i-lucide-archive' : 'i-lucide-undo',
         disabled: busy,
         onSelect() {
@@ -244,7 +246,7 @@ const columns: TableColumn<Site>[] = [{
       }
     ], [
       {
-        label: 'Delete',
+        label: t('dashboard.sites.actions.delete'),
         icon: 'i-lucide-trash-2',
         color: 'error',
         disabled: busy,
@@ -267,28 +269,28 @@ const columns: TableColumn<Site>[] = [{
           loading: busy,
           disabled: busy
         },
-        'aria-label': 'More actions'
+        'aria-label': t('dashboard.sites.ariaLabels.moreActions')
       }))
     ])
   }
 }]
 
-const formSchema = z.object({
+const getFormSchema = () => z.object({
   name: z
     .string()
-    .min(2, 'Le nom doit contenir au moins 2 caractères')
-    .max(120, 'Le nom doit contenir 120 caractères ou moins')
+    .min(2, t('dashboard.sites.validation.nameMin'))
+    .max(120, t('dashboard.sites.validation.nameMax'))
     .transform(value => value.trim()),
   address: z
     .string()
-    .min(5, 'Address must be at least 5 characters')
-    .max(240, 'Address must be 240 characters or less')
+    .min(5, t('dashboard.sites.validation.addressMin'))
+    .max(240, t('dashboard.sites.validation.addressMax'))
     .transform(value => value.trim()),
   status: z.enum(['active', 'archived'] as const)
 })
 
-type SiteForm = z.infer<typeof formSchema>
-type SiteFormInput = z.input<typeof formSchema>
+type SiteForm = z.infer<ReturnType<typeof getFormSchema>>
+type SiteFormInput = z.input<ReturnType<typeof getFormSchema>>
 
 const isFormOpen = ref(false)
 const formSubmitting = ref(false)
@@ -356,7 +358,7 @@ function handleRequestError(error: unknown, fallbackMessage: string) {
     ?? fallbackMessage
 
   toast.add({
-    title: 'Error',
+    title: t('common.error'),
     description: message,
     color: 'error'
   })
@@ -382,8 +384,8 @@ async function submitSite(event: { data?: SiteForm | null }) {
         body: payload
       })
       toast.add({
-        title: 'Site updated',
-        description: 'Information saved.',
+        title: t('dashboard.sites.toast.updated'),
+        description: t('dashboard.sites.toast.updatedDescription'),
         color: 'success',
         icon: 'i-lucide-check-circle'
       })
@@ -393,8 +395,8 @@ async function submitSite(event: { data?: SiteForm | null }) {
         body: payload
       })
       toast.add({
-        title: 'Site created',
-        description: 'Download the QR code to get started.',
+        title: t('dashboard.sites.toast.created'),
+        description: t('dashboard.sites.toast.createdDescription'),
         color: 'success',
         icon: 'i-lucide-check-circle'
       })
@@ -403,7 +405,7 @@ async function submitSite(event: { data?: SiteForm | null }) {
     closeForm()
     await refreshSites()
   } catch (error) {
-    handleRequestError(error, 'Unable to save the site.')
+    handleRequestError(error, t('dashboard.sites.toast.errorSave'))
   } finally {
     formSubmitting.value = false
   }
@@ -428,17 +430,17 @@ async function toggleSiteStatus(site: Site) {
     })
 
     toast.add({
-      title: nextStatus === 'active' ? 'Site reactivated' : 'Site archived',
+      title: nextStatus === 'active' ? t('dashboard.sites.toast.reactivated') : t('dashboard.sites.toast.archived'),
       description: nextStatus === 'active'
-        ? 'The site reappears in your active lists.'
-        : 'You can reactivate it at any time.',
+        ? t('dashboard.sites.toast.reactivatedDescription')
+        : t('dashboard.sites.toast.archivedDescription'),
       color: 'success',
       icon: 'i-lucide-check-circle'
     })
 
     await refreshSites()
   } catch (error) {
-    handleRequestError(error, 'Unable to update status.')
+    handleRequestError(error, t('dashboard.sites.toast.errorStatus'))
   } finally {
     setSiteBusy(site.id, false)
   }
@@ -476,8 +478,8 @@ async function deleteSite() {
     })
 
     toast.add({
-      title: 'Site deleted',
-      description: 'Site data has been removed.',
+      title: t('dashboard.sites.toast.deleted'),
+      description: t('dashboard.sites.toast.deletedDescription'),
       color: 'success',
       icon: 'i-lucide-check-circle'
     })
@@ -485,7 +487,7 @@ async function deleteSite() {
     closeDeleteModal()
     await refreshSites()
   } catch (error) {
-    handleRequestError(error, 'Unable to delete the site.')
+    handleRequestError(error, t('dashboard.sites.toast.errorDelete'))
   } finally {
     deleteInProgress.value = false
   }
@@ -494,14 +496,14 @@ async function deleteSite() {
 const isLoading = computed(() => sitesStatus.value === 'pending')
 const emptyMessage = computed(() => {
   if (searchTerm.value) {
-    return 'No sites match your search.'
+    return t('dashboard.sites.empty.search')
   }
 
   if (statusFilter.value === 'archived') {
-    return 'No archived sites.'
+    return t('dashboard.sites.empty.archived')
   }
 
-  return 'Add your first site to start collecting evidence.'
+  return t('dashboard.sites.empty.default')
 })
 
 const isFormEditing = computed(() => Boolean(editingSite.value))
@@ -511,8 +513,8 @@ const filterHasResults = computed(() => filteredSites.value.length > 0)
 async function copyReferenceCode(site: Site) {
   await copy(site.referenceCode)
   toast.add({
-    title: 'Code copied',
-    description: `The code ${site.referenceCode} is ready to be pasted.`,
+    title: t('dashboard.sites.toast.codeCopied'),
+    description: t('dashboard.sites.toast.codeDescription', { code: site.referenceCode }),
     color: 'success',
     icon: 'i-lucide-copy'
   })
@@ -555,13 +557,13 @@ async function downloadQRCodePDF(site: Site) {
     window.URL.revokeObjectURL(url)
 
     toast.add({
-      title: 'QR Code ready',
-      description: `PDF downloaded for ${site.name}. Print and place on site.`,
+      title: t('dashboard.sites.toast.qrReady'),
+      description: t('dashboard.sites.toast.qrReadyDescription', { name: site.name }),
       color: 'success',
       icon: 'i-lucide-download'
     })
   } catch (error) {
-    handleRequestError(error, 'Unable to generate QR code PDF.')
+    handleRequestError(error, t('dashboard.sites.toast.errorQR'))
   } finally {
     setSiteBusy(site.id, false)
   }
@@ -579,20 +581,20 @@ function refreshFilters() {
       <div class="flex flex-wrap items-start justify-between gap-6">
         <div class="space-y-2">
           <h1 class="text-3xl font-semibold text-[color:var(--ui-text-highlighted)]">
-            Hello {{ greeting }}
+            {{ t('dashboard.hello', { name: greeting }) }}
           </h1>
           <p class="max-w-2xl text-sm text-[color:var(--ui-text-muted)]">
-            Manage your construction sites and generate QR codes for delivery tracking.
+            {{ t('dashboard.subtitle') }}
           </p>
         </div>
 
         <div class="flex flex-wrap gap-3">
           <UButton color="neutral" variant="outline" icon="i-lucide-rotate-cw" :loading="isLoading"
             @click="refreshSites">
-            Refresh
+            {{ t('common.refresh') }}
           </UButton>
           <UButton color="secondary" icon="i-lucide-plus" @click="startCreateSite">
-            New site
+            {{ t('dashboard.newSite') }}
           </UButton>
         </div>
       </div>
@@ -602,13 +604,13 @@ function refreshFilters() {
           @click="statusFilter = 'active'">
           <div class="space-y-2">
             <p class="text-sm text-[color:var(--ui-text-muted)]">
-              Active sites
+              {{ t('dashboard.metrics.activeSites') }}
             </p>
             <p class="text-3xl font-semibold text-[color:var(--ui-text-highlighted)]">
               {{ metrics.active }}
             </p>
             <p class="text-xs text-[color:var(--ui-text-muted)]">
-              Click to filter
+              {{ t('dashboard.metrics.clickToFilter') }}
             </p>
           </div>
         </UCard>
@@ -617,13 +619,13 @@ function refreshFilters() {
           @click="statusFilter = 'archived'">
           <div class="space-y-2">
             <p class="text-sm text-[color:var(--ui-text-muted)]">
-              Archived sites
+              {{ t('dashboard.metrics.archivedSites') }}
             </p>
             <p class="text-3xl font-semibold text-[color:var(--ui-text-highlighted)]">
               {{ metrics.archived }}
             </p>
             <p class="text-xs text-[color:var(--ui-text-muted)]">
-              Click to filter
+              {{ t('dashboard.metrics.clickToFilter') }}
             </p>
           </div>
         </UCard>
@@ -632,13 +634,13 @@ function refreshFilters() {
           @click="statusFilter = 'all'">
           <div class="space-y-2">
             <p class="text-sm text-[color:var(--ui-text-muted)]">
-              Total sites
+              {{ t('dashboard.metrics.totalSites') }}
             </p>
             <p class="text-3xl font-semibold text-[color:var(--ui-text-highlighted)]">
               {{ metrics.total }}
             </p>
             <p class="text-xs text-[color:var(--ui-text-muted)]">
-              Click to show all
+              {{ t('dashboard.metrics.clickToShowAll') }}
             </p>
           </div>
         </UCard>
@@ -648,7 +650,7 @@ function refreshFilters() {
         <div class="flex flex-col gap-6">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div class="flex flex-1 flex-wrap items-center gap-3">
-              <UInput v-model="searchTerm" placeholder="Search by name, address or code..." icon="i-lucide-search"
+              <UInput v-model="searchTerm" :placeholder="t('dashboard.sites.searchPlaceholder')" icon="i-lucide-search"
                 class="min-w-[240px] flex-1" />
 
               <URadioGroup v-model="statusFilter" :items="statusOptions" orientation="horizontal" variant="table"
@@ -657,13 +659,12 @@ function refreshFilters() {
 
             <UButton v-if="searchTerm || statusFilter !== 'all'" color="neutral" variant="ghost" icon="i-lucide-eraser"
               @click="refreshFilters">
-              Reset
+              {{ t('dashboard.sites.resetFilters') }}
             </UButton>
           </div>
-
           <div class="space-y-4">
-            <UAlert v-if="sitesError" color="error" variant="subtle" title="Unable to load your sites"
-              description="Refresh the page or try again later." />
+            <UAlert v-if="sitesError" color="error" variant="subtle" :title="t('dashboard.sites.errors.loadTitle')"
+              :description="t('dashboard.sites.errors.loadDescription')" />
 
             <UTable :data="filteredSites" :columns="columns" sticky class="min-h-[360px]" :loading="isLoading"
               :empty="emptyMessage" />
@@ -684,36 +685,36 @@ function refreshFilters() {
           <div class="space-y-6">
             <div class="space-y-1">
               <h2 class="text-xl font-semibold text-[color:var(--ui-text-highlighted)]">
-                {{ isFormEditing ? 'Edit site' : 'New site' }}
+                {{ isFormEditing ? t('dashboard.sites.form.titleEdit') : t('dashboard.sites.form.titleNew') }}
               </h2>
               <p class="text-sm text-[color:var(--ui-text-muted)]">
-                The information will be visible in the on-site capture PWA.
+                {{ t('dashboard.sites.form.subtitle') }}
               </p>
             </div>
 
-            <UForm :state="formState" :schema="formSchema" class="space-y-5" @submit="submitSite">
-              <UFormField name="name" label="Site name" required>
-                <UInput v-model="formState.name" placeholder="Ex: Tour du Havre Phase 2" autofocus />
+            <UForm :state="formState" :schema="getFormSchema()" class="space-y-5" @submit="submitSite">
+              <UFormField name="name" :label="t('dashboard.sites.form.nameLabel')" required>
+                <UInput v-model="formState.name" :placeholder="t('dashboard.sites.form.namePlaceholder')" autofocus />
               </UFormField>
 
-              <UFormField name="address" label="Address" required>
-                <UTextarea v-model="formState.address" placeholder="Ex: 1455 Rue Peel, Montreal" auto-resize
-                  :rows="2" />
+              <UFormField name="address" :label="t('dashboard.sites.form.addressLabel')" required>
+                <UTextarea v-model="formState.address" :placeholder="t('dashboard.sites.form.addressPlaceholder')"
+                  auto-resize :rows="2" />
               </UFormField>
 
-              <UFormField name="status" label="Status">
+              <UFormField name="status" :label="t('dashboard.sites.form.statusLabel')">
                 <URadioGroup v-model="formState.status" orientation="horizontal" variant="table" size="sm" :items="[
-                  { label: 'Active', value: 'active' },
-                  { label: 'Archived', value: 'archived' }
+                  { label: t('dashboard.sites.form.statusOptions.active'), value: 'active' },
+                  { label: t('dashboard.sites.form.statusOptions.archived'), value: 'archived' }
                 ]" />
               </UFormField>
 
               <div class="flex justify-end gap-3">
                 <UButton color="neutral" variant="ghost" @click.prevent="closeForm">
-                  Cancel
+                  {{ t('common.cancel') }}
                 </UButton>
                 <UButton type="submit" color="secondary" :loading="formSubmitting">
-                  {{ isFormEditing ? 'Save' : 'Create site' }}
+                  {{ isFormEditing ? t('dashboard.sites.form.saveButton') : t('dashboard.sites.form.createButton') }}
                 </UButton>
               </div>
             </UForm>
@@ -726,20 +727,20 @@ function refreshFilters() {
       <template #content>
         <UCard>
           <div class="space-y-5">
-            <UAlert color="error" variant="subtle" icon="i-lucide-alert-triangle" title="Delete this site?"
-              :description="`The site ${sitePendingDeletion?.name ?? ''} will be permanently removed.`" />
+            <UAlert color="error" variant="subtle" icon="i-lucide-alert-triangle"
+              :title="t('dashboard.sites.delete.title')"
+              :description="t('dashboard.sites.delete.description', { name: sitePendingDeletion?.name ?? '' })" />
 
             <p class="text-sm text-[color:var(--ui-text-muted)]">
-              This action is irreversible. Captured evidence will remain accessible via your Aurora archives if you
-              exported them previously.
+              {{ t('dashboard.sites.delete.warning') }}
             </p>
 
             <div class="flex justify-end gap-3">
               <UButton color="neutral" variant="ghost" @click="closeDeleteModal">
-                Cancel
+                {{ t('common.cancel') }}
               </UButton>
               <UButton color="error" :loading="deleteInProgress" icon="i-lucide-trash-2" @click="deleteSite">
-                Delete permanently
+                {{ t('dashboard.sites.delete.confirmButton') }}
               </UButton>
             </div>
           </div>

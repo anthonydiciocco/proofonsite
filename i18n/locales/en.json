@@ -1,0 +1,474 @@
+{
+  "common": {
+    "appName": "ProofOnSite",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "search": "Search",
+    "noResults": "No results",
+    "required": "Required",
+    "optional": "Optional",
+    "yes": "Yes",
+    "no": "No",
+    "all": "All",
+    "active": "Active",
+    "archived": "Archived",
+    "refresh": "Refresh",
+    "language": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "login": "Log In",
+    "register": "Sign Up",
+    "logout": "Log Out",
+    "features": "Features",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "cta": "Free Trial",
+    "homeAriaLabel": "Go to home",
+    "toggleMenuAriaLabel": "Toggle navigation menu",
+    "product": "Product",
+    "workflow": "How It Works",
+    "benefits": "Benefits",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "headline": "Field-tested",
+    "title": "Visual proof of every delivery, captured in 30 seconds",
+    "description": "Scan the site QR code and snap a photo. No lost paperwork, no app download, no wasted time.",
+    "imageAlt": "ProofOnSite capture in action",
+    "badges": {
+      "liveCapture": "Live Capture",
+      "fieldReady": "Field Ready"
+    },
+    "cta": {
+      "demo": "See it in action",
+      "contact": "Contact us by email"
+    }
+  },
+  "problem": {
+    "title": "Why tracking deliveries is such a headache",
+    "description": "ProofOnSite eliminates the wasted time on lost paper slips and scattered text threads by providing a simple, structured flow your teams can actually use.",
+    "painPoints": {
+      "lostSlips": {
+        "title": "Delivery slips get lost",
+        "description": "Paper tickets easily get damaged or misplaced, creating problems with accountability and billing."
+      },
+      "chatPhotos": {
+        "title": "Photos buried in chat threads",
+        "description": "Images and messages in group chats get buried fast, and when you need proof, you can't find it."
+      },
+      "chasingConfirmations": {
+        "title": "Site managers chasing confirmations",
+        "description": "Spend 2 hours per week on calls and texts to confirm deliveries because there's no centralized record."
+      }
+    }
+  },
+  "solution": {
+    "title": "Simple 4-step workflow",
+    "description": "One QR code, 4 quick actions. No training required, no app to download.",
+    "howItWorks": {
+      "title": "How it works",
+      "steps": {
+        "setup": {
+          "title": "Generate QR",
+          "description": "Generate and print the site QR code."
+        },
+        "scan": {
+          "title": "Scan QR",
+          "description": "Open your camera and scan the code."
+        },
+        "capture": {
+          "title": "Record proof",
+          "description": "Take a photo and submit."
+        },
+        "notify": {
+          "title": "View history",
+          "description": "Search and view timestamped proof anytime."
+        }
+      }
+    },
+    "workflowSummary": {
+      "title": "Full flow in under 2 minutes",
+      "description": "Scan site QR, capture proof, notify the office. Fast, reliable, and designed for real field conditions."
+    }
+  },
+  "benefits": {
+    "title": "What ProofOnSite brings to your team",
+    "subtitle": "Simple for crews, powerful for managers. No per-user licensing, no complex rollout.",
+    "features": {
+      "zeroTraining": {
+        "title": "Zero training for crews",
+        "description": "Ready in seconds: two big buttons and clear on-screen instructions. No account or install — just scan and submit.",
+        "extendedDescription": "One button and clear on-screen guidance make capture instant. No account, no install — just photo and send. Uploads are optimized for weak connections and sync automatically.",
+        "highlights": {
+          "clearInstructions": "Simple instructions.",
+          "noAppDownload": "No app download, no account creation.",
+          "fastWorkflow": "Under 30-second workflow"
+        }
+      },
+      "structuredArchive": {
+        "title": "Structured archive of proof",
+        "description": "Filter by supplier, trade, or pour. Export CSV or PDF for reconciliations and audits."
+      },
+      "instantAlerts": {
+        "title": "Instant alerts for managers",
+        "description": "Automatically notify foremen, project managers, or clients. No additional user licenses required."
+      }
+    }
+  },
+  "reality": {
+    "title": "Built with field conditions in mind",
+    "subtitle": "We co-designed the experience with site managers — every detail addresses a real pain point observed in the field.",
+    "highlights": {
+      "offline": {
+        "title": "Works offline",
+        "detail": "Capture deliveries offline. Submissions sync automatically once connection is restored."
+      },
+      "toughConditions": {
+        "title": "Built for tough conditions",
+        "detail": "Large touch targets, high-contrast interface, and upload optimizations for low-bandwidth environments."
+      },
+      "globalReady": {
+        "title": "Multilingual support",
+        "detail": "Interface and notifications support multiple languages to keep teams and suppliers aligned."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Simple pricing, per site",
+    "subtitle": "Activate ProofOnSite when the job starts, pause it when the project wraps — don't pay for idle licenses.",
+    "perSite": "Per site",
+    "currency": "$",
+    "badge": "Pilot Ready",
+    "perActiveSite": "Per active site",
+    "perMonth": "/month",
+    "description": "Activate a site only when materials are flowing. Pause and resume in seconds — no annual commitment, no hidden tiers.",
+    "ctaButton": "Start 30-day pilot",
+    "billingNote": "Monthly billing for active sites only. Cancel or pause anytime — we send a reminder before each renewal.",
+    "features": {
+      "unlimitedUploads": {
+        "title": "Unlimited uploads",
+        "description": "Capture proof from anyone on-site without adding seats or licenses."
+      },
+      "qrPacks": {
+        "title": "Printable QR code per site",
+        "description": "Each site gets a unique QR code, ready to print and post on-site."
+      },
+      "offlineFirst": {
+        "title": "Offline-first mobile flow",
+        "description": "30-second capture with automatic compression and background sync."
+      },
+      "instantNotifications": {
+        "title": "Instant notifications",
+        "description": "Receive email notifications, automatically sent to managers, suppliers, and clients."
+      },
+      "structuredExports": {
+        "title": "Structured archive",
+        "description": "Searchable log with CSV/PDF exports for reconciliations and audits."
+      },
+      "support": {
+        "title": "Secure by default",
+        "description": "Site-scoped access, automatic timestamping, and data retained in-house only."
+      }
+    },
+    "cta": "Start 30-day pilot"
+  },
+  "dashboard": {
+    "hello": "Hello",
+    "welcome": "Welcome to your ProofOnSite dashboard",
+    "subtitle": "Manage your sites and track deliveries.",
+    "newSite": "Create new site",
+    "metrics": {
+      "total": "Total sites",
+      "active": "Active sites",
+      "archived": "Archived sites",
+      "lastCreated": "Last created",
+      "activeSites": "Active sites",
+      "archivedSites": "Archived sites",
+      "totalSites": "Total sites",
+      "clickToFilter": "Click to filter",
+      "clickToShowAll": "Click to show all"
+    },
+    "sites": {
+      "title": "Your sites",
+      "searchPlaceholder": "Search by name, address or code...",
+      "filterByStatus": "Filter by status",
+      "addNew": "Add site",
+      "reset": "Reset",
+      "columns": {
+        "site": "Site",
+        "code": "Code",
+        "status": "Status",
+        "qrCode": "QR Code",
+        "deliveries": "Deliveries"
+      },
+      "status": {
+        "all": "All sites",
+        "active": "Active",
+        "archived": "Archived"
+      },
+      "statusLabels": {
+        "active": "Active",
+        "archived": "Archived"
+      },
+      "actions": {
+        "view": "View deliveries",
+        "edit": "Edit site",
+        "archive": "Archive site",
+        "reactivate": "Reactivate site",
+        "downloadQR": "Download QR code",
+        "delete": "Delete site"
+      },
+      "ariaLabels": {
+        "copySiteCode": "Copy site code",
+        "moreActions": "More actions"
+      },
+      "form": {
+        "titleNew": "Create new site",
+        "titleEdit": "Edit site",
+        "subtitle": "Fill in the site information.",
+        "nameLabel": "Site name",
+        "namePlaceholder": "e.g., Maple Ridge Residential - Phase 2",
+        "addressLabel": "Site address",
+        "addressPlaceholder": "e.g., 1234 Main Street, Toronto, ON",
+        "statusLabel": "Site status",
+        "statusOptions": {
+          "active": "Active",
+          "archived": "Archived"
+        },
+        "saveButton": "Save site",
+        "createButton": "Create site"
+      },
+      "resetFilters": "Reset filters",
+      "validation": {
+        "nameMin": "Name must be at least 3 characters",
+        "nameMax": "Name cannot exceed 100 characters",
+        "addressMin": "Address must be at least 5 characters",
+        "addressMax": "Address cannot exceed 200 characters"
+      },
+      "toast": {
+        "created": "Site created successfully",
+        "createdDescription": "QR code is ready to download",
+        "updated": "Site updated successfully",
+        "updatedDescription": "Changes have been saved",
+        "deleted": "Site deleted successfully",
+        "deletedDescription": "The site and its deliveries have been deleted",
+        "archived": "Site archived successfully",
+        "archivedDescription": "The site is now archived",
+        "reactivated": "Site reactivated successfully",
+        "reactivatedDescription": "The site is active again",
+        "codeCopied": "Site code copied to clipboard",
+        "codeDescription": "You can share this code with your team",
+        "qrReady": "QR code ready to download",
+        "qrReadyDescription": "Print it and post it on your site",
+        "errorSave": "Error saving site",
+        "errorStatus": "Error changing status",
+        "errorDelete": "Error deleting site",
+        "errorQR": "Error generating QR code",
+        "errorPDF": "Error downloading PDF"
+      },
+      "delete": {
+        "title": "Delete site?",
+        "description": "This action cannot be undone. All delivery records for this site will be permanently deleted.",
+        "warning": "Are you sure you want to continue?",
+        "confirmButton": "Yes, delete site"
+      },
+      "empty": {
+        "default": "No sites yet. Create your first site to start tracking deliveries.",
+        "search": "No sites match your search. Try adjusting your filters.",
+        "archived": "No archived sites."
+      },
+      "errors": {
+        "loadTitle": "Load error",
+        "loadDescription": "Unable to load sites. Please try again."
+      }
+    }
+  },
+  "header": {
+    "logoutSuccess": "Logged out successfully",
+    "logoutError": "Failed to log out. Please try again."
+  },
+  "auth": {
+    "login": {
+      "title": "Log In",
+      "subtitle": "Access your dashboard",
+      "fullSubtitle": "Log in to manage your sites and view delivery records.",
+      "email": {
+        "label": "Email address",
+        "placeholder": "your{'@'}email.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password"
+      },
+      "submit": "Log in",
+      "noAccount": "Don't have an account?",
+      "register": "Sign up",
+      "createAccess": "Create your access",
+      "successTitle": "Welcome back!",
+      "successDescription": "You've logged in successfully.",
+      "errorTitle": "Login failed",
+      "errorDescription": "Invalid email or password. Please try again.",
+      "validation": {
+        "emailInvalid": "Invalid email address",
+        "passwordRequired": "Password required"
+      }
+    },
+    "register": {
+      "title": "Sign Up",
+      "subtitle": "Create your account",
+      "heading": "Create your account",
+      "fullSubtitle": "Start tracking site deliveries today.",
+      "displayName": {
+        "label": "Full name",
+        "placeholder": "John Smith"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "your{'@'}email.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Create a strong password"
+      },
+      "confirmPassword": {
+        "label": "Confirm password",
+        "placeholder": "Re-enter your password"
+      },
+      "submit": "Create account",
+      "hasAccount": "Already have an account?",
+      "login": "Log in",
+      "successTitle": "Account created!",
+      "successDescription": "Welcome to ProofOnSite. You can now add sites.",
+      "errorDescription": "Failed to create account. Please check your information and try again.",
+      "validation": {
+        "nameMin": "Name must be at least 2 characters",
+        "nameMax": "Name cannot exceed 50 characters",
+        "emailInvalid": "Invalid email address",
+        "passwordMin": "Password must be at least 8 characters",
+        "passwordMax": "Password cannot exceed 100 characters",
+        "passwordMismatch": "Passwords don't match"
+      }
+    },
+    "logout": "Log out"
+  },
+  "capture": {
+    "title": "Record delivery",
+    "subtitle": "Take a photo of the delivery slip and materials",
+    "uploadPhoto": {
+      "title": "Capture delivery photo",
+      "description": "Take a clear photo of the delivery slip and received materials."
+    },
+    "submit": "Submit delivery",
+    "success": "Delivery recorded",
+    "error": "Upload failed",
+    "uploading": "Uploading...",
+    "offline": "You're offline. Photo will upload when connection is restored.",
+    "loading": "Loading site information...",
+    "invalidCode": "Invalid QR code",
+    "invalidCodeDescription": "This QR code is not valid or has expired. Please contact your site manager.",
+    "archivedSite": "Site archived",
+    "archivedSiteDescription": "This site is archived and no longer accepting new deliveries. Contact your site manager to reactivate it.",
+    "sent": "Sent!",
+    "successDescription": "Delivery recorded and your manager has been notified.",
+    "newDelivery": "Record another delivery",
+    "cancelButton": "Cancel",
+    "sendButton": "Send photo",
+    "sendingButton": "Sending...",
+    "photoButton": "Take photo",
+    "tapToCapture": "Tap to take photo",
+    "photoTooLarge": "Photo is too large. Maximum size is 5MB.",
+    "unsupportedFormat": "Unsupported file format. Please use JPG or PNG.",
+    "uploadFailed": "Upload failed. Check your connection and try again."
+  },
+  "deliveries": {
+    "title": "Delivery records",
+    "site": "Site",
+    "backToDashboard": "Back to dashboard",
+    "noDeliveries": "No deliveries recorded for this site.",
+    "loading": "Loading delivery records...",
+    "deliveryFrom": "Delivery from",
+    "columns": {
+      "photo": "Photo",
+      "date": "Date & time",
+      "actions": "Actions"
+    },
+    "viewPhoto": "View full photo"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "description": "Everything is done by email — schedule a personalized demo and receive documentation for your team.",
+    "q1": {
+      "question": "Do crews need accounts or logins?",
+      "answer": "No account, password, or download. The QR opens a secure form scoped to that site. We automatically capture the submitter's identifier and timestamp."
+    },
+    "q2": {
+      "question": "What happens with spotty connectivity?",
+      "answer": "ProofOnSite caches the submission locally, compresses media, then syncs as soon as the device catches signal. A banner confirms once the delivery is transmitted."
+    },
+    "q3": {
+      "question": "Can we automatically notify suppliers or clients?",
+      "answer": "Yes. Each site lets you add optional CC emails so stakeholders receive the same log without being added as users."
+    },
+    "q4": {
+      "question": "How quickly can we get started?",
+      "answer": "We create your QR packs and onboarding checklist within 3 business days. Pilot sites typically launch the same week."
+    }
+  },
+  "cta": {
+    "title": "Schedule your site pilot",
+    "description": "Answer three short questions and we'll prepare a printable QR pack, adoption guide, and video onboarding session — all within 72 hours.",
+    "primaryButton": "Book a meeting",
+    "secondaryButton": "Download product sheet"
+  },
+  "footer": {
+    "tagline": "Visual proof for every delivery. Built for construction.",
+    "rights": "All rights reserved.",
+    "emailAriaLabel": "Send email",
+    "product": {
+      "title": "Product",
+      "demo": "Product demo",
+      "pricing": "Pricing",
+      "roadmap": "Roadmap"
+    },
+    "support": {
+      "title": "Support",
+      "implementation": "Implementation checklist",
+      "pilot": "Pilot program",
+      "email": "Email support"
+    },
+    "legal": {
+      "title": "Trust",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "security": "Security"
+    },
+    "startPilot": "Start pilot"
+  },
+  "meta": {
+    "home": {
+      "title": "ProofOnSite - Site Delivery Proof",
+      "description": "Get instant visual proof of every delivery on your construction site. Simple QR code tracking with no app download. Used by construction teams."
+    },
+    "dashboard": {
+      "title": "Dashboard - ProofOnSite"
+    },
+    "login": {
+      "title": "Log In - ProofOnSite"
+    },
+    "register": {
+      "title": "Sign Up - ProofOnSite"
+    }
+  }
+}

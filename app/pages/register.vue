@@ -10,8 +10,11 @@ definePageMeta({
   middleware: 'guest' as never
 })
 
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 useHead({
-  title: 'Création de compte — ProofOnSite'
+  title: computed(() => t('meta.register.title'))
 })
 
 const router = useRouter()
@@ -19,26 +22,26 @@ const toast = useToast()
 const requestFetch = useRequestFetch()
 const isSubmitting = ref(false)
 
-const schema = z
+const getSchema = () => z
   .object({
     name: z
       .string()
-      .min(2, 'Le nom doit contenir au moins 2 caractères')
-      .max(120, 'Le nom ne peut dépasser 120 caractères')
+      .min(2, t('auth.register.validation.nameMin'))
+      .max(120, t('auth.register.validation.nameMax'))
       .transform(value => value.trim()),
-    email: z.string().email('Adresse courriel invalide'),
+    email: z.string().email(t('auth.register.validation.emailInvalid')),
     password: z
       .string()
-      .min(8, 'Le mot de passe doit contenir au moins 8 caractères')
-      .max(72, 'Le mot de passe ne peut dépasser 72 caractères'),
+      .min(8, t('auth.register.validation.passwordMin'))
+      .max(72, t('auth.register.validation.passwordMax')),
     confirmPassword: z.string()
   })
   .refine(data => data.password === data.confirmPassword, {
-    message: 'Les mots de passe ne correspondent pas.',
+    message: t('auth.register.validation.passwordMismatch'),
     path: ['confirmPassword']
   })
 
-type RegisterForm = z.infer<typeof schema>
+type RegisterForm = z.infer<ReturnType<typeof getSchema>>
 
 const formState = reactive<RegisterForm>({
   name: '',
@@ -66,11 +69,11 @@ async function onSubmit(event: { data?: RegisterForm | null }) {
 
     await refreshAuth({ force: true })
     toast.add({
-      title: 'Compte créé',
-      description: 'Votre accès ProofOnSite est prêt.',
+      title: t('auth.register.successTitle'),
+      description: t('auth.register.successDescription'),
       color: 'success'
     })
-    await router.push('/dashboard')
+    await router.push(localePath('/dashboard'))
   } catch (error: unknown) {
     type FetchErrorLike = {
       data?: { message?: string }
@@ -82,9 +85,9 @@ async function onSubmit(event: { data?: RegisterForm | null }) {
     const message = fetchError.data?.message
       ?? fetchError.statusMessage
       ?? fallbackMessage
-      ?? 'La création du compte a échoué.'
+      ?? t('auth.register.errorDescription')
     toast.add({
-      title: 'Erreur',
+      title: t('common.error'),
       description: message,
       color: 'error'
     })
@@ -99,42 +102,45 @@ async function onSubmit(event: { data?: RegisterForm | null }) {
     <div class="mx-auto flex max-w-md flex-col gap-6">
       <div class="space-y-2 text-center">
         <h1 class="text-2xl font-semibold text-[color:var(--ui-text-highlighted)]">
-          Activer ProofOnSite
+          {{ t('auth.register.heading') }}
         </h1>
         <p class="text-sm text-[color:var(--ui-text-muted)]">
-          Créez un accès pour gérer vos chantiers et suivre les livraisons en temps réel.
+          {{ t('auth.register.fullSubtitle') }}
         </p>
       </div>
 
       <UCard class="bg-app-surface">
-        <UForm :state="formState" :schema="schema" class="space-y-6" @submit="onSubmit">
-          <UFormField name="name" label="Nom complet">
-            <UInput v-model="formState.name" placeholder="Alex Tremblay" autocomplete="name" />
+        <UForm :state="formState" :schema="getSchema()" class="space-y-6" @submit="onSubmit">
+          <UFormField name="name" :label="t('auth.register.displayName.label')">
+            <UInput v-model="formState.name" :placeholder="t('auth.register.displayName.placeholder')"
+              autocomplete="name" />
           </UFormField>
 
-          <UFormField name="email" label="Adresse courriel">
-            <UInput v-model="formState.email" type="email" placeholder="chef@chantier.com" autocomplete="email" />
+          <UFormField name="email" :label="t('auth.register.email.label')">
+            <UInput v-model="formState.email" type="email" :placeholder="t('auth.register.email.placeholder')"
+              autocomplete="email" />
           </UFormField>
 
-          <UFormField name="password" label="Mot de passe">
-            <UInput v-model="formState.password" type="password" placeholder="••••••••" autocomplete="new-password" />
-          </UFormField>
-
-          <UFormField name="confirmPassword" label="Confirmer le mot de passe">
-            <UInput v-model="formState.confirmPassword" type="password" placeholder="••••••••"
+          <UFormField name="password" :label="t('auth.register.password.label')">
+            <UInput v-model="formState.password" type="password" :placeholder="t('auth.register.password.placeholder')"
               autocomplete="new-password" />
           </UFormField>
 
+          <UFormField name="confirmPassword" :label="t('auth.register.confirmPassword.label')">
+            <UInput v-model="formState.confirmPassword" type="password"
+              :placeholder="t('auth.register.confirmPassword.placeholder')" autocomplete="new-password" />
+          </UFormField>
+
           <UButton type="submit" color="secondary" class="w-full" :loading="isSubmitting">
-            Créer mon compte
+            {{ t('auth.register.submit') }}
           </UButton>
         </UForm>
       </UCard>
 
       <p class="text-center text-sm text-[color:var(--ui-text-muted)]">
-        Vous avez déjà un compte ?
-        <NuxtLink to="/login" class="font-medium text-secondary hover:underline">
-          Se connecter
+        {{ t('auth.register.hasAccount') }}
+        <NuxtLink :to="localePath('/login')" class="font-medium text-secondary hover:underline">
+          {{ t('auth.register.login') }}
         </NuxtLink>
       </p>
     </div>

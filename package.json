@@ -12,13 +12,15 @@
     "db:generate": "drizzle-kit generate:pg",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "i18n:validate": "bun run scripts/validate-i18n.ts"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.68",
     "@iconify-json/simple-icons": "^1.2.53",
     "@neondatabase/serverless": "^1.0.1",
     "@nuxt/ui": "^4.0.0",
+    "@nuxtjs/i18n": "^10.1.0",
     "@oslojs/crypto": "^1.0.1",
     "@oslojs/encoding": "^1.1.0",
     "@vercel/blob": "^2.0.0",
