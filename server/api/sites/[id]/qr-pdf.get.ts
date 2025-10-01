@@ -76,12 +76,13 @@ export default defineEventHandler(async (event) => {
   const pageWidth = 8.5
   const centerX = pageWidth / 2
 
-  // Instructions at top (clear, action-oriented, in French for Quebec)
+  /* Instructions at top (clear, action-oriented, in French for Quebec)
   doc.setTextColor(0, 0, 0)
   doc.setFontSize(24)
   doc.setFont('helvetica', 'bold')
   doc.text('SCANNEZ POUR ENREGISTRER', centerX, 1.5, { align: 'center' })
   doc.text('UNE LIVRAISON', centerX, 2, { align: 'center' })
+  */
 
   // QR Code centered and extra large (6" x 6" for easy scanning from distance)
   const qrSize = 6
@@ -89,16 +90,18 @@ export default defineEventHandler(async (event) => {
   const qrY = 2.5
   doc.addImage(qrCodeDataUrl, 'PNG', qrX, qrY, qrSize, qrSize)
 
-  // Site code (reference for verbal communication)
+  /* Site code (reference for verbal communication)
   doc.setFontSize(20)
   doc.setFont('helvetica', 'bold')
-  doc.text(`Code: ${site.referenceCode}`, centerX, 9, { align: 'center' })
+  doc.text(`${site.referenceCode}`, centerX, 9, { align: 'center' })
+  */
 
-  // Branding (subtle, bottom of page)
+  /* Branding (subtle, bottom of page)
   doc.setFontSize(10)
   doc.setFont('helvetica', 'normal')
-  doc.setTextColor(120, 120, 120)
+  doc.setTextColor(200, 200, 200)
   doc.text('ProofOnSite', centerX, 10.2, { align: 'center' })
+  */
 
   // Generate PDF buffer
   const pdfBuffer = Buffer.from(doc.output('arraybuffer'))
