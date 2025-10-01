@@ -5,9 +5,6 @@ export interface Site {
   ownerId: string
   name: string
   address: string
-  contactName: string | null
-  contactPhone: string | null
-  notes: string | null
   status: SiteStatus
   referenceCode: string
   captureToken: string
@@ -18,8 +15,5 @@ export interface Site {
 export interface SiteInput {
   name: string
   address: string
-  contactName?: string | null
-  contactPhone?: string | null
-  notes?: string | null
   status?: SiteStatus
 }

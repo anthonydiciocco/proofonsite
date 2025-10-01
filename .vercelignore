@@ -1,0 +1,4 @@
+# Ignore alternative package manager lockfiles
+pnpm-lock.yaml
+yarn.lock
+package-lock.json

@@ -81,9 +81,7 @@ const filteredSites = computed(() => {
     const haystack = [
       site.name,
       site.address,
-      site.referenceCode,
-      site.contactName ?? '',
-      site.contactPhone ?? ''
+      site.referenceCode
     ].join(' ').toLowerCase()
 
     return haystack.includes(term)
@@ -102,19 +100,31 @@ const UDropdownMenu = resolveComponent('UDropdownMenu')
 const columns: TableColumn<Site>[] = [{
   accessorKey: 'name',
   header: 'Site',
+  meta: {
+    style: {
+      th: { width: '360px', minWidth: '360px', maxWidth: '360px' },
+      td: { width: '360px', minWidth: '360px', maxWidth: '360px' }
+    }
+  },
   cell: ({ row }) => {
     const site = row.original
     return h('div', { class: 'space-y-1' }, [
-      h('p', { class: 'font-medium text-[color:var(--ui-text-highlighted)]' }, site.name),
-      h('p', { class: 'text-sm text-[color:var(--ui-text-muted)]' }, site.address)
+      h('p', { class: 'font-medium text-[color:var(--ui-text-highlighted)] truncate' }, site.name),
+      h('p', { class: 'text-sm text-[color:var(--ui-text-muted)] truncate' }, site.address)
     ])
   }
 }, {
   accessorKey: 'referenceCode',
-  header: 'Site code',
+  header: 'Code',
+  meta: {
+    style: {
+      th: { width: '140px', minWidth: '140px' },
+      td: { width: '140px', minWidth: '140px' }
+    }
+  },
   cell: ({ row }) => {
     const site = row.original
-    return h('div', { class: 'flex items-center gap-2' }, [
+    return h('div', { class: 'flex items-center gap-1.5' }, [
       h('span', { class: 'font-semibold tracking-widest text-[color:var(--ui-text-highlighted)]' }, site.referenceCode),
       h(UButton, {
         ...{
@@ -133,6 +143,12 @@ const columns: TableColumn<Site>[] = [{
 }, {
   accessorKey: 'status',
   header: 'Status',
+  meta: {
+    style: {
+      th: { width: '100px', minWidth: '100px' },
+      td: { width: '100px', minWidth: '100px' }
+    }
+  },
   cell: ({ row }) => {
     const site = row.original
     const variant = site.status === 'active' ? 'success' : 'neutral'
@@ -144,32 +160,68 @@ const columns: TableColumn<Site>[] = [{
     )
   }
 }, {
-  accessorKey: 'contactName',
-  header: 'On-site contact',
+  id: 'qrcode',
+  header: 'QR Code',
+  enableSorting: false,
+  meta: {
+    style: {
+      th: { width: '110px', minWidth: '110px' },
+      td: { width: '110px', minWidth: '110px' }
+    }
+  },
   cell: ({ row }) => {
     const site = row.original
-    if (!site.contactName && !site.contactPhone) {
-      return h('span', { class: 'text-sm text-[color:var(--ui-text-muted)]' }, 'Not specified')
-    }
-
-    return h('div', { class: 'space-y-0.5' }, [
-      site.contactName
-        ? h('p', { class: 'text-sm font-medium text-[color:var(--ui-text-highlighted)]' }, site.contactName)
-        : null,
-      site.contactPhone
-        ? h('p', { class: 'text-xs text-[color:var(--ui-text-muted)]' }, site.contactPhone)
-        : null
-    ])
+    const busy = siteIsBusy(site.id)
+    return h(UButton, {
+      ...{
+        color: 'primary',
+        variant: 'outline',
+        size: 'sm',
+        icon: 'i-lucide-qr-code',
+        loading: busy,
+        disabled: busy,
+        onClick: () => downloadQRCodePDF(site)
+      },
+      'aria-label': `Download QR code for ${site.name}`
+    }, () => 'Download')
   }
 }, {
-  accessorKey: 'createdAt',
-  header: 'Created on',
-  cell: ({ row }) => dateFormatter.format(new Date(row.original.createdAt))
+  id: 'deliveries',
+  header: 'Deliveries',
+  enableSorting: false,
+  meta: {
+    style: {
+      th: { width: '110px', minWidth: '110px' },
+      td: { width: '110px', minWidth: '110px' }
+    }
+  },
+  cell: ({ row }) => {
+    const site = row.original
+    const busy = siteIsBusy(site.id)
+    return h(UButton, {
+      ...{
+        color: 'secondary',
+        variant: 'outline',
+        size: 'sm',
+        icon: 'i-lucide-package',
+        loading: busy,
+        disabled: busy,
+        onClick: () => openDeliveriesModal(site)
+      },
+      'aria-label': `View deliveries for ${site.name}`
+    }, () => 'View')
+  }
 }, {
   id: 'actions',
   header: '',
   enableSorting: false,
   enableHiding: false,
+  meta: {
+    style: {
+      th: { width: '60px', minWidth: '60px' },
+      td: { width: '60px', minWidth: '60px' }
+    }
+  },
   cell: ({ row }) => {
     const site = row.original
     const busy = siteIsBusy(site.id)
@@ -215,7 +267,7 @@ const columns: TableColumn<Site>[] = [{
           loading: busy,
           disabled: busy
         },
-        'aria-label': 'Actions'
+        'aria-label': 'More actions'
       }))
     ])
   }
@@ -232,85 +284,7 @@ const formSchema = z.object({
     .min(5, 'Address must be at least 5 characters')
     .max(240, 'Address must be 240 characters or less')
     .transform(value => value.trim()),
-  status: z.enum(['active', 'archived'] as const),
-  contactName: z
-    .string()
-    .optional()
-    .transform((value, ctx) => {
-      if (typeof value !== 'string') {
-        return null
-      }
-
-      const trimmed = value.trim()
-      if (!trimmed) {
-        return null
-      }
-
-      if (trimmed.length > 120) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.too_big,
-          maximum: 120,
-          type: 'string',
-          inclusive: true,
-          message: '120 character limit'
-        })
-        return z.NEVER
-      }
-
-      return trimmed
-    }),
-  contactPhone: z
-    .string()
-    .optional()
-    .transform((value, ctx) => {
-      if (typeof value !== 'string') {
-        return null
-      }
-
-      const trimmed = value.trim()
-      if (!trimmed) {
-        return null
-      }
-
-      if (trimmed.length > 32) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.too_big,
-          maximum: 32,
-          type: 'string',
-          inclusive: true,
-          message: '32 character limit'
-        })
-        return z.NEVER
-      }
-
-      return trimmed
-    }),
-  notes: z
-    .string()
-    .optional()
-    .transform((value, ctx) => {
-      if (typeof value !== 'string') {
-        return null
-      }
-
-      const trimmed = value.trim()
-      if (!trimmed) {
-        return null
-      }
-
-      if (trimmed.length > 1000) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.too_big,
-          maximum: 1000,
-          type: 'string',
-          inclusive: true,
-          message: '1000 character limit'
-        })
-        return z.NEVER
-      }
-
-      return trimmed
-    })
+  status: z.enum(['active', 'archived'] as const)
 })
 
 type SiteForm = z.infer<typeof formSchema>
@@ -320,23 +294,21 @@ const isFormOpen = ref(false)
 const formSubmitting = ref(false)
 const editingSite = ref<Site | null>(null)
 
+// Deliveries modal
+const deliveriesModalOpen = ref(false)
+const selectedSite = ref<Site | null>(null)
+
 const formState = reactive<SiteFormInput>({
   name: '',
   address: '',
-  status: 'active',
-  contactName: '',
-  contactPhone: '',
-  notes: ''
+  status: 'active'
 })
 
 function resetForm(site?: Site) {
   Object.assign(formState, {
     name: site?.name ?? '',
     address: site?.address ?? '',
-    status: site?.status ?? 'active',
-    contactName: site?.contactName ?? '',
-    contactPhone: site?.contactPhone ?? '',
-    notes: site?.notes ?? ''
+    status: site?.status ?? 'active'
   })
 }
 
@@ -400,10 +372,7 @@ async function submitSite(event: { data?: SiteForm | null }) {
   const payload = {
     name: event.data.name,
     address: event.data.address,
-    status: event.data.status,
-    contactName: event.data.contactName,
-    contactPhone: event.data.contactPhone,
-    notes: event.data.notes
+    status: event.data.status
   }
 
   try {
@@ -415,7 +384,8 @@ async function submitSite(event: { data?: SiteForm | null }) {
       toast.add({
         title: 'Site updated',
         description: 'Information saved.',
-        color: 'success'
+        color: 'success',
+        icon: 'i-lucide-check-circle'
       })
     } else {
       await requestFetch('/api/sites', {
@@ -424,8 +394,9 @@ async function submitSite(event: { data?: SiteForm | null }) {
       })
       toast.add({
         title: 'Site created',
-        description: 'Print the QR code and share it with your team.',
-        color: 'success'
+        description: 'Download the QR code to get started.',
+        color: 'success',
+        icon: 'i-lucide-check-circle'
       })
     }
 
@@ -452,10 +423,7 @@ async function toggleSiteStatus(site: Site) {
       body: {
         name: site.name,
         address: site.address,
-        status: nextStatus,
-        contactName: site.contactName,
-        contactPhone: site.contactPhone,
-        notes: site.notes
+        status: nextStatus
       }
     })
 
@@ -464,7 +432,8 @@ async function toggleSiteStatus(site: Site) {
       description: nextStatus === 'active'
         ? 'The site reappears in your active lists.'
         : 'You can reactivate it at any time.',
-      color: 'success'
+      color: 'success',
+      icon: 'i-lucide-check-circle'
     })
 
     await refreshSites()
@@ -478,6 +447,11 @@ async function toggleSiteStatus(site: Site) {
 const deleteModalOpen = ref(false)
 const deleteInProgress = ref(false)
 const sitePendingDeletion = ref<Site | null>(null)
+
+function openDeliveriesModal(site: Site) {
+  selectedSite.value = site
+  deliveriesModalOpen.value = true
+}
 
 function askDeleteSite(site: Site) {
   sitePendingDeletion.value = site
@@ -504,7 +478,8 @@ async function deleteSite() {
     toast.add({
       title: 'Site deleted',
       description: 'Site data has been removed.',
-      color: 'success'
+      color: 'success',
+      icon: 'i-lucide-check-circle'
     })
 
     closeDeleteModal()
@@ -538,8 +513,58 @@ async function copyReferenceCode(site: Site) {
   toast.add({
     title: 'Code copied',
     description: `The code ${site.referenceCode} is ready to be pasted.`,
-    color: 'success'
+    color: 'success',
+    icon: 'i-lucide-copy'
   })
+}
+
+async function downloadQRCodePDF(site: Site) {
+  if (siteIsBusy(site.id)) {
+    return
+  }
+
+  setSiteBusy(site.id, true)
+
+  try {
+    // Fetch PDF as blob directly
+    const response = await fetch(`/api/sites/${site.id}/qr-pdf`, {
+      method: 'GET',
+      credentials: 'include'
+    })
+
+    if (!response.ok) {
+      throw new Error('Failed to generate PDF')
+    }
+
+    // Create blob from response
+    const blob = await response.blob()
+    const url = window.URL.createObjectURL(blob)
+
+    // Create temporary download link with accessible attributes
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `ProofOnSite-QR-${site.referenceCode}.pdf`
+    link.setAttribute('aria-label', `Download QR code PDF for site ${site.name}`)
+
+    // Trigger download
+    document.body.appendChild(link)
+    link.click()
+
+    // Cleanup
+    document.body.removeChild(link)
+    window.URL.revokeObjectURL(url)
+
+    toast.add({
+      title: 'QR Code ready',
+      description: `PDF downloaded for ${site.name}. Print and place on site.`,
+      color: 'success',
+      icon: 'i-lucide-download'
+    })
+  } catch (error) {
+    handleRequestError(error, 'Unable to generate QR code PDF.')
+  } finally {
+    setSiteBusy(site.id, false)
+  }
 }
 
 function refreshFilters() {
@@ -557,8 +582,7 @@ function refreshFilters() {
             Hello {{ greeting }}
           </h1>
           <p class="max-w-2xl text-sm text-[color:var(--ui-text-muted)]">
-            Keep control of your sites, photo evidence and delivery tracking.
-            Use personalized QR codes to speed up work on site.
+            Manage your construction sites and generate QR codes for delivery tracking.
           </p>
         </div>
 
@@ -573,8 +597,9 @@ function refreshFilters() {
         </div>
       </div>
 
-      <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <UCard class="bg-app-surface/90">
+      <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <UCard class="bg-app-surface/90 cursor-pointer transition-all hover:ring-2 hover:ring-primary"
+          @click="statusFilter = 'active'">
           <div class="space-y-2">
             <p class="text-sm text-[color:var(--ui-text-muted)]">
               Active sites
@@ -582,10 +607,14 @@ function refreshFilters() {
             <p class="text-3xl font-semibold text-[color:var(--ui-text-highlighted)]">
               {{ metrics.active }}
             </p>
+            <p class="text-xs text-[color:var(--ui-text-muted)]">
+              Click to filter
+            </p>
           </div>
         </UCard>
 
-        <UCard class="bg-app-surface/90">
+        <UCard class="bg-app-surface/90 cursor-pointer transition-all hover:ring-2 hover:ring-primary"
+          @click="statusFilter = 'archived'">
           <div class="space-y-2">
             <p class="text-sm text-[color:var(--ui-text-muted)]">
               Archived sites
@@ -593,27 +622,23 @@ function refreshFilters() {
             <p class="text-3xl font-semibold text-[color:var(--ui-text-highlighted)]">
               {{ metrics.archived }}
             </p>
+            <p class="text-xs text-[color:var(--ui-text-muted)]">
+              Click to filter
+            </p>
           </div>
         </UCard>
 
-        <UCard class="bg-app-surface/90">
+        <UCard class="bg-app-surface/90 cursor-pointer transition-all hover:ring-2 hover:ring-primary"
+          @click="statusFilter = 'all'">
           <div class="space-y-2">
             <p class="text-sm text-[color:var(--ui-text-muted)]">
-              Tracked sites
+              Total sites
             </p>
             <p class="text-3xl font-semibold text-[color:var(--ui-text-highlighted)]">
               {{ metrics.total }}
             </p>
-          </div>
-        </UCard>
-
-        <UCard class="bg-app-surface/90">
-          <div class="space-y-2">
-            <p class="text-sm text-[color:var(--ui-text-muted)]">
-              Latest addition
-            </p>
-            <p class="text-base font-medium text-[color:var(--ui-text-highlighted)]">
-              {{ metrics.lastCreated }}
+            <p class="text-xs text-[color:var(--ui-text-muted)]">
+              Click to show all
             </p>
           </div>
         </UCard>
@@ -623,8 +648,8 @@ function refreshFilters() {
         <div class="flex flex-col gap-6">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div class="flex flex-1 flex-wrap items-center gap-3">
-              <UInput v-model="searchTerm" placeholder="Search for a site (name, address, contact...)"
-                icon="i-lucide-search" class="min-w-[240px] flex-1" />
+              <UInput v-model="searchTerm" placeholder="Search by name, address or code..." icon="i-lucide-search"
+                class="min-w-[240px] flex-1" />
 
               <URadioGroup v-model="statusFilter" :items="statusOptions" orientation="horizontal" variant="table"
                 size="sm" />
@@ -667,12 +692,13 @@ function refreshFilters() {
             </div>
 
             <UForm :state="formState" :schema="formSchema" class="space-y-5" @submit="submitSite">
-              <UFormField name="name" label="Site name">
-                <UInput v-model="formState.name" placeholder="Downtown Site" autofocus />
+              <UFormField name="name" label="Site name" required>
+                <UInput v-model="formState.name" placeholder="Ex: Tour du Havre Phase 2" autofocus />
               </UFormField>
 
-              <UFormField name="address" label="Address">
-                <UTextarea v-model="formState.address" placeholder="123 Worker St, Montreal" auto-resize />
+              <UFormField name="address" label="Address" required>
+                <UTextarea v-model="formState.address" placeholder="Ex: 1455 Rue Peel, Montreal" auto-resize
+                  :rows="2" />
               </UFormField>
 
               <UFormField name="status" label="Status">
@@ -680,20 +706,6 @@ function refreshFilters() {
                   { label: 'Active', value: 'active' },
                   { label: 'Archived', value: 'archived' }
                 ]" />
-              </UFormField>
-
-              <div class="grid gap-4 md:grid-cols-2">
-                <UFormField name="contactName" label="Primary contact">
-                  <UInput v-model="formState.contactName" placeholder="Foreman name" />
-                </UFormField>
-
-                <UFormField name="contactPhone" label="Contact phone">
-                  <UInput v-model="formState.contactPhone" placeholder="(514) 555-1234" />
-                </UFormField>
-              </div>
-
-              <UFormField name="notes" label="Internal notes">
-                <UTextarea v-model="formState.notes" placeholder="Logistics info, client requirements..." :rows="3" />
               </UFormField>
 
               <div class="flex justify-end gap-3">
@@ -734,5 +746,7 @@ function refreshFilters() {
         </UCard>
       </template>
     </UModal>
+
+    <DeliveriesModal v-if="selectedSite" v-model="deliveriesModalOpen" :site="selectedSite" />
   </div>
 </template>

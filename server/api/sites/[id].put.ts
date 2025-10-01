@@ -25,9 +25,6 @@ export default defineEventHandler(async (event) => {
   const [record] = await db.update(sites).set({
     name: payload.name,
     address: payload.address,
-    contactName: payload.contactName,
-    contactPhone: payload.contactPhone,
-    notes: payload.notes,
     status: payload.status ?? 'active',
     updatedAt: new Date()
   }).where(and(

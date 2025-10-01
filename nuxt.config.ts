@@ -17,6 +17,9 @@ export default defineNuxtConfig({
       cookieName: process.env.SESSION_COOKIE_NAME || 'pos_session',
       cookieDomain: process.env.SESSION_COOKIE_DOMAIN || undefined,
       maxAge: Number(process.env.SESSION_MAX_AGE ?? 60 * 60 * 24 * 30)
+    },
+    public: {
+      appUrl: process.env.APP_URL || 'http://localhost:3000'
     }
   },
 

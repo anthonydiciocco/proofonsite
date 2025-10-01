@@ -33,9 +33,6 @@ export const sites = pgTable('sites', {
   ownerId: text('owner_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
   name: text('name').notNull(),
   address: text('address').notNull(),
-  contactName: text('contact_name'),
-  contactPhone: text('contact_phone'),
-  notes: text('notes'),
   status: siteStatus('status').notNull().default('active'),
   referenceCode: text('reference_code').notNull(),
   captureToken: text('capture_token').notNull(),
@@ -59,9 +56,25 @@ export const sessionsRelations = relations(sessions, ({ one }) => ({
   })
 }))
 
-export const sitesRelations = relations(sites, ({ one }) => ({
+export const sitesRelations = relations(sites, ({ one, many }) => ({
   owner: one(users, {
     fields: [sites.ownerId],
     references: [users.id]
+  }),
+  deliveries: many(deliveries)
+}))
+
+export const deliveries = pgTable('deliveries', {
+  id: text('id').primaryKey(),
+  siteId: text('site_id').notNull().references(() => sites.id, { onDelete: 'cascade' }),
+  photoUrl: text('photo_url').notNull(),
+  capturedAt: timestamp('captured_at', { withTimezone: true }).defaultNow().notNull(),
+  metadata: text('metadata') // JSON string for flexible metadata storage
+})
+
+export const deliveriesRelations = relations(deliveries, ({ one }) => ({
+  site: one(sites, {
+    fields: [deliveries.siteId],
+    references: [sites.id]
   })
 }))
