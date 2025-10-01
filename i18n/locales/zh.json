@@ -132,8 +132,8 @@
     "subtitle": "我们与工地项目经理共同设计体验——每个细节都在解决现场的真实问题。",
     "highlights": {
       "offline": {
-        "title": "离线也能用",
-        "detail": "离线状态下也能拍照记录。一旦恢复网络，记录会自动同步。"
+        "title": "弱网环境也能用",
+        "detail": "数据经过压缩处理，即使网络缓慢或不稳定也能记录材料到场。"
       },
       "toughConditions": {
         "title": "适应恶劣环境",
@@ -166,8 +166,8 @@
         "description": "每个工地获得唯一二维码，可直接打印张贴在现场。"
       },
       "offlineFirst": {
-        "title": "离线优先的移动端",
-        "description": "30秒内完成拍照，自动压缩图片并在后台同步。"
+        "title": "针对慢速连接优化的移动端",
+        "description": "30秒内完成拍照，自动压缩图片并针对慢速连接优化同步。"
       },
       "instantNotifications": {
         "title": "即时通知",

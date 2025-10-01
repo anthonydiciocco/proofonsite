@@ -132,8 +132,8 @@
     "subtitle": "Nous avons co-conçu l'expérience avec des gestionnaires de chantier — chaque détail répond à une vraie difficulté observée sur le terrain.",
     "highlights": {
       "offline": {
-        "title": "Fonctionne sans connexion",
-        "detail": "Capturez les livraisons hors ligne. Les envoies se synchronisent automatiquement dès qu'une connexion est disponible."
+        "title": "Fonctionne avec une connexion faible",
+        "detail": "Les données sont compressées pour pouvoir enregistrer les livraisons même avec une connexion internet faible ou instable."
       },
       "toughConditions": {
         "title": "Conçu pour les conditions difficiles",
@@ -166,8 +166,8 @@
         "description": "Chaque chantier reçoit un QR code unique, prêt à imprimer et à placer sur site."
       },
       "offlineFirst": {
-        "title": "Flux mobile hors ligne",
-        "description": "Capture en 30 secondes avec compression automatique et synchronisation en arrière-plan."
+        "title": "Flux mobile",
+        "description": "Capture en 30 secondes avec compression automatique et synchronisation optimisée pour les connexions lentes."
       },
       "instantNotifications": {
         "title": "Notifications instantanées",

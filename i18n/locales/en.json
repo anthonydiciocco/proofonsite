@@ -132,8 +132,8 @@
     "subtitle": "We co-designed the experience with site managers — every detail addresses a real pain point observed in the field.",
     "highlights": {
       "offline": {
-        "title": "Works offline",
-        "detail": "Capture deliveries offline. Submissions sync automatically once connection is restored."
+        "title": "Works with low bandwidth",
+        "detail": "Data is compressed to allow capturing deliveries even with slow or unstable internet connection."
       },
       "toughConditions": {
         "title": "Built for tough conditions",
@@ -166,8 +166,8 @@
         "description": "Each site gets a unique QR code, ready to print and post on-site."
       },
       "offlineFirst": {
-        "title": "Offline-first mobile flow",
-        "description": "30-second capture with automatic compression and background sync."
+        "title": "Mobile flow optimized for slow connections",
+        "description": "30-second capture with automatic compression and sync optimized for slow connections."
       },
       "instantNotifications": {
         "title": "Instant notifications",

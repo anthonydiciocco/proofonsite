@@ -186,7 +186,7 @@ function detectAndSetBrowserLanguage() {
     const parts = navigator.language.split('-')
     if (parts.length > 0 && parts[0]) {
       const browserLang = parts[0].toLowerCase() as LocaleCode
-      
+
       if (supportedCodes.includes(browserLang)) {
         setLocale(browserLang)
         cookie.value = browserLang

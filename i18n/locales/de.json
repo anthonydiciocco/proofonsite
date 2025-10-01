@@ -132,8 +132,8 @@
     "subtitle": "Gemeinsam mit Bauleitern entwickelt – jedes Detail löst ein echtes Problem auf der Baustelle.",
     "highlights": {
       "offline": {
-        "title": "Offline-Erfassung",
-        "detail": "Lieferungen auch ohne Internet erfassen. Die Daten werden automatisch synchronisiert, sobald eine Verbindung besteht."
+        "title": "Funktioniert mit schwacher Verbindung",
+        "detail": "Die Daten werden komprimiert, um Lieferungen auch bei langsamer oder instabiler Internetverbindung erfassen zu können."
       },
       "toughConditions": {
         "title": "Robuste Bedienung",
@@ -166,8 +166,8 @@
         "description": "Jede Baustelle erhält einen eindeutigen QR-Code, druckfertig zum Anbringen vor Ort."
       },
       "offlineFirst": {
-        "title": "Offline-fähig",
-        "description": "Erfassung in 30 Sekunden mit automatischer Komprimierung und Hintergrund-Synchronisation."
+        "title": "Für langsame Verbindungen optimiert",
+        "description": "Erfassung in 30 Sekunden mit automatischer Komprimierung und für langsame Verbindungen optimierter Synchronisation."
       },
       "instantNotifications": {
         "title": "Sofortbenachrichtigungen",

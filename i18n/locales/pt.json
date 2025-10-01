@@ -132,8 +132,8 @@
     "subtitle": "Desenvolvemos a experiência junto com mestres de obra — cada detalhe resolve um problema real do dia a dia.",
     "highlights": {
       "offline": {
-        "title": "Funciona sem internet",
-        "detail": "Registra entregas offline. O envio sincroniza automaticamente quando pega sinal."
+        "title": "Funciona com conexão fraca",
+        "detail": "Os dados são comprimidos pra permitir registrar entregas mesmo com conexão lenta ou instável."
       },
       "toughConditions": {
         "title": "Feito pra condições difíceis",
@@ -166,8 +166,8 @@
         "description": "Cada obra recebe um QR único, pronto pra imprimir e fixar no canteiro."
       },
       "offlineFirst": {
-        "title": "Funciona offline no celular",
-        "description": "Registro em 30 segundos com compressão automática e sincronização em segundo plano."
+        "title": "Otimizado pra conexão lenta no celular",
+        "description": "Registro em 30 segundos com compressão automática e sincronização otimizada pra conexão lenta."
       },
       "instantNotifications": {
         "title": "Notificações instantâneas",
