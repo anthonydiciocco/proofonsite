@@ -125,22 +125,22 @@ const pricingEssentials = computed(() => [
 const faqItems = computed(() => [
   {
     label: t('faq.q1.question'),
-    icon: 'i-lucide-user-round',
+    icon: 'i-lucide-smartphone',
     content: t('faq.q1.answer')
   },
   {
     label: t('faq.q2.question'),
-    icon: 'i-lucide-cloud-off',
+    icon: 'i-lucide-rocket',
     content: t('faq.q2.answer')
   },
   {
     label: t('faq.q3.question'),
-    icon: 'i-lucide-bell-ring',
+    icon: 'i-lucide-bell',
     content: t('faq.q3.answer')
   },
   {
     label: t('faq.q4.question'),
-    icon: 'i-lucide-rocket',
+    icon: 'i-lucide-download',
     content: t('faq.q4.answer')
   }
 ] satisfies AccordionItem[])
@@ -481,26 +481,47 @@ const currentYear = new Date().getFullYear()
           <ScrollReveal as="div" class="mt-12 flex justify-center" animation="zoom-in" :delay="80">
             <UCard class="pricing-card w-full max-w-3xl border border-app-card bg-app-surface shadow-app-glow">
               <div class="space-y-6">
-                <UBadge color="secondary" variant="soft" size="sm">
-                  {{ t('pricing.badge') }}
-                </UBadge>
+                <!-- Beta Badge + Original Badge -->
+                <div class="flex items-center gap-2 flex-wrap">
+                  <UBadge color="success" variant="subtle" size="md" class="animate-pulse">
+                    <div class="flex items-center gap-1.5">
+                      <UIcon name="i-lucide-sparkles" class="size-3.5" />
+                      <span class="font-semibold">{{ t('pricing.betaBadge') }}</span>
+                    </div>
+                  </UBadge>
+
+                  <!-- <UBadge color="secondary" variant="soft" size="sm">
+                    {{ t('pricing.badge') }}
+                  </UBadge> -->
+
+
+                </div>
 
                 <div class="space-y-4">
                   <p class="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
                     {{ t('pricing.perActiveSite') }}
                   </p>
 
-                  <div class="flex flex-wrap items-end gap-3">
-                    <span class="pricing-price text-5xl font-semibold text-highlighted">
-                      49$
-                    </span>
-                    <span class="text-sm font-medium text-muted">
-                      {{ t('pricing.perMonth') }}
-                    </span>
+                  <!-- Beta Pricing Display -->
+                  <div class="space-y-3">
+                    <div class="flex flex-wrap items-end gap-3">
+                      <span class="pricing-price text-5xl font-semibold text-green-600 dark:text-green-400">
+                        {{ t('pricing.betaPrice') }}
+                      </span>
+                      <span class="text-sm font-medium text-muted">
+                        {{ t('pricing.duringBeta') }}
+                      </span>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-sm text-muted">
+                      <UIcon name="i-lucide-arrow-right" class="size-4" />
+                      <span>{{ t('pricing.afterBeta') }}: <span class="font-semibold text-highlighted">49$</span> {{
+                        t('pricing.perMonth') }}</span>
+                    </div>
                   </div>
 
                   <p class="text-base text-toned">
-                    {{ t('pricing.description') }}
+                    {{ t('pricing.betaDescription') }}
                   </p>
                 </div>
               </div>
@@ -525,13 +546,14 @@ const currentYear = new Date().getFullYear()
               </ul>
 
               <div class="mt-8 space-y-3">
-                <UButton :to="localePath('/register')" size="lg" color="secondary" class="w-full justify-between"
-                  icon="i-lucide-mail" trailing-icon="i-lucide-arrow-right">
-                  {{ t('pricing.ctaButton') }}
+                <UButton :to="localePath('/register')" size="lg" color="success" class="w-full justify-between"
+                  icon="i-lucide-sparkles" trailing-icon="i-lucide-arrow-right">
+                  {{ t('pricing.betaCtaButton') }}
                 </UButton>
-                <p class="text-xs text-muted">
-                  {{ t('pricing.billingNote') }}
-                </p>
+                <div class="flex items-center gap-2 text-xs text-green-600 dark:text-green-400">
+                  <UIcon name="i-lucide-check-circle" class="size-4 shrink-0" />
+                  <span class="font-medium">{{ t('pricing.betaBillingNote') }}</span>
+                </div>
               </div>
             </UCard>
           </ScrollReveal>

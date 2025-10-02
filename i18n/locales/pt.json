@@ -157,11 +157,18 @@
     "perSite": "Por obra",
     "currency": "R$",
     "badge": "Versão Piloto",
+    "betaBadge": "Beta Aberto — Acesso Gratuito",
     "perActiveSite": "Por obra ativa",
     "perMonth": "/mês",
+    "betaPrice": "Grátis",
+    "duringBeta": "durante a beta",
+    "afterBeta": "Depois do lançamento",
     "description": "Ativa a obra só quando o material está circulando. Pausa e reativa em segundos — sem contrato anual, sem taxa escondida.",
+    "betaDescription": "Teste ProofOnSite completamente grátis durante nosso período beta. Ajude a gente a aperfeiçoar o produto e você será dos primeiros quando lançarmos oficialmente.",
     "ctaButton": "Começar piloto de 30 dias",
+    "betaCtaButton": "Entrar na beta grátis",
     "billingNote": "Cobrança mensal só das obras ativas. Cancela ou pausa a qualquer momento — mandamos lembrete antes de cada renovação.",
+    "betaBillingNote": "Totalmente grátis durante a beta — Sem cartão de crédito",
     "features": {
       "unlimitedUploads": {
         "title": "Registros ilimitados",
@@ -423,22 +430,22 @@
   },
   "faq": {
     "title": "Perguntas frequentes",
-    "description": "Tudo por e-mail — agende uma demo personalizada e receba a documentação pra sua equipe.",
+    "description": "Respostas simples sobre como o ProofOnSite funciona em obras reais.",
     "q1": {
-      "question": "A equipe precisa de conta ou login?",
-      "answer": "Nenhuma conta, senha ou download. O QR abre um formulário seguro específico daquela obra. Capturamos automaticamente o identificador de quem enviou e o horário."
+      "question": "Os entregadores precisam de contas ou apps?",
+      "answer": "Não. Eles escaneiam o código QR com a câmera do telefone e veem imediatamente um formulário para enviar fotos. Sem conta, sem senha, sem baixar nenhum app. Funciona em qualquer smartphone."
     },
     "q2": {
-      "question": "E se a conexão estiver ruim?",
-      "answer": "ProofOnSite guarda o envio localmente, comprime a foto, e sincroniza assim que o aparelho pegar sinal. Um banner confirma quando o registro foi transmitido."
+      "question": "Quão rápido posso começar?",
+      "answer": "Menos de 5 minutos. Cadastre-se, crie sua primeira obra, adicione um endereço, depois baixe seu código QR. Imprima e você está pronto para rastrear entregas."
     },
     "q3": {
-      "question": "Dá pra notificar fornecedores ou clientes automaticamente?",
-      "answer": "Sim. Cada obra permite adicionar e-mails opcionais pra cópia, assim as partes interessadas recebem o mesmo registro sem precisar ser adicionadas como usuários."
+      "question": "Quem é notificado quando uma entrega chega?",
+      "answer": "Você recebe um e-mail instantâneo com as fotos, horário e referência da obra. Você também pode adicionar e-mails em cópia (fornecedores, clientes, gerentes de projeto) que receberão a mesma notificação automaticamente."
     },
     "q4": {
-      "question": "Quanto tempo leva pra começar?",
-      "answer": "Criamos seu pacote de QR codes e checklist de integração em até 3 dias úteis. Obras piloto geralmente começam na mesma semana."
+      "question": "Posso exportar meus registros de entregas?",
+      "answer": "Sim. Todas as fotos e dados de entregas podem ser exportados para seus arquivos, relatórios ou contabilidade. Seus dados sempre pertencem a você e permanecem acessíveis."
     }
   },
   "cta": {

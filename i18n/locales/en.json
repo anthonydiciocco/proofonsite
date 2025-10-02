@@ -157,11 +157,18 @@
     "perSite": "Per site",
     "currency": "$",
     "badge": "Pilot Ready",
+    "betaBadge": "Open Beta — Free Access",
     "perActiveSite": "Per active site",
     "perMonth": "/month",
+    "betaPrice": "Free",
+    "duringBeta": "during beta",
+    "afterBeta": "After launch",
     "description": "Activate a site only when materials are flowing. Pause and resume in seconds — no annual commitment, no hidden tiers.",
+    "betaDescription": "Test ProofOnSite completely free during our beta period. Help us refine the product, and you'll be first in line when we launch officially.",
     "ctaButton": "Start 30-day pilot",
+    "betaCtaButton": "Join the free beta",
     "billingNote": "Monthly billing for active sites only. Cancel or pause anytime — we send a reminder before each renewal.",
+    "betaBillingNote": "Completely free during beta — No credit card required",
     "features": {
       "unlimitedUploads": {
         "title": "Unlimited uploads",
@@ -423,22 +430,22 @@
   },
   "faq": {
     "title": "Frequently asked questions",
-    "description": "Everything is done by email — schedule a personalized demo and receive documentation for your team.",
+    "description": "Simple answers about how ProofOnSite works on real construction sites.",
     "q1": {
-      "question": "Do crews need accounts or logins?",
-      "answer": "No account, password, or download. The QR opens a secure form scoped to that site. We automatically capture the submitter's identifier and timestamp."
+      "question": "Do delivery crews need accounts or apps?",
+      "answer": "No. They scan the QR code with their phone camera and immediately see a photo upload form. No account, no password, no app download required. Works on any smartphone."
     },
     "q2": {
-      "question": "What happens with spotty connectivity?",
-      "answer": "ProofOnSite caches the submission locally, compresses media, then syncs as soon as the device catches signal. A banner confirms once the delivery is transmitted."
+      "question": "How fast can I get started?",
+      "answer": "Less than 5 minutes. Sign up, create your first site, add an address, then download your QR code. Print it and you're ready to track deliveries."
     },
     "q3": {
-      "question": "Can we automatically notify suppliers or clients?",
-      "answer": "Yes. Each site lets you add optional CC emails so stakeholders receive the same log without being added as users."
+      "question": "Who gets notified when a delivery arrives?",
+      "answer": "You receive an instant email with the photos, timestamp, and site reference. You can also add CC emails (suppliers, clients, project managers) who will get the same notification automatically."
     },
     "q4": {
-      "question": "How quickly can we get started?",
-      "answer": "We create your QR packs and onboarding checklist within 3 business days. Pilot sites typically launch the same week."
+      "question": "Can I export my delivery records?",
+      "answer": "Yes. All delivery photos and data can be exported for your archives, reports, or accounting. Your data always remains yours and accessible."
     }
   },
   "cta": {

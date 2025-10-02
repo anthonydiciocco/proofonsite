@@ -157,11 +157,18 @@
     "perSite": "Par chantier",
     "currency": "$",
     "badge": "Prêt pilote",
+    "betaBadge": "Beta Ouverte — Accès Gratuit",
     "perActiveSite": "Par chantier actif",
     "perMonth": "/ mois",
+    "betaPrice": "Gratuit",
+    "duringBeta": "pendant la beta",
+    "afterBeta": "Après le lancement",
     "description": "Activez un chantier seulement quand les matériaux circulent. Mettez en pause et reprenez en quelques secondes — aucun engagement annuel ni palier caché.",
+    "betaDescription": "Testez ProofOnSite complètement gratuitement durant notre période beta. Aidez-nous à perfectionner le produit, et vous serez les premiers servis lors du lancement officiel.",
     "ctaButton": "Démarrer un pilote de 30 jours",
+    "betaCtaButton": "Rejoindre la beta gratuite",
     "billingNote": "Facturation mensuelle pour les chantiers actifs uniquement. Annulez ou mettez en pause à tout moment — nous envoyons un rappel avant chaque renouvellement.",
+    "betaBillingNote": "Complètement gratuit pendant la beta — Aucune carte bancaire requise",
     "features": {
       "unlimitedUploads": {
         "title": "Téléversements illimités",
@@ -423,22 +430,22 @@
   },
   "faq": {
     "title": "Questions fréquentes",
-    "description": "Tout se fait par e-mail — planifiez une démonstration personnalisée et recevez la documentation pour votre équipe.",
+    "description": "Réponses simples sur le fonctionnement de ProofOnSite sur de vrais chantiers.",
     "q1": {
-      "question": "Les équipes ont-elles besoin de comptes ou de connexions ?",
-      "answer": "Aucun compte, mot de passe ou téléchargement. Le QR ouvre un formulaire sécurisé délimité à ce chantier. Nous capturons l'identifiant de l'appelant et l'horodatage automatiquement."
+      "question": "Les livreurs ont-ils besoin de comptes ou d'applications ?",
+      "answer": "Non. Ils scannent le code QR avec la caméra de leur téléphone et voient immédiatement un formulaire de téléversement de photos. Aucun compte, aucun mot de passe, aucune application à télécharger. Fonctionne sur n'importe quel téléphone intelligent."
     },
     "q2": {
-      "question": "Que se passe-t-il avec une connectivité irrégulière ?",
-      "answer": "ProofOnSite met en cache la soumission localement, compresse les médias, puis se synchronise dès que l'appareil capte un signal. Une bannière confirme une fois la livraison transmise."
+      "question": "En combien de temps puis-je démarrer ?",
+      "answer": "Moins de 5 minutes. Inscrivez-vous, créez votre premier chantier, ajoutez une adresse, puis téléchargez votre code QR. Imprimez-le et vous êtes prêt à suivre les livraisons."
     },
     "q3": {
-      "question": "Peut-on notifier automatiquement les fournisseurs ou clients ?",
-      "answer": "Oui. Chaque chantier vous permet d'ajouter des e-mails CC optionnels pour que les parties prenantes reçoivent le même registre sans être ajoutées comme utilisateurs."
+      "question": "Qui est notifié quand une livraison arrive ?",
+      "answer": "Vous recevez un courriel instantané avec les photos, l'horodatage et la référence du chantier. Vous pouvez aussi ajouter des courriels en CC (fournisseurs, clients, chargés de projet) qui recevront la même notification automatiquement."
     },
     "q4": {
-      "question": "En combien de temps peut-on démarrer ?",
-      "answer": "Nous créons vos trousses QR et liste de vérification d'intégration sous 3 jours ouvrables. Les chantiers pilotes démarrent généralement la même semaine."
+      "question": "Puis-je exporter mes registres de livraison ?",
+      "answer": "Oui. Toutes les photos et données de livraison peuvent être exportées pour vos archives, rapports ou comptabilité. Vos données vous appartiennent toujours et restent accessibles."
     }
   },
   "cta": {

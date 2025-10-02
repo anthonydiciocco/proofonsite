@@ -157,11 +157,18 @@
     "perSite": "Pro Baustelle",
     "currency": "$",
     "badge": "Pilotphase",
+    "betaBadge": "Offene Beta — Kostenloser Zugang",
     "perActiveSite": "Pro aktiver Baustelle",
     "perMonth": "/ Monat",
+    "betaPrice": "Kostenlos",
+    "duringBeta": "während der Beta",
+    "afterBeta": "Nach dem Launch",
     "description": "Aktivieren Sie eine Baustelle nur, wenn Material angeliefert wird. Pausieren und fortsetzen Sie jederzeit – keine Jahresverträge, keine versteckten Kosten.",
+    "betaDescription": "Testen Sie ProofOnSite völlig kostenlos während unserer Betaphase. Helfen Sie uns, das Produkt zu verfeinern, und Sie sind beim offiziellen Launch ganz vorne dabei.",
     "ctaButton": "30-Tage-Pilot starten",
+    "betaCtaButton": "Kostenlos zur Beta anmelden",
     "billingNote": "Monatliche Abrechnung nur für aktive Baustellen. Jederzeit kündbar oder pausierbar – wir senden eine Erinnerung vor jeder Verlängerung.",
+    "betaBillingNote": "Völlig kostenlos während der Beta — Keine Kreditkarte erforderlich",
     "features": {
       "unlimitedUploads": {
         "title": "Unbegrenzte Erfassungen",
@@ -423,22 +430,22 @@
   },
   "faq": {
     "title": "Häufige Fragen",
-    "description": "Alles per E-Mail – vereinbaren Sie eine persönliche Demo und erhalten Sie die Dokumentation für Ihr Team.",
+    "description": "Einfache Antworten darüber, wie ProofOnSite auf echten Baustellen funktioniert.",
     "q1": {
-      "question": "Benötigen Mitarbeiter ein Konto, um Lieferungen zu erfassen?",
-      "answer": "Nein. Kein Konto, kein Passwort, kein Download. Der QR-Code öffnet ein sicheres Formular nur für diese Baustelle. Wir erfassen automatisch Zeitstempel und Geräte-ID."
+      "question": "Benötigen Lieferanten Konten oder Apps?",
+      "answer": "Nein. Sie scannen den QR-Code mit ihrer Handykamera und sehen sofort ein Foto-Upload-Formular. Kein Konto, kein Passwort, kein App-Download erforderlich. Funktioniert auf jedem Smartphone."
     },
     "q2": {
-      "question": "Funktioniert es auch ohne Internetverbindung?",
-      "answer": "Ja. ProofOnSite speichert die Erfassung lokal, komprimiert die Dateien und synchronisiert automatisch, sobald das Gerät wieder Empfang hat. Ein Banner bestätigt die erfolgreiche Übertragung."
+      "question": "Wie schnell kann ich starten?",
+      "answer": "Weniger als 5 Minuten. Registrieren Sie sich, erstellen Sie Ihre erste Baustelle, fügen Sie eine Adresse hinzu, dann laden Sie Ihren QR-Code herunter. Drucken Sie ihn aus und Sie können Lieferungen verfolgen."
     },
     "q3": {
-      "question": "Können mehrere Personen benachrichtigt werden?",
-      "answer": "Ja. Bei jeder Baustelle können Sie optionale CC-E-Mail-Adressen hinzufügen, damit Beteiligte das gleiche Protokoll erhalten, ohne als Benutzer hinzugefügt zu werden."
+      "question": "Wer wird benachrichtigt, wenn eine Lieferung eintrifft?",
+      "answer": "Sie erhalten eine sofortige E-Mail mit den Fotos, Zeitstempel und Baustellenreferenz. Sie können auch CC-E-Mails hinzufügen (Lieferanten, Kunden, Projektmanager), die automatisch die gleiche Benachrichtigung erhalten."
     },
     "q4": {
-      "question": "Wie lange werden die Daten gespeichert?",
-      "answer": "Alle Lieferungsdaten werden sicher für die Dauer Ihres Abonnements gespeichert. Nach Beendigung haben Sie 30 Tage Zeit, um alle Daten zu exportieren."
+      "question": "Kann ich meine Lieferungsdaten exportieren?",
+      "answer": "Ja. Alle Lieferfotos und -daten können für Ihre Archive, Berichte oder Buchhaltung exportiert werden. Ihre Daten bleiben immer Ihnen und zugänglich."
     }
   },
   "cta": {
