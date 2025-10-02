@@ -88,20 +88,6 @@ export async function sendDeliveryNotification(data: DeliveryNotificationData) {
           </div>
         </div>
 
-        <!-- Photo Section -->
-        <div style="background: #ffffff; border-radius: 12px; padding: 24px; margin-bottom: 20px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
-          <h2 style="margin: 0 0 16px; font-size: 16px; font-weight: 600; color: #0f172a;">
-            Photo de livraison
-          </h2>
-          <a href="${data.photoUrl}" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
-            <img
-              src="${data.photoUrl}"
-              alt="Photo de livraison"
-              style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #e5e7eb; display: block;"
-            />
-          </a>
-        </div>
-
         <!-- Footer -->
         <div style="margin-top: 32px; padding-top: 24px; border-top: 2px solid #e5e7eb; text-align: center;">
           <p style="margin: 0 0 16px; font-size: 14px; color: #64748b; font-weight: 500;">
