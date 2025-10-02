@@ -261,7 +261,7 @@
           "archived": "Archiviert"
         },
         "notificationEmailsLabel": "Benachrichtigungs-E-Mails (CC)",
-        "notificationEmailsPlaceholder": "lieferant@beispiel.de",
+        "notificationEmailsPlaceholder": "lieferant{'@'}beispiel.de",
         "notificationEmailsHint": "Fügen Sie bis zu 5 E-Mail-Adressen hinzu, um Lieferbenachrichtigungen zu erhalten (Lieferanten, Kunden, Manager)",
         "saveButton": "Speichern",
         "createButton": "Baustelle anlegen"

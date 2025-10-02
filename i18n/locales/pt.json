@@ -261,7 +261,7 @@
           "archived": "Arquivada"
         },
         "notificationEmailsLabel": "E-mails de notificação (CC)",
-        "notificationEmailsPlaceholder": "fornecedor@exemplo.com",
+        "notificationEmailsPlaceholder": "fornecedor{'@'}exemplo.com",
         "notificationEmailsHint": "Adicione até 5 endereços de e-mail para receber notificações de entregas (fornecedores, clientes, gerentes)",
         "saveButton": "Salvar obra",
         "createButton": "Criar obra"
