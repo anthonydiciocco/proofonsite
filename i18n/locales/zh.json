@@ -17,8 +17,29 @@
     "noResults": "无结果",
     "required": "必填",
     "optional": "可选",
-    "yes": "是",
-    "no": "否",
+     "deliveries": {
+    "title": "到货记录",
+    "site": "工地",
+    "backToDashboard": "返回工作台",
+    "noDeliveries": "此工地暂无到货记录。",
+    "loading": "加载到货记录中...",
+    "deliveryFrom": "到货于",
+    "columns": {
+      "photo": "照片",
+      "date": "日期时间",
+      "actions": "操作"
+    },
+    "viewPhoto": "查看完整照片",
+    "delete": {
+      "title": "删除此到货记录？",
+      "description": "此操作无法撤销。照片将被永久删除。",
+      "confirm": "删除"
+    },
+    "toast": {
+      "deleted": "到货记录已删除",
+      "errorDelete": "无法删除到货记录。请重试。"
+    }
+  },    "no": "否",
     "all": "全部",
     "active": "进行中",
     "archived": "已归档",
@@ -185,7 +206,7 @@
     "cta": "开始30天试点"
   },
   "dashboard": {
-    "hello": "你好",
+    "hello": "你好, {name}",
     "welcome": "欢迎使用 ProofOnSite 工作台",
     "subtitle": "管理工地并跟踪材料到场记录。",
     "newSite": "创建新工地",

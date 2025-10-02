@@ -238,10 +238,10 @@ const currentYear = new Date().getFullYear()
             </p>
           </div>
 
-          <UPageColumns>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <ScrollReveal v-for="(pain, index) in painPoints" :key="pain.title" as="div" animation="fade-up"
               :delay="index * 80"
-              class="space-y-4 p-8 rounded-2xl bg-gradient-to-b from-red-50/30 to-transparent dark:from-red-950/20 dark:to-transparent border border-red-100/50 dark:border-red-900/30 hover:border-red-200/70 dark:hover:border-red-800/50 transition-colors duration-300">
+              class="flex flex-col space-y-4 p-8 rounded-2xl bg-gradient-to-b from-red-50/30 to-transparent dark:from-red-950/20 dark:to-transparent border border-red-100/50 dark:border-red-900/30 hover:border-red-200/70 dark:hover:border-red-800/50 transition-colors duration-300">
               <div class="flex size-16 items-center justify-center rounded-2xl bg-red-500 text-white shadow-lg">
                 <UIcon :name="pain.icon" class="size-8" />
               </div>
@@ -252,7 +252,7 @@ const currentYear = new Date().getFullYear()
                 {{ pain.description }}
               </p>
             </ScrollReveal>
-          </UPageColumns>
+          </div>
         </UContainer>
       </ScrollReveal>
 

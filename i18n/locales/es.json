@@ -185,7 +185,7 @@
     "cta": "Comenzar piloto de 30 días"
   },
   "dashboard": {
-    "hello": "Hola",
+    "hello": "Hola, {name}",
     "welcome": "Bienvenido a tu panel ProofOnSite",
     "subtitle": "Gestiona tus obras y sigue las entregas.",
     "newSite": "Crear nueva obra",
@@ -404,7 +404,16 @@
       "date": "Fecha y hora",
       "actions": "Acciones"
     },
-    "viewPhoto": "Ver foto completa"
+    "viewPhoto": "Ver foto completa",
+    "delete": {
+      "title": "¿Eliminar esta entrega?",
+      "description": "Esta acción no se puede deshacer. La foto se eliminará permanentemente.",
+      "confirm": "Eliminar"
+    },
+    "toast": {
+      "deleted": "Entrega eliminada con éxito",
+      "errorDelete": "No se pudo eliminar la entrega. Intente nuevamente."
+    }
   },
   "faq": {
     "title": "Preguntas frecuentes",

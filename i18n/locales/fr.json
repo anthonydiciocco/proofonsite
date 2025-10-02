@@ -185,7 +185,7 @@
     "cta": "Démarrer un pilote de 30 jours"
   },
   "dashboard": {
-    "hello": "Bonjour",
+    "hello": "Bonjour, {name}",
     "welcome": "Bienvenue sur votre tableau de bord ProofOnSite",
     "subtitle": "Gérez vos chantiers et suivez les livraisons.",
     "newSite": "Créer un nouveau chantier",
@@ -404,7 +404,16 @@
       "date": "Date et heure",
       "actions": "Actions"
     },
-    "viewPhoto": "Voir la photo complète"
+    "viewPhoto": "Voir la photo complète",
+    "delete": {
+      "title": "Supprimer cette livraison ?",
+      "description": "Cette action est irréversible. La photo sera définitivement supprimée.",
+      "confirm": "Supprimer"
+    },
+    "toast": {
+      "deleted": "Livraison supprimée avec succès",
+      "errorDelete": "Impossible de supprimer la livraison. Veuillez réessayer."
+    }
   },
   "faq": {
     "title": "Questions fréquentes",

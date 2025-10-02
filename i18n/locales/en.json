@@ -185,7 +185,7 @@
     "cta": "Start 30-day pilot"
   },
   "dashboard": {
-    "hello": "Hello",
+    "hello": "Hello, {name}",
     "welcome": "Welcome to your ProofOnSite dashboard",
     "subtitle": "Manage your sites and track deliveries.",
     "newSite": "Create new site",
@@ -404,7 +404,16 @@
       "date": "Date & time",
       "actions": "Actions"
     },
-    "viewPhoto": "View full photo"
+    "viewPhoto": "View full photo",
+    "delete": {
+      "title": "Delete this delivery?",
+      "description": "This action cannot be undone. The photo will be permanently deleted.",
+      "confirm": "Delete"
+    },
+    "toast": {
+      "deleted": "Delivery deleted successfully",
+      "errorDelete": "Failed to delete delivery. Please try again."
+    }
   },
   "faq": {
     "title": "Frequently asked questions",

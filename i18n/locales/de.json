@@ -185,7 +185,7 @@
     "cta": "30-Tage-Pilot starten"
   },
   "dashboard": {
-    "hello": "Hallo",
+    "hello": "Hallo, {name}",
     "welcome": "Willkommen in Ihrem ProofOnSite Dashboard",
     "subtitle": "Verwalten Sie Ihre Baustellen und verfolgen Sie Lieferungen.",
     "newSite": "Neue Baustelle anlegen",
@@ -404,7 +404,16 @@
       "date": "Datum",
       "actions": "Aktionen"
     },
-    "viewPhoto": "Vollständiges Foto anzeigen"
+    "viewPhoto": "Vollständiges Foto anzeigen",
+    "delete": {
+      "title": "Diese Lieferung löschen?",
+      "description": "Diese Aktion kann nicht rückgängig gemacht werden. Das Foto wird dauerhaft gelöscht.",
+      "confirm": "Löschen"
+    },
+    "toast": {
+      "deleted": "Lieferung erfolgreich gelöscht",
+      "errorDelete": "Lieferung konnte nicht gelöscht werden. Bitte versuchen Sie es erneut."
+    }
   },
   "faq": {
     "title": "Häufige Fragen",

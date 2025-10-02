@@ -185,7 +185,7 @@
     "cta": "Começar piloto de 30 dias"
   },
   "dashboard": {
-    "hello": "Olá",
+    "hello": "Olá, {name}",
     "welcome": "Bem-vindo ao seu painel ProofOnSite",
     "subtitle": "Gerencie suas obras e acompanhe as entregas.",
     "newSite": "Criar nova obra",
@@ -404,7 +404,16 @@
       "date": "Data e hora",
       "actions": "Ações"
     },
-    "viewPhoto": "Ver foto completa"
+    "viewPhoto": "Ver foto completa",
+    "delete": {
+      "title": "Excluir esta entrega?",
+      "description": "Esta ação não pode ser desfeita. A foto será excluída permanentemente.",
+      "confirm": "Excluir"
+    },
+    "toast": {
+      "deleted": "Entrega excluída com sucesso",
+      "errorDelete": "Falha ao excluir entrega. Tente novamente."
+    }
   },
   "faq": {
     "title": "Perguntas frequentes",
