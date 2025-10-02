@@ -23,7 +23,8 @@
     "active": "Active",
     "archived": "Archived",
     "refresh": "Refresh",
-    "language": "Language"
+    "language": "Language",
+    "add": "Add"
   },
   "beta": {
     "bannerMessage": "Open Beta — Free unlimited access",
@@ -273,6 +274,7 @@
         "addressMin": "Address must be at least 5 characters",
         "addressMax": "Address cannot exceed 200 characters",
         "emailInvalid": "Invalid email format",
+        "emailDuplicate": "This email is already in the list",
         "emailsMax": "Maximum 5 notification emails allowed"
       },
       "toast": {

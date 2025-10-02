@@ -23,7 +23,8 @@
     "active": "进行中",
     "archived": "已归档",
     "refresh": "刷新",
-    "language": "语言"
+    "language": "语言",
+    "add": "添加"
   },
   "beta": {
     "bannerMessage": "开放测试版 — 免费无限制使用",
@@ -273,6 +274,7 @@
         "addressMin": "地址至少需要5个字符",
         "addressMax": "地址不能超过200个字符",
         "emailInvalid": "邮箱格式无效",
+        "emailDuplicate": "此邮箱已在列表中",
         "emailsMax": "最多允许5个通知邮箱"
       },
       "toast": {

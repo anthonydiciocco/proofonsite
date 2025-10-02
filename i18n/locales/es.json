@@ -23,7 +23,8 @@
     "active": "Activa",
     "archived": "Archivada",
     "refresh": "Actualizar",
-    "language": "Idioma"
+    "language": "Idioma",
+    "add": "Agregar"
   },
   "beta": {
     "bannerMessage": "Beta abierta — Acceso gratuito ilimitado",
@@ -273,6 +274,7 @@
         "addressMin": "La dirección debe tener al menos 5 caracteres",
         "addressMax": "La dirección no puede superar 200 caracteres",
         "emailInvalid": "Formato de correo inválido",
+        "emailDuplicate": "Este correo ya está en la lista",
         "emailsMax": "Máximo 5 correos de notificación permitidos"
       },
       "toast": {

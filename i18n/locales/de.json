@@ -23,7 +23,8 @@
     "active": "",
     "archived": "",
     "refresh": "",
-    "language": ""
+    "language": "",
+    "add": "Hinzufügen"
   },
   "beta": {
     "bannerMessage": "Offene Beta — Kostenloser unbegrenzter Zugang",
@@ -273,6 +274,7 @@
         "addressMin": "Die Adresse muss mindestens 5 Zeichen lang sein",
         "addressMax": "Die Adresse darf maximal 200 Zeichen lang sein",
         "emailInvalid": "Ungültiges E-Mail-Format",
+        "emailDuplicate": "Diese E-Mail ist bereits in der Liste",
         "emailsMax": "Maximal 5 Benachrichtigungs-E-Mails erlaubt"
       },
       "toast": {

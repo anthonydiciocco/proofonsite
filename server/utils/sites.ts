@@ -24,6 +24,7 @@ export function serializeSite(record: DBSite): Site {
     status: record.status,
     referenceCode: record.referenceCode,
     captureToken: record.captureToken,
+    notificationEmails: record.notificationEmails ?? [],
     createdAt: formatDate(record.createdAt),
     updatedAt: formatDate(record.updatedAt)
   }

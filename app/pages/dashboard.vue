@@ -312,6 +312,9 @@ const formState = reactive<SiteFormInput>({
   notificationEmails: []
 })
 
+const newEmail = ref('')
+const emailInputError = ref('')
+
 function resetForm(site?: Site) {
   Object.assign(formState, {
     name: site?.name ?? '',
@@ -319,6 +322,60 @@ function resetForm(site?: Site) {
     status: site?.status ?? 'active',
     notificationEmails: site?.notificationEmails ?? []
   })
+  newEmail.value = ''
+  emailInputError.value = ''
+}
+
+function addEmail() {
+  const email = newEmail.value.trim()
+
+  // Reset error
+  emailInputError.value = ''
+
+  if (!email) {
+    return
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    emailInputError.value = t('dashboard.sites.validation.emailInvalid')
+    return
+  }
+
+  // Check if email already exists
+  if (formState.notificationEmails?.includes(email)) {
+    emailInputError.value = t('dashboard.sites.validation.emailDuplicate')
+    return
+  }
+
+  // Check max limit
+  if ((formState.notificationEmails?.length ?? 0) >= 5) {
+    emailInputError.value = t('dashboard.sites.validation.emailsMax')
+    return
+  }
+
+  // Add email
+  if (!formState.notificationEmails) {
+    formState.notificationEmails = []
+  }
+  formState.notificationEmails.push(email)
+  newEmail.value = ''
+}
+
+function removeEmail(email: string) {
+  if (!formState.notificationEmails) {
+    return
+  }
+  formState.notificationEmails = formState.notificationEmails.filter(e => e !== email)
+  emailInputError.value = ''
+}
+
+function handleEmailKeydown(event: KeyboardEvent) {
+  if (event.key === 'Enter') {
+    event.preventDefault()
+    addEmail()
+  }
 }
 
 function startCreateSite() {
@@ -381,7 +438,8 @@ async function submitSite(event: { data?: SiteForm | null }) {
   const payload = {
     name: event.data.name,
     address: event.data.address,
-    status: event.data.status
+    status: event.data.status,
+    notificationEmails: event.data.notificationEmails ?? []
   }
 
   try {
@@ -716,15 +774,40 @@ function refreshFilters() {
                 ]" />
               </UFormField>
 
-              <UFormField name="notificationEmails" :label="t('dashboard.sites.form.notificationEmailsLabel')">
-                <UInputMenu v-model="formState.notificationEmails"
-                  :placeholder="t('dashboard.sites.form.notificationEmailsPlaceholder')" multiple creatable searchable
-                  icon="i-lucide-mail" />
-                <template #hint>
+              <UFormField :label="t('dashboard.sites.form.notificationEmailsLabel')">
+                <div class="space-y-3">
+                  <div class="flex gap-2">
+                    <UInput v-model="newEmail" :placeholder="t('dashboard.sites.form.notificationEmailsPlaceholder')"
+                      icon="i-lucide-mail" type="email" class="flex-1"
+                      :disabled="(formState.notificationEmails?.length ?? 0) >= 5" @keydown="handleEmailKeydown" />
+                    <UButton color="secondary" variant="outline" icon="i-lucide-plus"
+                      :disabled="!newEmail.trim() || (formState.notificationEmails?.length ?? 0) >= 5"
+                      @click="addEmail">
+                      {{ t('common.add') }}
+                    </UButton>
+                  </div>
+
+                  <p v-if="emailInputError" class="text-xs text-error">
+                    {{ emailInputError }}
+                  </p>
+
+                  <div v-if="formState.notificationEmails && formState.notificationEmails.length > 0"
+                    class="flex flex-wrap gap-2">
+                    <UBadge v-for="email in formState.notificationEmails" :key="email" color="primary" variant="subtle"
+                      class="pl-3 pr-1 py-1.5">
+                      <span class="text-sm">{{ email }}</span>
+                      <UButton color="neutral" variant="ghost" size="xs" icon="i-lucide-x" :ui="{ root: 'ml-1.5' }"
+                        @click="removeEmail(email)" />
+                    </UBadge>
+                  </div>
+
                   <p class="text-xs text-[color:var(--ui-text-muted)]">
                     {{ t('dashboard.sites.form.notificationEmailsHint') }}
+                    <span v-if="formState.notificationEmails && formState.notificationEmails.length > 0">
+                      ({{ formState.notificationEmails.length }}/5)
+                    </span>
                   </p>
-                </template>
+                </div>
               </UFormField>
 
               <div class="flex justify-end gap-3">
