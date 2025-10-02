@@ -25,6 +25,10 @@
     "refresh": "Refresh",
     "language": "Language"
   },
+  "beta": {
+    "bannerMessage": "Open Beta — Free unlimited access",
+    "signupCta": "Sign up free"
+  },
   "nav": {
     "home": "Home",
     "dashboard": "Dashboard",
@@ -43,15 +47,17 @@
     "faq": "FAQ"
   },
   "hero": {
+    "betaBadge": "Open Beta — Free Unlimited Access",
     "headline": "Field-tested",
     "title": "Visual proof of every delivery, captured in 30 seconds",
-    "description": "Scan the site QR code and snap a photo. No lost paperwork, no app download, no wasted time.",
+    "description": "Scan the site QR code and snap a photo. No lost paperwork, no app download, no wasted time. Sign up now — completely free during beta.",
     "imageAlt": "ProofOnSite capture in action",
     "badges": {
       "liveCapture": "Live Capture",
       "fieldReady": "Field Ready"
     },
     "cta": {
+      "signup": "Start for free",
       "demo": "See it in action",
       "contact": "Contact us by email"
     }
@@ -438,8 +444,12 @@
   "cta": {
     "title": "Schedule your site pilot",
     "description": "Answer three short questions and we'll prepare a printable QR pack, adoption guide, and video onboarding session — all within 72 hours.",
+    "titleBeta": "Start tracking deliveries today",
+    "descriptionBeta": "Sign up now — completely free during beta. No credit card required. No time limits. Help us validate ProofOnSite and get unlimited access.",
     "primaryButton": "Book a meeting",
-    "secondaryButton": "Download product sheet"
+    "secondaryButton": "Download product sheet",
+    "signupButton": "Create free account",
+    "learnMore": "Learn how it works"
   },
   "footer": {
     "tagline": "Visual proof for every delivery. Built for construction.",

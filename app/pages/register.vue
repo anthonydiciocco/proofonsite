@@ -100,6 +100,16 @@ async function onSubmit(event: { data?: RegisterForm | null }) {
 <template>
   <UContainer class="py-16">
     <div class="mx-auto flex max-w-md flex-col gap-6">
+      <!-- Beta Badge -->
+      <div class="flex justify-center">
+        <UBadge color="success" variant="subtle" size="lg">
+          <div class="flex items-center gap-2">
+            <UIcon name="i-lucide-sparkles" class="size-4" />
+            <span class="font-semibold">{{ t('beta.bannerMessage') }}</span>
+          </div>
+        </UBadge>
+      </div>
+
       <div class="space-y-2 text-center">
         <h1 class="text-2xl font-semibold text-[color:var(--ui-text-highlighted)]">
           {{ t('auth.register.heading') }}

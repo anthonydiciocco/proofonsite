@@ -25,6 +25,10 @@
     "refresh": "Atualizar",
     "language": "Idioma"
   },
+  "beta": {
+    "bannerMessage": "Beta aberta — Acesso gratuito ilimitado",
+    "signupCta": "Cadastrar grátis"
+  },
   "nav": {
     "home": "Início",
     "dashboard": "Painel",
@@ -43,15 +47,17 @@
     "faq": "Dúvidas"
   },
   "hero": {
+    "betaBadge": "Beta aberta — Acesso gratuito ilimitado",
     "headline": "Testado em obra",
     "title": "Cada entrega registrada em 30 segundos, com foto e hora exata",
-    "description": "Escaneia o QR da obra e tira a foto. Sem papel perdido, sem app pra baixar, sem perder tempo.",
+    "description": "Escaneia o QR da obra e tira a foto. Sem papel perdido, sem app pra baixar, sem perder tempo. Cadastre-se agora — completamente grátis durante a beta.",
     "imageAlt": "ProofOnSite registro em obra",
     "badges": {
       "liveCapture": "Registro Instantâneo",
       "fieldReady": "Pronto pra Obra"
     },
     "cta": {
+      "signup": "Começar grátis",
       "demo": "Ver demonstração",
       "contact": "Falar por e-mail"
     }
@@ -438,8 +444,12 @@
   "cta": {
     "title": "Agende seu piloto em obra",
     "description": "Responda três perguntas curtas e preparamos um pacote de QR imprimível, guia de adoção e sessão de onboarding em vídeo — tudo em até 72 horas.",
+    "titleBeta": "Comece a rastrear entregas hoje",
+    "descriptionBeta": "Cadastre-se agora — completamente grátis durante a beta. Sem cartão de crédito. Sem limites de tempo. Nos ajude a validar o ProofOnSite e ganhe acesso ilimitado.",
     "primaryButton": "Agendar reunião",
-    "secondaryButton": "Baixar ficha do produto"
+    "secondaryButton": "Baixar ficha do produto",
+    "signupButton": "Criar conta gratuita",
+    "learnMore": "Descobrir como funciona"
   },
   "footer": {
     "tagline": "Prova visual de cada entrega. Feito pra construção.",

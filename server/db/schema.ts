@@ -1,5 +1,6 @@
 import { relations } from 'drizzle-orm'
 import {
+  boolean,
   pgEnum,
   pgTable,
   text,
@@ -12,6 +13,11 @@ export const users = pgTable('users', {
   email: text('email').notNull().unique(),
   passwordHash: text('password_hash').notNull(),
   displayName: text('display_name'),
+
+  // Beta tracking
+  joinedDuringBeta: boolean('joined_during_beta').default(true),
+  betaJoinedAt: timestamp('beta_joined_at', { withTimezone: true }),
+
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull()
 }, table => ({

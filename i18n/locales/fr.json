@@ -25,6 +25,10 @@
     "refresh": "Actualiser",
     "language": "Langue"
   },
+  "beta": {
+    "bannerMessage": "Beta ouverte — Accès gratuit illimité",
+    "signupCta": "Inscription gratuite"
+  },
   "nav": {
     "home": "Accueil",
     "dashboard": "Tableau de bord",
@@ -43,15 +47,17 @@
     "faq": "FAQ"
   },
   "hero": {
+    "betaBadge": "Beta ouverte — Accès illimité gratuit",
     "headline": "Testé sur les chantiers",
     "title": "Preuve visuelle de chaque livraison, capturée en 30 secondes",
-    "description": "Scannez le code QR du chantier et prenez une photo. Aucune perte de papier, aucune application à télécharger, aucun temps perdu.",
+    "description": "Scannez le code QR du chantier et prenez une photo. Aucune perte de papier, aucune application à télécharger, aucun temps perdu. Inscrivez-vous maintenant — complètement gratuit pendant la beta.",
     "imageAlt": "ProofOnSite capture en action",
     "badges": {
       "liveCapture": "Capture en direct",
       "fieldReady": "Prêt pour le chantier"
     },
     "cta": {
+      "signup": "Commencer gratuitement",
       "demo": "Voir en action",
       "contact": "Nous contacter par e-mail"
     }
@@ -438,8 +444,12 @@
   "cta": {
     "title": "Planifiez votre pilote sur un chantier",
     "description": "Répondez à trois courtes questions et nous préparerons une trousse QR imprimable, un guide d'adoption et une séance vidéo d'intégration — le tout sous 72 heures.",
+    "titleBeta": "Commencez à suivre vos livraisons dès aujourd'hui",
+    "descriptionBeta": "Inscrivez-vous maintenant — complètement gratuit pendant la beta. Aucune carte de crédit requise. Aucune limite de temps. Aidez-nous à valider ProofOnSite et obtenez un accès illimité.",
     "primaryButton": "Réserver une rencontre",
-    "secondaryButton": "Télécharger la fiche produit"
+    "secondaryButton": "Télécharger la fiche produit",
+    "signupButton": "Créer un compte gratuit",
+    "learnMore": "Découvrir le fonctionnement"
   },
   "footer": {
     "tagline": "Preuve visuelle pour chaque livraison. Conçu pour la construction.",

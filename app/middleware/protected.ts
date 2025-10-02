@@ -4,10 +4,11 @@ import { refreshAuth, useAuthState } from '../../composables/useAuth'
 
 export default defineNuxtRouteMiddleware(async () => {
   const state = useAuthState()
+  const localePath = useLocalePath()
 
   if (typeof window === 'undefined') {
     if (!state.value.user) {
-      return navigateTo('/login')
+      return navigateTo(localePath('/login'))
     }
     return
   }
@@ -17,6 +18,6 @@ export default defineNuxtRouteMiddleware(async () => {
   }
 
   if (!state.value.user) {
-    return navigateTo('/login')
+    return navigateTo(localePath('/login'))
   }
 })

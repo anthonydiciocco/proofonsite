@@ -17,34 +17,17 @@
     "noResults": "无结果",
     "required": "必填",
     "optional": "可选",
-     "deliveries": {
-    "title": "到货记录",
-    "site": "工地",
-    "backToDashboard": "返回工作台",
-    "noDeliveries": "此工地暂无到货记录。",
-    "loading": "加载到货记录中...",
-    "deliveryFrom": "到货于",
-    "columns": {
-      "photo": "照片",
-      "date": "日期时间",
-      "actions": "操作"
-    },
-    "viewPhoto": "查看完整照片",
-    "delete": {
-      "title": "删除此到货记录？",
-      "description": "此操作无法撤销。照片将被永久删除。",
-      "confirm": "删除"
-    },
-    "toast": {
-      "deleted": "到货记录已删除",
-      "errorDelete": "无法删除到货记录。请重试。"
-    }
-  },    "no": "否",
+    "yes": "是",
+    "no": "否",
     "all": "全部",
     "active": "进行中",
     "archived": "已归档",
     "refresh": "刷新",
     "language": "语言"
+  },
+  "beta": {
+    "bannerMessage": "开放测试版 — 免费无限制使用",
+    "signupCta": "免费注册"
   },
   "nav": {
     "home": "首页",
@@ -64,15 +47,17 @@
     "faq": "常见问题"
   },
   "hero": {
+    "betaBadge": "开放测试版 — 免费无限制使用",
     "headline": "工地实测有效",
     "title": "每次材料到场，30秒完成可视化记录",
-    "description": "扫码拍照即完成。不丢单据，不装App，不浪费时间。",
+    "description": "扫码拍照即完成。不丢单据，不装App，不浪费时间。立即注册 — 测试版期间完全免费。",
     "imageAlt": "ProofOnSite 现场拍照记录",
     "badges": {
       "liveCapture": "实时记录",
       "fieldReady": "工地适配"
     },
     "cta": {
+      "signup": "免费开始",
       "demo": "查看演示",
       "contact": "邮件联系我们"
     }
@@ -450,8 +435,12 @@
   "cta": {
     "title": "预约工地试点",
     "description": "回答三个简短问题，我们会准备可打印的二维码包、使用指南和视频培训——全部在72小时内完成。",
+    "titleBeta": "今天就开始追踪材料到货",
+    "descriptionBeta": "立即注册 — 测试版期间完全免费。无需信用卡。无时间限制。帮助我们验证 ProofOnSite 并获得无限制访问权限。",
     "primaryButton": "预约演示",
-    "secondaryButton": "下载产品说明"
+    "secondaryButton": "下载产品说明",
+    "signupButton": "创建免费账户",
+    "learnMore": "了解工作原理"
   },
   "footer": {
     "tagline": "每次到货的可视化记录。专为建筑行业设计。",

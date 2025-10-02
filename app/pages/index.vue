@@ -7,27 +7,33 @@ import type {
 } from '@nuxt/ui'
 import { createNavigationItems } from '~/constants/navigation'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const localePath = useLocalePath()
 
 const navigationItems = computed(() => createNavigationItems(t))
 
-const heroLinks = computed(() => [
-  {
-    label: t('hero.cta.demo'),
-    to: '#cta',
-    size: 'xl' as const,
-    color: 'secondary' as const,
-    trailingIcon: 'i-lucide-arrow-right'
-  },
-  {
-    label: t('hero.cta.contact'),
-    to: 'mailto:hello@proofonsite.com?subject=ProofOnSite%20Pilot',
-    size: 'xl' as const,
-    color: 'secondary' as const,
-    variant: 'soft' as const,
-    icon: 'i-lucide-mail'
-  }
-] satisfies ButtonProps[])
+const heroLinks = computed(() => {
+  // Force recomputation when locale changes
+  const _locale = locale.value
+  return [
+    {
+      label: t('hero.cta.signup'),
+      to: localePath('/register'),
+      size: 'xl' as const,
+      color: 'secondary' as const,
+      trailingIcon: 'i-lucide-arrow-right',
+      icon: 'i-lucide-sparkles'
+    },
+    {
+      label: t('hero.cta.demo'),
+      to: '#workflow',
+      size: 'xl' as const,
+      color: 'secondary' as const,
+      variant: 'soft' as const,
+      icon: 'i-lucide-play-circle'
+    }
+  ] satisfies ButtonProps[]
+})
 
 const painPoints = computed(() => [
   {
@@ -180,6 +186,28 @@ const footerLegalLinks = computed(() => [
   { label: t('footer.legal.security'), to: '#', icon: 'i-lucide-lock' }
 ] satisfies PageLink[])
 
+const ctaLinks = computed(() => {
+  // Force recomputation when locale changes
+  const _locale = locale.value
+  return [
+    {
+      label: t('cta.signupButton'),
+      to: localePath('/register'),
+      color: 'secondary' as const,
+      icon: 'i-lucide-sparkles',
+      size: 'xl' as const
+    },
+    {
+      label: t('cta.learnMore'),
+      to: '#workflow',
+      color: 'secondary' as const,
+      variant: 'outline' as const,
+      icon: 'i-lucide-arrow-up',
+      size: 'xl' as const
+    }
+  ] satisfies ButtonProps[]
+})
+
 const currentYear = new Date().getFullYear()
 </script>
 
@@ -187,8 +215,16 @@ const currentYear = new Date().getFullYear()
   <div class="space-y-24">
     <div class="space-y-24">
       <ScrollReveal as="section" animation="fade-up" :duration="700">
-        <UPageHero :headline="t('hero.headline')" :title="t('hero.title')" :description="t('hero.description')"
-          orientation="horizontal" :links="heroLinks">
+        <UPageHero :title="t('hero.title')" :description="t('hero.description')" orientation="horizontal"
+          :links="heroLinks">
+          <template #headline>
+            <UBadge color="success" variant="subtle" size="lg" class="mb-4">
+              <div class="flex items-center gap-2">
+                <UIcon name="i-lucide-sparkles" class="size-4 animate-pulse" />
+                <span class="font-semibold">{{ t('hero.betaBadge') }}</span>
+              </div>
+            </UBadge>
+          </template>
           <template #default>
             <div class="flex justify-center">
               <div class="relative inline-block">
@@ -487,8 +523,8 @@ const currentYear = new Date().getFullYear()
               </ul>
 
               <div class="mt-8 space-y-3">
-                <UButton to="#cta" size="lg" color="secondary" class="w-full justify-between" icon="i-lucide-mail"
-                  trailing-icon="i-lucide-arrow-right">
+                <UButton :to="localePath('/register')" size="lg" color="secondary" class="w-full justify-between"
+                  icon="i-lucide-mail" trailing-icon="i-lucide-arrow-right">
                   {{ t('pricing.ctaButton') }}
                 </UButton>
                 <p class="text-xs text-muted">
@@ -509,19 +545,8 @@ const currentYear = new Date().getFullYear()
       </ScrollReveal>
 
       <ScrollReveal id="cta" as="section" animation="zoom-in" :duration="650">
-        <UPageCTA :title="t('cta.title')" :description="t('cta.description')" variant="subtle" :links="[{
-          label: t('cta.primaryButton'),
-          to: 'mailto:hello@proofonsite.com?subject=I%20want%20to%20pilot%20ProofOnSite',
-          color: 'secondary',
-          icon: 'i-lucide-calendar-plus'
-        }, {
-          label: t('cta.secondaryButton'),
-          to: '#',
-          target: '_blank',
-          color: 'secondary',
-          variant: 'outline',
-          icon: 'i-lucide-file-down'
-        }]" />
+        <UPageCTA :title="t('cta.titleBeta')" :description="t('cta.descriptionBeta')" variant="subtle"
+          :links="ctaLinks" />
       </ScrollReveal>
     </div>
 

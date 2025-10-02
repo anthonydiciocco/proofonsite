@@ -114,6 +114,32 @@ Benefits:
 **Reason:** "One feature only" - tracking deliveries, not managing contacts
 **Migration:** Applied via `pnpm drizzle-kit push --force`
 
+### 4.4 Beta mode & short-term releases (important notes)
+
+- **Beta mode is enabled** via a simple feature flag located at `server/utils/features.ts`. Toggle `IS_BETA` to `false` when preparing for public launch.
+- **DB changes:** Added `joinedDuringBeta` (boolean) and `betaJoinedAt` (timestamp) to `users` to track beta participants. The migration was generated in `drizzle/0001_shallow_logan.sql` and pushed to the DB.
+- **Signup flow:** `server/api/auth/register.post.ts` now auto-marks new signups as beta users when the flag is active.
+- **Banner & UI:** A minimal, dismissible beta banner (`app/components/BetaBanner.vue`) is shown while beta is active. It uses `localePath()` for locale-aware navigation, stores dismissal in `sessionStorage`, and the banner is wired into the default layout (`app/layouts/default.vue`).
+- **Landing & Register:** The landing and register pages were updated to highlight the beta (badges, CTA) and to ensure locale-aware links (`app/pages/index.vue`, `app/pages/register.vue`).
+
+### 4.5 i18n & translations
+
+- Added `beta` copy keys and `hero.betaBadge` / beta CTA keys across all locale files to keep messages consistent: `i18n/locales/en.json`, `fr.json`, `es.json`, `pt.json`, `de.json`, `zh.json`.
+- Fixed a malformed `zh.json` and ensured every locale contains `beta.bannerMessage` and `beta.signupCta` so the banner and CTAs render correctly in all languages.
+
+### 4.6 Quick file map (recent changes)
+
+- `server/utils/features.ts` — feature flag & beta config
+- `server/api/features.get.ts` — exposes flags to the client
+- `server/api/auth/register.post.ts` — auto-mark signups as beta users
+- `server/db/schema.ts` — added `joinedDuringBeta`, `betaJoinedAt`
+- `drizzle/0001_shallow_logan.sql` — migration to add beta columns
+- `app/components/BetaBanner.vue` — compact green dismissible banner
+- `app/layouts/default.vue` — banner inserted into layout
+- `app/pages/index.vue` — hero + CTA updated to emphasize beta and use `localePath`
+- `app/pages/register.vue` — beta badge added on the register page
+- `i18n/locales/*.{en,fr,es,pt,de,zh}.json` — added beta copy and CTA keys
+
 ## 5. UX/Accessibility Decisions
 
 ### 5.1 Design Philosophy

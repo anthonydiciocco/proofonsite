@@ -25,6 +25,10 @@
     "refresh": "",
     "language": ""
   },
+  "beta": {
+    "bannerMessage": "Offene Beta — Kostenloser unbegrenzter Zugang",
+    "signupCta": "Kostenlos registrieren"
+  },
   "nav": {
     "home": "Start",
     "dashboard": "Dashboard",
@@ -43,15 +47,17 @@
     "faq": "Häufige Fragen"
   },
   "hero": {
+    "betaBadge": "Offene Beta — Kostenloser unbegrenzter Zugang",
     "headline": "Baustellengeprüft",
     "title": "Visueller Nachweis jeder Lieferung, erfasst in 30 Sekunden",
-    "description": "QR-Code scannen und Foto machen. Kein Papierkram verloren, keine App nötig, keine Zeit verschwendet.",
+    "description": "QR-Code scannen und Foto machen. Kein Papierkram verloren, keine App nötig, keine Zeit verschwendet. Jetzt registrieren — komplett kostenlos während der Beta.",
     "imageAlt": "ProofOnSite Erfassung in Aktion",
     "badges": {
       "liveCapture": "Live-Erfassung",
       "fieldReady": "Baustellentauglich"
     },
     "cta": {
+      "signup": "Kostenlos starten",
       "demo": "In Aktion sehen",
       "contact": "Per E-Mail kontaktieren"
     }
@@ -438,8 +444,12 @@
   "cta": {
     "title": "Planen Sie Ihren Baustellen-Pilot",
     "description": "Beantworten Sie drei kurze Fragen und wir bereiten ein druckfertiges QR-Paket, einen Einführungsleitfaden und eine Video-Schulung vor – alles innerhalb von 72 Stunden.",
+    "titleBeta": "Starten Sie heute mit der Lieferungsverfolgung",
+    "descriptionBeta": "Jetzt registrieren — komplett kostenlos während der Beta. Keine Kreditkarte erforderlich. Keine Zeitbegrenzung. Helfen Sie uns, ProofOnSite zu validieren und erhalten Sie unbegrenzten Zugang.",
     "primaryButton": "Termin buchen",
-    "secondaryButton": "Produktdatenblatt herunterladen"
+    "secondaryButton": "Produktdatenblatt herunterladen",
+    "signupButton": "Kostenloses Konto erstellen",
+    "learnMore": "Funktionsweise entdecken"
   },
   "footer": {
     "tagline": "Visueller Nachweis für jede Lieferung. Für die Baustelle entwickelt.",

@@ -7,6 +7,7 @@ import { z } from 'zod'
 import { useDb } from '../../db'
 import { users } from '../../db/schema'
 import { createSession, hashPassword } from '../../utils/auth'
+import { isBetaActive } from '../../utils/features'
 
 const registerSchema = z.object({
   email: z.string().email('Adresse courriel invalide').transform(value => value.toLowerCase()),
@@ -39,12 +40,15 @@ export default defineEventHandler(async (event) => {
   const now = new Date()
   const userId = randomUUID()
   const passwordHash = await hashPassword(body.password)
+  const isBeta = isBetaActive()
 
   await db.insert(users).values({
     id: userId,
     email: body.email,
     passwordHash,
     displayName: body.name,
+    joinedDuringBeta: isBeta,
+    betaJoinedAt: isBeta ? now : null,
     createdAt: now,
     updatedAt: now
   })

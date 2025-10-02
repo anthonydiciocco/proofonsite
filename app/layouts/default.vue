@@ -4,6 +4,7 @@
 
 <template>
   <div class="min-h-screen bg-app-surface text-app-foreground">
+    <BetaBanner />
     <ProofSiteHeader />
     <UMain class="pb-24">
       <slot />
