@@ -15,6 +15,13 @@
       "when": 1759365911501,
       "tag": "0001_shallow_logan",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1759415745562,
+      "tag": "0002_absent_hiroim",
+      "breakpoints": true
     }
   ]
 }

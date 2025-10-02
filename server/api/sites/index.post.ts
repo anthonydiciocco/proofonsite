@@ -23,6 +23,7 @@ export default defineEventHandler(async (event) => {
     name: payload.name,
     address: payload.address,
     status: payload.status ?? 'active',
+    notificationEmails: payload.notificationEmails ?? [],
     referenceCode,
     captureToken,
     createdAt: now,

@@ -3,8 +3,9 @@ import { eq } from 'drizzle-orm'
 import { nanoid } from 'nanoid'
 import { z } from 'zod'
 import { useDb } from '../../db'
-import { deliveries, sites } from '../../db/schema'
+import { deliveries, sites, users } from '../../db/schema'
 import type { DeliveryMetadata } from '../../../types/delivery'
+import { sendDeliveryNotification } from '../../utils/email'
 
 // Validation schema
 const captureSchema = z.object({
@@ -92,6 +93,27 @@ export default defineEventHandler(async (event) => {
       photoUrl: blob.url,
       metadata: JSON.stringify(metadata)
     }).returning()
+
+    // 7. Send email notification (async, non-blocking)
+    const owner = await db.query.users.findFirst({
+      where: eq(users.id, site.ownerId)
+    })
+
+    if (owner?.email) {
+      // Fire and forget - don't block the response
+      sendDeliveryNotification({
+        siteName: site.name,
+        siteAddress: site.address,
+        siteCode: site.referenceCode,
+        photoUrl: blob.url,
+        capturedAt: delivery.capturedAt,
+        ownerEmail: owner.email,
+        ccEmails: site.notificationEmails ?? []
+      }).catch((error) => {
+        console.error('Failed to send notification email:', error)
+        // Don't fail the request if email fails
+      })
+    }
 
     return {
       success: true,

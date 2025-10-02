@@ -286,7 +286,12 @@ const getFormSchema = () => z.object({
     .min(5, t('dashboard.sites.validation.addressMin'))
     .max(240, t('dashboard.sites.validation.addressMax'))
     .transform(value => value.trim()),
-  status: z.enum(['active', 'archived'] as const)
+  status: z.enum(['active', 'archived'] as const),
+  notificationEmails: z
+    .array(z.string().email(t('dashboard.sites.validation.emailInvalid')))
+    .max(5, t('dashboard.sites.validation.emailsMax'))
+    .optional()
+    .default([])
 })
 
 type SiteForm = z.infer<ReturnType<typeof getFormSchema>>
@@ -303,14 +308,16 @@ const selectedSite = ref<Site | null>(null)
 const formState = reactive<SiteFormInput>({
   name: '',
   address: '',
-  status: 'active'
+  status: 'active',
+  notificationEmails: []
 })
 
 function resetForm(site?: Site) {
   Object.assign(formState, {
     name: site?.name ?? '',
     address: site?.address ?? '',
-    status: site?.status ?? 'active'
+    status: site?.status ?? 'active',
+    notificationEmails: site?.notificationEmails ?? []
   })
 }
 
@@ -707,6 +714,17 @@ function refreshFilters() {
                   { label: t('dashboard.sites.form.statusOptions.active'), value: 'active' },
                   { label: t('dashboard.sites.form.statusOptions.archived'), value: 'archived' }
                 ]" />
+              </UFormField>
+
+              <UFormField name="notificationEmails" :label="t('dashboard.sites.form.notificationEmailsLabel')">
+                <UInputMenu v-model="formState.notificationEmails"
+                  :placeholder="t('dashboard.sites.form.notificationEmailsPlaceholder')" multiple creatable searchable
+                  icon="i-lucide-mail" />
+                <template #hint>
+                  <p class="text-xs text-[color:var(--ui-text-muted)]">
+                    {{ t('dashboard.sites.form.notificationEmailsHint') }}
+                  </p>
+                </template>
               </UFormField>
 
               <div class="flex justify-end gap-3">

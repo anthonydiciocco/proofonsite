@@ -260,6 +260,9 @@
           "active": "Aktiv",
           "archived": "Archiviert"
         },
+        "notificationEmailsLabel": "Benachrichtigungs-E-Mails (CC)",
+        "notificationEmailsPlaceholder": "lieferant@beispiel.de",
+        "notificationEmailsHint": "Fügen Sie bis zu 5 E-Mail-Adressen hinzu, um Lieferbenachrichtigungen zu erhalten (Lieferanten, Kunden, Manager)",
         "saveButton": "Speichern",
         "createButton": "Baustelle anlegen"
       },
@@ -268,7 +271,9 @@
         "nameMin": "Der Name muss mindestens 2 Zeichen lang sein",
         "nameMax": "Der Name darf maximal 100 Zeichen lang sein",
         "addressMin": "Die Adresse muss mindestens 5 Zeichen lang sein",
-        "addressMax": "Die Adresse darf maximal 200 Zeichen lang sein"
+        "addressMax": "Die Adresse darf maximal 200 Zeichen lang sein",
+        "emailInvalid": "Ungültiges E-Mail-Format",
+        "emailsMax": "Maximal 5 Benachrichtigungs-E-Mails erlaubt"
       },
       "toast": {
         "created": "Baustelle angelegt",

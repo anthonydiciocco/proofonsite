@@ -8,6 +8,7 @@ export interface Site {
   status: SiteStatus
   referenceCode: string
   captureToken: string
+  notificationEmails: string[]
   createdAt: string
   updatedAt: string
 }
@@ -16,4 +17,5 @@ export interface SiteInput {
   name: string
   address: string
   status?: SiteStatus
+  notificationEmails?: string[]
 }

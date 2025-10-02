@@ -260,6 +260,9 @@
           "active": "进行中",
           "archived": "已归档"
         },
+        "notificationEmailsLabel": "通知邮箱（抄送）",
+        "notificationEmailsPlaceholder": "supplier@example.com",
+        "notificationEmailsHint": "添加最多5个邮箱地址以接收到货通知（供应商、客户、管理人员）",
         "saveButton": "保存工地",
         "createButton": "创建工地"
       },
@@ -268,7 +271,9 @@
         "nameMin": "名称至少需要3个字符",
         "nameMax": "名称不能超过100个字符",
         "addressMin": "地址至少需要5个字符",
-        "addressMax": "地址不能超过200个字符"
+        "addressMax": "地址不能超过200个字符",
+        "emailInvalid": "邮箱格式无效",
+        "emailsMax": "最多允许5个通知邮箱"
       },
       "toast": {
         "created": "工地创建成功",

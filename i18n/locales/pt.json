@@ -260,6 +260,9 @@
           "active": "Ativa",
           "archived": "Arquivada"
         },
+        "notificationEmailsLabel": "E-mails de notificação (CC)",
+        "notificationEmailsPlaceholder": "fornecedor@exemplo.com",
+        "notificationEmailsHint": "Adicione até 5 endereços de e-mail para receber notificações de entregas (fornecedores, clientes, gerentes)",
         "saveButton": "Salvar obra",
         "createButton": "Criar obra"
       },
@@ -268,7 +271,9 @@
         "nameMin": "O nome deve ter pelo menos 3 caracteres",
         "nameMax": "O nome não pode passar de 100 caracteres",
         "addressMin": "O endereço deve ter pelo menos 5 caracteres",
-        "addressMax": "O endereço não pode passar de 200 caracteres"
+        "addressMax": "O endereço não pode passar de 200 caracteres",
+        "emailInvalid": "Formato de e-mail inválido",
+        "emailsMax": "Máximo 5 e-mails de notificação permitidos"
       },
       "toast": {
         "created": "Obra criada com sucesso",

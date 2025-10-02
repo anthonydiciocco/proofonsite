@@ -26,6 +26,7 @@ export default defineEventHandler(async (event) => {
     name: payload.name,
     address: payload.address,
     status: payload.status ?? 'active',
+    notificationEmails: payload.notificationEmails ?? [],
     updatedAt: new Date()
   }).where(and(
     eq(sites.id, siteId),

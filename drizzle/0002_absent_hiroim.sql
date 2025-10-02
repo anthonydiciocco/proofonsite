@@ -1,0 +1,1 @@
+ALTER TABLE "sites" ADD COLUMN "notification_emails" text[] DEFAULT '{}' NOT NULL;

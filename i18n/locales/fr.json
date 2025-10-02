@@ -260,6 +260,9 @@
           "active": "Actif",
           "archived": "Archivé"
         },
+        "notificationEmailsLabel": "Courriels de notification (CC)",
+        "notificationEmailsPlaceholder": "fournisseur{'@'}exemple.com",
+        "notificationEmailsHint": "Ajoutez jusqu'à 5 adresses courriel pour recevoir les notifications de livraison (fournisseurs, clients, gestionnaires)",
         "saveButton": "Enregistrer le chantier",
         "createButton": "Créer le chantier"
       },
@@ -268,7 +271,9 @@
         "nameMin": "Le nom doit contenir au moins 3 caractères",
         "nameMax": "Le nom ne peut pas dépasser 100 caractères",
         "addressMin": "L'adresse doit contenir au moins 5 caractères",
-        "addressMax": "L'adresse ne peut pas dépasser 200 caractères"
+        "addressMax": "L'adresse ne peut pas dépasser 200 caractères",
+        "emailInvalid": "Format de courriel invalide",
+        "emailsMax": "Maximum 5 courriels de notification autorisés"
       },
       "toast": {
         "created": "Chantier créé avec succès",

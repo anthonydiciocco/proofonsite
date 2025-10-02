@@ -260,6 +260,9 @@
           "active": "Active",
           "archived": "Archived"
         },
+        "notificationEmailsLabel": "Notification emails (CC)",
+        "notificationEmailsPlaceholder": "supplier{'@'}example.com",
+        "notificationEmailsHint": "Add up to 5 email addresses to receive delivery notifications (suppliers, clients, managers)",
         "saveButton": "Save site",
         "createButton": "Create site"
       },
@@ -268,7 +271,9 @@
         "nameMin": "Name must be at least 3 characters",
         "nameMax": "Name cannot exceed 100 characters",
         "addressMin": "Address must be at least 5 characters",
-        "addressMax": "Address cannot exceed 200 characters"
+        "addressMax": "Address cannot exceed 200 characters",
+        "emailInvalid": "Invalid email format",
+        "emailsMax": "Maximum 5 notification emails allowed"
       },
       "toast": {
         "created": "Site created successfully",

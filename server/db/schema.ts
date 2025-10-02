@@ -42,6 +42,7 @@ export const sites = pgTable('sites', {
   status: siteStatus('status').notNull().default('active'),
   referenceCode: text('reference_code').notNull(),
   captureToken: text('capture_token').notNull(),
+  notificationEmails: text('notification_emails').array().default([]).notNull(),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull()
 }, table => ({
