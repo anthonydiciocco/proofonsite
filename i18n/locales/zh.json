@@ -261,7 +261,7 @@
           "archived": "已归档"
         },
         "notificationEmailsLabel": "通知邮箱（抄送）",
-        "notificationEmailsPlaceholder": "supplier@example.com",
+        "notificationEmailsPlaceholder": "supplier{'@'}example.com",
         "notificationEmailsHint": "添加最多5个邮箱地址以接收到货通知（供应商、客户、管理人员）",
         "saveButton": "保存工地",
         "createButton": "创建工地"
