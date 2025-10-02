@@ -13,6 +13,9 @@ export const FEATURES = {
 
   // Beta banner on landing page
   BETA_BANNER_ENABLED: true,
+
+  // Email notifications: Set to false to disable email notifications (MVP simplification)
+  EMAIL_NOTIFICATIONS_ENABLED: false,
 } as const
 
 /**

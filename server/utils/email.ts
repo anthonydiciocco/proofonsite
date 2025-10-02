@@ -1,4 +1,5 @@
 import { Resend } from 'resend'
+import { FEATURES } from './features'
 
 // Read and normalize the API key. Some dotenv setups keep surrounding quotes,
 // so strip them and whitespace to avoid subtle "invalid key" issues.
@@ -26,6 +27,12 @@ export interface DeliveryNotificationData {
 }
 
 export async function sendDeliveryNotification(data: DeliveryNotificationData) {
+  // Feature flag: Email notifications disabled for MVP
+  if (!FEATURES.EMAIL_NOTIFICATIONS_ENABLED) {
+    console.log('ℹ️ Email notifications are disabled (feature flag). Skipping notification.')
+    return { success: false, error: new Error('Email notifications disabled via feature flag') }
+  }
+
   if (!isResendKeySet || !resend) {
     const msg = 'RESEND_API_KEY is missing; cannot send email.'
     console.error('❌', msg)
