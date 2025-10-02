@@ -454,26 +454,27 @@
   "footer": {
     "tagline": "Visual proof for every delivery. Built for construction.",
     "rights": "All rights reserved.",
-    "emailAriaLabel": "Send email",
+    "emailAriaLabel": "Send email to support",
+    "signupAriaLabel": "Sign up for free beta access",
     "product": {
       "title": "Product",
-      "demo": "Product demo",
-      "pricing": "Pricing",
-      "roadmap": "Roadmap"
+      "howItWorks": "How It Works",
+      "features": "Features",
+      "pricing": "Pricing"
     },
     "support": {
       "title": "Support",
-      "implementation": "Implementation checklist",
-      "pilot": "Pilot program",
-      "email": "Email support"
+      "faq": "FAQ",
+      "contact": "Contact us"
     },
     "legal": {
-      "title": "Trust",
-      "terms": "Terms",
-      "privacy": "Privacy",
-      "security": "Security"
+      "title": "Legal",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy"
     },
-    "startPilot": "Start pilot"
+    "cta": {
+      "signup": "Join Beta"
+    }
   },
   "meta": {
     "home": {
@@ -488,6 +489,123 @@
     },
     "register": {
       "title": "Sign Up - ProofOnSite"
+    },
+    "terms": {
+      "title": "Terms of Service - ProofOnSite",
+      "description": "Terms and conditions for using ProofOnSite"
+    },
+    "privacy": {
+      "title": "Privacy Policy - ProofOnSite",
+      "description": "How we collect, use, and protect your data"
+    }
+  },
+  "legal": {
+    "terms": {
+      "title": "Terms of Service",
+      "lastUpdated": "Last updated: October 2, 2025",
+      "intro": "Welcome to ProofOnSite. By using our service, you agree to these terms.",
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptance of Terms",
+          "content": "By accessing and using ProofOnSite, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our service."
+        },
+        "description": {
+          "title": "2. Service Description",
+          "content": "ProofOnSite is a construction delivery tracking platform that allows users to capture, store, and manage visual proof of material deliveries on construction sites through QR code scanning."
+        },
+        "beta": {
+          "title": "3. Beta Access",
+          "content": "ProofOnSite is currently in beta testing. The service is provided 'as is' and may contain bugs or incomplete features. We reserve the right to modify, suspend, or discontinue any part of the service during the beta period."
+        },
+        "accounts": {
+          "title": "4. User Accounts",
+          "content": "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must notify us immediately of any unauthorized use of your account."
+        },
+        "data": {
+          "title": "5. User Data",
+          "content": "You retain all rights to the photos and data you upload to ProofOnSite. By uploading content, you grant us the right to store, process, and display this content solely for the purpose of providing our service to you."
+        },
+        "prohibited": {
+          "title": "6. Prohibited Uses",
+          "content": "You may not use ProofOnSite to upload illegal content, infringe on intellectual property rights, transmit malware, or engage in any activity that disrupts or interferes with our service."
+        },
+        "termination": {
+          "title": "7. Termination",
+          "content": "We reserve the right to suspend or terminate your account at any time for violation of these terms. You may cancel your account at any time. Upon termination, your data will be deleted according to our data retention policy."
+        },
+        "liability": {
+          "title": "8. Limitation of Liability",
+          "content": "ProofOnSite is provided 'as is' without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from your use of the service."
+        },
+        "changes": {
+          "title": "9. Changes to Terms",
+          "content": "We may update these terms at any time. Continued use of the service after changes constitutes acceptance of the new terms. We will notify users of significant changes via email."
+        },
+        "governing": {
+          "title": "10. Governing Law",
+          "content": "These terms are governed by the laws of the Province of Quebec, Canada. Any disputes shall be resolved in the courts of Quebec."
+        },
+        "contact": {
+          "title": "11. Contact",
+          "content": "For questions about these terms, please contact us at hello{'@'}proofonsite.com"
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: October 2, 2025",
+      "intro": "This Privacy Policy explains how ProofOnSite collects, uses, and protects your personal information.",
+      "sections": {
+        "collection": {
+          "title": "1. Information We Collect",
+          "content": "We collect information you provide directly to us, including:\n• Account information (name, email, password)\n• Site information (site names, addresses, reference codes)\n• Delivery photos and metadata (timestamps, capture tokens)\n• Usage data (login times, features used)"
+        },
+        "usage": {
+          "title": "2. How We Use Your Information",
+          "content": "We use your information to:\n• Provide and maintain the ProofOnSite service\n• Process and store delivery photos\n• Send service notifications and updates\n• Improve our service and develop new features\n• Respond to your support requests"
+        },
+        "storage": {
+          "title": "3. Data Storage and Security",
+          "content": "Your data is stored securely using:\n• Neon PostgreSQL for structured data (encrypted at rest)\n• Vercel Blob for photo storage (secure CDN delivery)\n• Industry-standard encryption for data in transit (TLS/SSL)\n• Secure session-based authentication\n\nWe implement reasonable security measures to protect your data, but no method of transmission over the internet is 100% secure."
+        },
+        "sharing": {
+          "title": "4. Information Sharing",
+          "content": "We do not sell, trade, or rent your personal information to third parties. We may share your information only:\n• With service providers who assist in operating our platform (hosting, storage)\n• When required by law or to protect our rights\n• With your explicit consent"
+        },
+        "retention": {
+          "title": "5. Data Retention",
+          "content": "We retain your data for as long as your account is active or as needed to provide you services. When you delete your account, we will delete your personal data and delivery photos within 30 days, except where retention is required by law."
+        },
+        "rights": {
+          "title": "6. Your Rights",
+          "content": "You have the right to:\n• Access your personal data\n• Correct inaccurate data\n• Delete your account and data\n• Export your data\n• Object to data processing\n\nTo exercise these rights, contact us at hello{'@'}proofonsite.com"
+        },
+        "cookies": {
+          "title": "7. Cookies and Tracking",
+          "content": "We use essential cookies for authentication and session management. We do not use third-party tracking cookies or analytics that collect personal information."
+        },
+        "international": {
+          "title": "8. International Users",
+          "content": "ProofOnSite is hosted on servers located in North America. By using our service, you consent to the transfer and processing of your data in Canada and the United States."
+        },
+        "children": {
+          "title": "9. Children's Privacy",
+          "content": "ProofOnSite is not intended for users under the age of 18. We do not knowingly collect personal information from children."
+        },
+        "changes": {
+          "title": "10. Changes to Privacy Policy",
+          "content": "We may update this Privacy Policy from time to time. We will notify you of significant changes via email or through a notice on our website."
+        },
+        "contact": {
+          "title": "11. Contact Us",
+          "content": "If you have questions about this Privacy Policy or how we handle your data, please contact us at hello{'@'}proofonsite.com"
+        }
+      }
+    },
+    "navigation": {
+      "backToHome": "Back to Home",
+      "viewTerms": "View Terms of Service",
+      "viewPrivacy": "View Privacy Policy"
     }
   }
 }

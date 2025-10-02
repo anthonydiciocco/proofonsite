@@ -169,22 +169,24 @@ const workflowItems = computed(() => [
 ] satisfies StepperItem[])
 
 const footerProductLinks = computed(() => [
-  { label: t('footer.product.demo'), to: '#workflow', icon: 'i-lucide-monitor-play' },
-  { label: t('footer.product.pricing'), to: '#pricing', icon: 'i-lucide-credit-card' },
-  { label: t('footer.product.roadmap'), to: '#benefits', icon: 'i-lucide-compass' }
+  { label: t('footer.product.howItWorks'), to: '#workflow', icon: 'i-lucide-workflow' },
+  { label: t('footer.product.features'), to: '#benefits', icon: 'i-lucide-sparkles' },
+  { label: t('footer.product.pricing'), to: '#pricing', icon: 'i-lucide-credit-card' }
 ] satisfies PageLink[])
 
 const footerSupportLinks = computed(() => [
-  { label: t('footer.support.implementation'), to: '#product', icon: 'i-lucide-list-checks' },
-  { label: t('footer.support.pilot'), to: '#pricing', icon: 'i-lucide-flag' },
-  { label: t('footer.support.email'), to: 'mailto:hello@proofonsite.com', icon: 'i-lucide-life-buoy' }
+  { label: t('footer.support.faq'), to: '#faq', icon: 'i-lucide-help-circle' },
+  { label: t('footer.support.contact'), to: 'mailto:hello@proofonsite.com', icon: 'i-lucide-mail' }
 ] satisfies PageLink[])
 
-const footerLegalLinks = computed(() => [
-  { label: t('footer.legal.terms'), to: '#', icon: 'i-lucide-scale' },
-  { label: t('footer.legal.privacy'), to: '#', icon: 'i-lucide-shield' },
-  { label: t('footer.legal.security'), to: '#', icon: 'i-lucide-lock' }
-] satisfies PageLink[])
+const footerLegalLinks = computed(() => {
+  // Force recomputation when locale changes
+  const _locale = locale.value
+  return [
+    { label: t('footer.legal.terms'), to: localePath('/terms'), icon: 'i-lucide-file-text' },
+    { label: t('footer.legal.privacy'), to: localePath('/privacy'), icon: 'i-lucide-shield-check' }
+  ] satisfies PageLink[]
+})
 
 const ctaLinks = computed(() => {
   // Force recomputation when locale changes
@@ -553,7 +555,7 @@ const currentYear = new Date().getFullYear()
     <ScrollReveal as="footer" animation="fade-up" :duration="600" :delay="120">
       <UFooter>
         <template #top>
-          <UContainer class="grid gap-10 md:grid-cols-3">
+          <UContainer class="grid gap-12 md:grid-cols-3">
             <UPageLinks :title="t('footer.product.title')" :links="footerProductLinks" />
             <UPageLinks :title="t('footer.support.title')" :links="footerSupportLinks" />
             <UPageLinks :title="t('footer.legal.title')" :links="footerLegalLinks" />
@@ -561,22 +563,26 @@ const currentYear = new Date().getFullYear()
         </template>
 
         <template #left>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <AppLogo class="text-sm sm:text-base" />
+            <p class="text-xs text-muted max-w-xs">
+              {{ t('footer.tagline') }}
+            </p>
             <p class="text-xs text-muted">
-              © {{ currentYear }} — {{ t('footer.rights') }}
+              © {{ currentYear }} ProofOnSite — {{ t('footer.rights') }}
             </p>
           </div>
         </template>
 
-        <UNavigationMenu :items="navigationItems" orientation="horizontal" variant="link" />
-
         <template #right>
-          <UButton color="secondary" variant="ghost" icon="i-lucide-mail" to="mailto:hello@proofonsite.com"
-            :aria-label="t('footer.emailAriaLabel')" />
-          <UButton color="secondary" variant="soft" trailing-icon="i-lucide-arrow-right" to="#cta">
-            {{ t('footer.startPilot') }}
-          </UButton>
+          <div class="flex items-center gap-2">
+            <UButton color="secondary" variant="ghost" icon="i-lucide-mail" to="mailto:hello@proofonsite.com"
+              :aria-label="t('footer.emailAriaLabel')" />
+            <UButton :to="localePath('/register')" color="secondary" variant="solid" icon="i-lucide-sparkles"
+              :aria-label="t('footer.signupAriaLabel')">
+              {{ t('footer.cta.signup') }}
+            </UButton>
+          </div>
         </template>
       </UFooter>
     </ScrollReveal>

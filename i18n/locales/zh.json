@@ -445,26 +445,27 @@
   "footer": {
     "tagline": "每次到货的可视化记录。专为建筑行业设计。",
     "rights": "版权所有。",
-    "emailAriaLabel": "发送邮件",
+    "emailAriaLabel": "发送邮件至支持",
+    "signupAriaLabel": "注册免费测试版",
     "product": {
       "title": "产品",
-      "demo": "产品演示",
-      "pricing": "价格",
-      "roadmap": "产品路线图"
+      "howItWorks": "如何使用",
+      "features": "功能特性",
+      "pricing": "价格"
     },
     "support": {
       "title": "支持",
-      "implementation": "实施清单",
-      "pilot": "试点计划",
-      "email": "邮件支持"
+      "faq": "常见问题",
+      "contact": "联系我们"
     },
     "legal": {
-      "title": "信任",
+      "title": "法律",
       "terms": "服务条款",
-      "privacy": "隐私政策",
-      "security": "安全保障"
+      "privacy": "隐私政策"
     },
-    "startPilot": "开始试点"
+    "cta": {
+      "signup": "加入测试版"
+    }
   },
   "meta": {
     "home": {
@@ -479,6 +480,123 @@
     },
     "register": {
       "title": "注册 - ProofOnSite"
+    },
+    "terms": {
+      "title": "服务条款 - ProofOnSite",
+      "description": "使用ProofOnSite的条款和条件"
+    },
+    "privacy": {
+      "title": "隐私政策 - ProofOnSite",
+      "description": "我们如何收集、使用和保护您的数据"
+    }
+  },
+  "legal": {
+    "terms": {
+      "title": "服务条款",
+      "lastUpdated": "最后更新：2025年10月2日",
+      "intro": "欢迎使用ProofOnSite。使用我们的服务即表示您同意这些条款。",
+      "sections": {
+        "acceptance": {
+          "title": "1. 接受条款",
+          "content": "通过访问和使用ProofOnSite，您接受并同意受这些服务条款的约束。如果您不同意这些条款，请不要使用我们的服务。"
+        },
+        "description": {
+          "title": "2. 服务描述",
+          "content": "ProofOnSite是一个建筑工地物料到场跟踪平台，允许用户通过扫描二维码来捕捉、存储和管理建筑工地材料到货的可视化证明。"
+        },
+        "beta": {
+          "title": "3. 测试版访问",
+          "content": "ProofOnSite目前处于测试阶段。该服务按'原样'提供，可能包含错误或不完整的功能。我们保留在测试期间修改、暂停或终止服务任何部分的权利。"
+        },
+        "accounts": {
+          "title": "4. 用户账户",
+          "content": "您有责任维护账户凭据的机密性，并对您账户下发生的所有活动负责。您必须立即通知我们任何未经授权使用您账户的情况。"
+        },
+        "data": {
+          "title": "5. 用户数据",
+          "content": "您保留对上传到ProofOnSite的照片和数据的所有权利。通过上传内容，您授予我们仅为向您提供服务的目的而存储、处理和显示此内容的权利。"
+        },
+        "prohibited": {
+          "title": "6. 禁止使用",
+          "content": "您不得使用ProofOnSite上传非法内容、侵犯知识产权、传播恶意软件，或从事任何破坏或干扰我们服务的活动。"
+        },
+        "termination": {
+          "title": "7. 终止",
+          "content": "我们保留因违反这些条款而随时暂停或终止您账户的权利。您可以随时取消您的账户。终止后，您的数据将根据我们的数据保留政策删除。"
+        },
+        "liability": {
+          "title": "8. 责任限制",
+          "content": "ProofOnSite按'原样'提供，不提供任何形式的保证。我们不对因您使用服务而产生的任何间接、附带或后果性损害承担责任。"
+        },
+        "changes": {
+          "title": "9. 条款变更",
+          "content": "我们可能随时更新这些条款。在变更后继续使用服务即表示接受新条款。我们将通过电子邮件通知用户重大变更。"
+        },
+        "governing": {
+          "title": "10. 适用法律",
+          "content": "这些条款受加拿大魁北克省法律管辖。任何争议应在魁北克法院解决。"
+        },
+        "contact": {
+          "title": "11. 联系方式",
+          "content": "如对这些条款有疑问，请通过hello{'@'}proofonsite.com联系我们"
+        }
+      }
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "lastUpdated": "最后更新：2025年10月2日",
+      "intro": "本隐私政策说明ProofOnSite如何收集、使用和保护您的个人信息。",
+      "sections": {
+        "collection": {
+          "title": "1. 我们收集的信息",
+          "content": "我们收集您直接提供给我们的信息，包括：\n• 账户信息（姓名、电子邮件、密码）\n• 工地信息（工地名称、地址、参考代码）\n• 到货照片和元数据（时间戳、捕获令牌）\n• 使用数据（登录时间、使用的功能）"
+        },
+        "usage": {
+          "title": "2. 我们如何使用您的信息",
+          "content": "我们使用您的信息来：\n• 提供和维护ProofOnSite服务\n• 处理和存储到货照片\n• 发送服务通知和更新\n• 改进我们的服务并开发新功能\n• 回应您的支持请求"
+        },
+        "storage": {
+          "title": "3. 数据存储和安全",
+          "content": "您的数据使用以下方式安全存储：\n• Neon PostgreSQL用于结构化数据（静态加密）\n• Vercel Blob用于照片存储（安全CDN传输）\n• 行业标准加密用于传输中的数据（TLS/SSL）\n• 基于会话的安全身份验证\n\n我们实施合理的安全措施来保护您的数据，但没有通过互联网传输的方法是100%安全的。"
+        },
+        "sharing": {
+          "title": "4. 信息共享",
+          "content": "我们不会向第三方出售、交易或出租您的个人信息。我们只在以下情况下共享您的信息：\n• 与帮助我们运营平台的服务提供商（托管、存储）\n• 法律要求或为保护我们的权利\n• 获得您的明确同意"
+        },
+        "retention": {
+          "title": "5. 数据保留",
+          "content": "只要您的账户处于活动状态或根据需要为您提供服务，我们就会保留您的数据。当您删除账户时，我们将在30天内删除您的个人数据和到货照片，除非法律要求保留。"
+        },
+        "rights": {
+          "title": "6. 您的权利",
+          "content": "您有权：\n• 访问您的个人数据\n• 更正不准确的数据\n• 删除您的账户和数据\n• 导出您的数据\n• 反对数据处理\n\n要行使这些权利，请通过hello{'@'}proofonsite.com联系我们"
+        },
+        "cookies": {
+          "title": "7. Cookie和跟踪",
+          "content": "我们使用必要的cookie进行身份验证和会话管理。我们不使用第三方跟踪cookie或收集个人信息的分析工具。"
+        },
+        "international": {
+          "title": "8. 国际用户",
+          "content": "ProofOnSite托管在位于北美的服务器上。使用我们的服务，即表示您同意在加拿大和美国传输和处理您的数据。"
+        },
+        "children": {
+          "title": "9. 儿童隐私",
+          "content": "ProofOnSite不适用于18岁以下的用户。我们不会有意收集儿童的个人信息。"
+        },
+        "changes": {
+          "title": "10. 隐私政策变更",
+          "content": "我们可能会不时更新本隐私政策。我们将通过电子邮件或在我们网站上的通知告知您重大变更。"
+        },
+        "contact": {
+          "title": "11. 联系我们",
+          "content": "如果您对本隐私政策或我们如何处理您的数据有疑问，请通过hello{'@'}proofonsite.com联系我们"
+        }
+      }
+    },
+    "navigation": {
+      "backToHome": "返回首页",
+      "viewTerms": "查看服务条款",
+      "viewPrivacy": "查看隐私政策"
     }
   }
 }

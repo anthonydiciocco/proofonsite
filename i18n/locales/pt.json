@@ -454,26 +454,27 @@
   "footer": {
     "tagline": "Prova visual de cada entrega. Feito pra construção.",
     "rights": "Todos os direitos reservados.",
-    "emailAriaLabel": "Enviar e-mail",
+    "emailAriaLabel": "Enviar e-mail ao suporte",
+    "signupAriaLabel": "Cadastre-se para acesso beta gratuito",
     "product": {
       "title": "Produto",
-      "demo": "Demonstração",
-      "pricing": "Preços",
-      "roadmap": "Roadmap"
+      "howItWorks": "Como funciona",
+      "features": "Funcionalidades",
+      "pricing": "Preços"
     },
     "support": {
       "title": "Suporte",
-      "implementation": "Checklist de implementação",
-      "pilot": "Programa piloto",
-      "email": "Suporte por e-mail"
+      "faq": "FAQ",
+      "contact": "Fale conosco"
     },
     "legal": {
-      "title": "Confiança",
-      "terms": "Termos",
-      "privacy": "Privacidade",
-      "security": "Segurança"
+      "title": "Legal",
+      "terms": "Termos de serviço",
+      "privacy": "Política de privacidade"
     },
-    "startPilot": "Começar piloto"
+    "cta": {
+      "signup": "Entrar na beta"
+    }
   },
   "meta": {
     "home": {
@@ -488,6 +489,123 @@
     },
     "register": {
       "title": "Cadastrar - ProofOnSite"
+    },
+    "terms": {
+      "title": "Termos de Serviço - ProofOnSite",
+      "description": "Termos e condições para usar o ProofOnSite"
+    },
+    "privacy": {
+      "title": "Política de Privacidade - ProofOnSite",
+      "description": "Como coletamos, usamos e protegemos seus dados"
+    }
+  },
+  "legal": {
+    "terms": {
+      "title": "Termos de Serviço",
+      "lastUpdated": "Última atualização: 2 de outubro de 2025",
+      "intro": "Bem-vindo ao ProofOnSite. Ao usar nosso serviço, você concorda com estes termos.",
+      "sections": {
+        "acceptance": {
+          "title": "1. Aceitação dos Termos",
+          "content": "Ao acessar e usar o ProofOnSite, você aceita e concorda em estar vinculado a estes Termos de Serviço. Se você não concorda com estes termos, por favor não use nosso serviço."
+        },
+        "description": {
+          "title": "2. Descrição do Serviço",
+          "content": "ProofOnSite é uma plataforma de rastreamento de entregas em construção que permite aos usuários capturar, armazenar e gerenciar provas visuais de entregas de materiais em obras através da leitura de códigos QR."
+        },
+        "beta": {
+          "title": "3. Acesso Beta",
+          "content": "ProofOnSite está atualmente em fase de testes beta. O serviço é fornecido 'como está' e pode conter bugs ou recursos incompletos. Reservamo-nos o direito de modificar, suspender ou descontinuar qualquer parte do serviço durante o período beta."
+        },
+        "accounts": {
+          "title": "4. Contas de Usuário",
+          "content": "Você é responsável por manter a confidencialidade das credenciais da sua conta e por todas as atividades que ocorram sob sua conta. Você deve nos notificar imediatamente sobre qualquer uso não autorizado da sua conta."
+        },
+        "data": {
+          "title": "5. Dados do Usuário",
+          "content": "Você mantém todos os direitos sobre as fotos e dados que você envia para o ProofOnSite. Ao enviar conteúdo, você nos concede o direito de armazenar, processar e exibir este conteúdo exclusivamente com o propósito de fornecer nosso serviço a você."
+        },
+        "prohibited": {
+          "title": "6. Usos Proibidos",
+          "content": "Você não pode usar o ProofOnSite para enviar conteúdo ilegal, infringir direitos de propriedade intelectual, transmitir malware ou se envolver em qualquer atividade que interrompa ou interfira com nosso serviço."
+        },
+        "termination": {
+          "title": "7. Encerramento",
+          "content": "Reservamo-nos o direito de suspender ou encerrar sua conta a qualquer momento por violação destes termos. Você pode cancelar sua conta a qualquer momento. Após o encerramento, seus dados serão excluídos de acordo com nossa política de retenção de dados."
+        },
+        "liability": {
+          "title": "8. Limitação de Responsabilidade",
+          "content": "ProofOnSite é fornecido 'como está' sem garantias de qualquer tipo. Não somos responsáveis por quaisquer danos indiretos, incidentais ou consequentes decorrentes do seu uso do serviço."
+        },
+        "changes": {
+          "title": "9. Alterações nos Termos",
+          "content": "Podemos atualizar estes termos a qualquer momento. O uso continuado do serviço após as alterações constitui aceitação dos novos termos. Notificaremos os usuários sobre mudanças significativas por e-mail."
+        },
+        "governing": {
+          "title": "10. Lei Aplicável",
+          "content": "Estes termos são regidos pelas leis da Província de Quebec, Canadá. Quaisquer disputas serão resolvidas nos tribunais de Quebec."
+        },
+        "contact": {
+          "title": "11. Contato",
+          "content": "Para perguntas sobre estes termos, por favor entre em contato conosco em hello{'@'}proofonsite.com"
+        }
+      }
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "lastUpdated": "Última atualização: 2 de outubro de 2025",
+      "intro": "Esta Política de Privacidade explica como o ProofOnSite coleta, usa e protege suas informações pessoais.",
+      "sections": {
+        "collection": {
+          "title": "1. Informações que Coletamos",
+          "content": "Coletamos informações que você nos fornece diretamente, incluindo:\n• Informações de conta (nome, e-mail, senha)\n• Informações de obra (nomes de obras, endereços, códigos de referência)\n• Fotos de entregas e metadados (carimbos de data/hora, tokens de captura)\n• Dados de uso (horários de login, recursos utilizados)"
+        },
+        "usage": {
+          "title": "2. Como Usamos suas Informações",
+          "content": "Usamos suas informações para:\n• Fornecer e manter o serviço ProofOnSite\n• Processar e armazenar fotos de entregas\n• Enviar notificações e atualizações do serviço\n• Melhorar nosso serviço e desenvolver novos recursos\n• Responder às suas solicitações de suporte"
+        },
+        "storage": {
+          "title": "3. Armazenamento e Segurança de Dados",
+          "content": "Seus dados são armazenados com segurança usando:\n• Neon PostgreSQL para dados estruturados (criptografados em repouso)\n• Vercel Blob para armazenamento de fotos (entrega CDN segura)\n• Criptografia padrão da indústria para dados em trânsito (TLS/SSL)\n• Autenticação segura baseada em sessões\n\nImplementamos medidas de segurança razoáveis para proteger seus dados, mas nenhum método de transmissão pela Internet é 100% seguro."
+        },
+        "sharing": {
+          "title": "4. Compartilhamento de Informações",
+          "content": "Não vendemos, trocamos ou alugamos suas informações pessoais para terceiros. Podemos compartilhar suas informações apenas:\n• Com provedores de serviços que nos ajudam a operar nossa plataforma (hospedagem, armazenamento)\n• Quando exigido por lei ou para proteger nossos direitos\n• Com seu consentimento explícito"
+        },
+        "retention": {
+          "title": "5. Retenção de Dados",
+          "content": "Retemos seus dados enquanto sua conta estiver ativa ou conforme necessário para fornecer serviços a você. Quando você excluir sua conta, excluiremos seus dados pessoais e fotos de entregas dentro de 30 dias, exceto onde a retenção for exigida por lei."
+        },
+        "rights": {
+          "title": "6. Seus Direitos",
+          "content": "Você tem o direito de:\n• Acessar seus dados pessoais\n• Corrigir dados imprecisos\n• Excluir sua conta e dados\n• Exportar seus dados\n• Objetar ao processamento de dados\n\nPara exercer esses direitos, entre em contato conosco em hello{'@'}proofonsite.com"
+        },
+        "cookies": {
+          "title": "7. Cookies e Rastreamento",
+          "content": "Usamos cookies essenciais para autenticação e gerenciamento de sessões. Não usamos cookies de rastreamento de terceiros ou análises que coletam informações pessoais."
+        },
+        "international": {
+          "title": "8. Usuários Internacionais",
+          "content": "ProofOnSite está hospedado em servidores localizados na América do Norte. Ao usar nosso serviço, você consente com a transferência e processamento de seus dados no Canadá e nos Estados Unidos."
+        },
+        "children": {
+          "title": "9. Privacidade de Crianças",
+          "content": "ProofOnSite não se destina a usuários menores de 18 anos. Não coletamos intencionalmente informações pessoais de crianças."
+        },
+        "changes": {
+          "title": "10. Alterações à Política de Privacidade",
+          "content": "Podemos atualizar esta Política de Privacidade de tempos em tempos. Notificaremos você sobre mudanças significativas por e-mail ou através de um aviso em nosso site."
+        },
+        "contact": {
+          "title": "11. Entre em Contato",
+          "content": "Se você tiver dúvidas sobre esta Política de Privacidade ou como lidamos com seus dados, por favor entre em contato conosco em hello{'@'}proofonsite.com"
+        }
+      }
+    },
+    "navigation": {
+      "backToHome": "Voltar ao Início",
+      "viewTerms": "Ver Termos de Serviço",
+      "viewPrivacy": "Ver Política de Privacidade"
     }
   }
 }
